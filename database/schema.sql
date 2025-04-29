@@ -1,10 +1,14 @@
-# Generate the merged and normalized SQL schema for both Sanjana's and Mohammed's tables
-
-#CREATE DATABASE CVD_Risk;
+-- ===============================
+-- Create and Select the Database
+-- ===============================
+CREATE DATABASE IF NOT EXISTS CVD_Risk;
 USE CVD_Risk;
 
+-- ===============================
+-- COMMON TABLES
+-- ===============================
 
--- Users Table (shared by all users: patients, clinicians)
+-- Users Table
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -22,6 +26,10 @@ CREATE TABLE Admins (
     role ENUM('SuperAdmin', 'Manager', 'Support') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- ===============================
+-- PATIENTS & CLINICIANS
+-- ===============================
 
 -- Patients Table
 CREATE TABLE Patients (
@@ -54,6 +62,10 @@ CREATE TABLE Clinicians (
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
+-- ===============================
+-- QUESTIONNAIRES AND RESPONSES
+-- ===============================
+
 -- Questionnaire Table
 CREATE TABLE CVD_risk_Questionnaire (
     question_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -67,7 +79,7 @@ CREATE TABLE CVD_risk_Questionnaire (
     FOREIGN KEY (dependencies) REFERENCES CVD_risk_Questionnaire(question_id) ON DELETE SET NULL
 );
 
--- Questionnaire Response Options Table
+-- Questionnaire Response Options
 CREATE TABLE CVD_risk_QuestionResponseOptions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     question_id INT,
@@ -103,6 +115,17 @@ CREATE TABLE CVD_risk_Clinician_Patient (
     FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE
 );
 
+-- ===============================
+-- ML MODELS AND FEATURES
+-- ===============================
+
+-- Machine Learning Models Table
+CREATE TABLE ML_Models (
+    model_id INT AUTO_INCREMENT PRIMARY KEY,
+    model_name VARCHAR(255) NOT NULL,
+    model_type VARCHAR(100) NOT NULL
+);
+
 -- Features Table
 CREATE TABLE batch_CVD_Risk_Features (
     feature_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -110,7 +133,7 @@ CREATE TABLE batch_CVD_Risk_Features (
     feature_description TEXT
 );
 
--- Model-Feature Table
+-- Model-Feature Mapping Table
 CREATE TABLE batch_CVD_Risk_Model_Features (
     model_id INT NOT NULL,
     feature_id INT NOT NULL,
@@ -119,35 +142,12 @@ CREATE TABLE batch_CVD_Risk_Model_Features (
     FOREIGN KEY (feature_id) REFERENCES batch_CVD_Risk_Features(feature_id)
 );
 
--- Patient Outcomes Table
-CREATE TABLE CVD_risk_Patient_Outcomes (
-    outcome_id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_id INT,
-    outcome_description TEXT NOT NULL,
-    reported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (patient_id) REFERENCES CVD_risk_Patients(patient_id) ON DELETE CASCADE
-);
+-- ===============================
+-- RISK STRATIFICATION OUTPUTS
+-- ===============================
 
--- Model Table
-CREATE TABLE ML_Models (
-    `model_id` INT(11) NOT NULL AUTO_INCREMENT,
-    `model_name` VARCHAR(255) NOT NULL,  -- E.g. 'Classical COX-PH Model', 'Elastic Net COX-PH' 
-    `model_type` VARCHAR(100) NOT NULL,  -- E.g. 'CNN', 'XGBoost', 'Logistic Regression'
-
-    PRIMARY KEY (`model_id`)
-);
-
--- Output Visuals Table
-CREATE TABLE batch_CVD_Risk_Output (
-    output_id INT AUTO_INCREMENT PRIMARY KEY,
-    risk_id INT NOT NULL,
-    plot_type VARCHAR(100) NOT NULL,
-    generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (risk_id) REFERENCES batch_CVD_Risk_Risk(risk_id)
-);
-
--- Risk Stratification Table (live system use)
-CREATE TABLE CVD_risk_Risk_Stratification (
+-- Risk Stratification Table (Clinical, Live Use)
+CREATE TABLE Risk_Stratification (
     stratification_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
     risk_score DECIMAL(5,2),
@@ -158,4 +158,35 @@ CREATE TABLE CVD_risk_Risk_Stratification (
     FOREIGN KEY (model_id) REFERENCES ML_Models(model_id) ON DELETE SET NULL
 );
 
+-- Patient Outcomes Table
+CREATE TABLE CVD_risk_Patient_Outcomes (
+    outcome_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT,
+    outcome_description TEXT NOT NULL,
+    reported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE
+);
 
+-- ===============================
+-- BATCH PROCESSING TABLES (Research Outputs)
+-- ===============================
+
+-- Batch Risk Prediction Table
+CREATE TABLE batch_CVD_Risk_Risk (
+    risk_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT NOT NULL,
+    model_id INT NOT NULL,
+    risk_score DECIMAL(5,2) NOT NULL,
+    prediction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id),
+    FOREIGN KEY (model_id) REFERENCES ML_Models(model_id)
+);
+
+-- Output Visualizations Table
+CREATE TABLE batch_CVD_Risk_Output (
+    output_id INT AUTO_INCREMENT PRIMARY KEY,
+    risk_id INT NOT NULL,
+    plot_type VARCHAR(100) NOT NULL,
+    generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (risk_id) REFERENCES batch_CVD_Risk_Risk(risk_id)
+);
