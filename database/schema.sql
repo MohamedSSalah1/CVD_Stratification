@@ -26,7 +26,7 @@ CREATE TABLE Admins (
 );
 
 -- Patients Table
-CREATE TABLE CVD_risk_Patients (
+CREATE TABLE Patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE CVD_risk_Patients (
 );
 
 -- Clinicians Table
-CREATE TABLE CVD_risk_Clinicians (
+CREATE TABLE Clinicians (
     clinician_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE CVD_risk_Responses (
     boolean_response BOOLEAN,
     option_selected_id INT,
     response_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (patient_id) REFERENCES CVD_risk_Patients(patient_id) ON DELETE CASCADE,
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE,
     FOREIGN KEY (question_id) REFERENCES CVD_risk_Questionnaire(question_id) ON DELETE CASCADE,
     FOREIGN KEY (option_selected_id) REFERENCES CVD_risk_QuestionResponseOptions(id)
 );
@@ -101,8 +101,8 @@ CREATE TABLE CVD_risk_Clinician_Patient (
     patient_id INT,
     assigned_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (clinician_id, patient_id),
-    FOREIGN KEY (clinician_id) REFERENCES CVD_risk_Clinicians(clinician_id) ON DELETE CASCADE,
-    FOREIGN KEY (patient_id) REFERENCES CVD_risk_Patients(patient_id) ON DELETE CASCADE
+    FOREIGN KEY (clinician_id) REFERENCES Clinicians(clinician_id) ON DELETE CASCADE,
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE
 );
 
 -- Features Table
@@ -117,7 +117,7 @@ CREATE TABLE batch_CVD_Risk_Model_Features (
     model_id INT NOT NULL,
     feature_id INT NOT NULL,
     PRIMARY KEY (model_id, feature_id),
-    FOREIGN KEY (model_id) REFERENCES CVD_risk_ML_Models(model_id),
+    FOREIGN KEY (model_id) REFERENCES ML_Models(model_id),
     FOREIGN KEY (feature_id) REFERENCES batch_CVD_Risk_Features(feature_id)
 );
 
@@ -131,7 +131,7 @@ CREATE TABLE CVD_risk_Patient_Outcomes (
 );
 
 -- Model Table
-CREATE TABLE `Model` (
+CREATE TABLE ML_Models (
     `model_id` INT(11) NOT NULL AUTO_INCREMENT,
     `model_name` VARCHAR(255) NOT NULL,  -- E.g. 'Classical COX-PH Model', 'Elastic Net COX-PH' 
     `model_type` VARCHAR(100) NOT NULL,  -- E.g. 'CNN', 'XGBoost', 'Logistic Regression'
@@ -149,8 +149,8 @@ CREATE TABLE batch_CVD_Risk_Stratification (
     model_id INT NOT NULL,
     risk_score DECIMAL(5,2) NOT NULL,
     prediction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (patient_id) REFERENCES CVD_risk_Patients(patient_id),
-    FOREIGN KEY (model_id) REFERENCES CVD_risk_ML_Models(model_id)
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id),
+    FOREIGN KEY (model_id) REFERENCES ML_Models(model_id)
 );
 
 -- ===========================
