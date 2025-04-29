@@ -174,8 +174,8 @@ CREATE TABLE CVD_risk_Risk_Stratification (
     recommendation TEXT,
     assessed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     model_id INT,
-    FOREIGN KEY (patient_id) REFERENCES CVD_risk_Patients(patient_id) ON DELETE CASCADE,
-    FOREIGN KEY (model_id) REFERENCES CVD_risk_ML_Models(model_id) ON DELETE SET NULL
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id) ON DELETE CASCADE,
+    FOREIGN KEY (model_id) REFERENCES ML_Models(model_id) ON DELETE SET NULL
 );
 
 
