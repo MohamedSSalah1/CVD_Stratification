@@ -1,10 +1,8 @@
 # Generate the merged and normalized SQL schema for both Sanjana's and Mohammed's tables
 
-#CREATE DATABASE CVD_RiskDB;
-USE CVD_RiskDB;
--- ===========================
--- COMMON TABLES
--- ===========================
+#CREATE DATABASE CVD_Risk;
+USE CVD_Risk;
+
 
 -- Users Table (shared by all users: patients, clinicians)
 CREATE TABLE Users (
