@@ -138,24 +138,6 @@ CREATE TABLE ML_Models (
 
     PRIMARY KEY (`model_id`)
 );
--- ===========================
--- SANJANA'S SCHEMA (CVD_risk_)
--- ===========================
-
--- Risk Stratification Scores Table
-CREATE TABLE batch_CVD_Risk_Stratification (
-    risk_id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_id INT NOT NULL,
-    model_id INT NOT NULL,
-    risk_score DECIMAL(5,2) NOT NULL,
-    prediction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id),
-    FOREIGN KEY (model_id) REFERENCES ML_Models(model_id)
-);
-
--- ===========================
--- MOHAMMED'S SCHEMA (batch_CVD_Risk_)
--- ===========================
 
 -- Output Visuals Table
 CREATE TABLE batch_CVD_Risk_Output (
@@ -166,7 +148,7 @@ CREATE TABLE batch_CVD_Risk_Output (
     FOREIGN KEY (risk_id) REFERENCES batch_CVD_Risk_Risk(risk_id)
 );
 
--- Risk Stratification (live system use)
+-- Risk Stratification Table (live system use)
 CREATE TABLE CVD_risk_Risk_Stratification (
     stratification_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
