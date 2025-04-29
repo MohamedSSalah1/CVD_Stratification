@@ -142,8 +142,8 @@ CREATE TABLE `Model` (
 -- SANJANA'S SCHEMA (CVD_risk_)
 -- ===========================
 
--- Model Outputs Table
-CREATE TABLE batch_CVD_Risk_Risk (
+-- Risk Stratification Scores Table
+CREATE TABLE batch_CVD_Risk_Stratification (
     risk_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT NOT NULL,
     model_id INT NOT NULL,
