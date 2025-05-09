@@ -13,18 +13,9 @@ CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    role ENUM('patient', 'clinician') NOT NULL
-);
-
--- Admins Table
-CREATE TABLE Admins (
-    admin_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    role ENUM('SuperAdmin', 'Manager', 'Support') NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    role ENUM('patient', 'clinician_pending', 'clinician_approved') NOT NULL
 );
 
 -- ===============================
@@ -34,31 +25,19 @@ CREATE TABLE Admins (
 -- Patients Table
 CREATE TABLE Patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
     date_of_birth DATE,
     gender ENUM('Male', 'Female', 'Other'),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    admin_id INT,
     user_id INT UNIQUE,
-    FOREIGN KEY (admin_id) REFERENCES Admins(admin_id) ON DELETE SET NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
 -- Clinicians Table
 CREATE TABLE Clinicians (
     clinician_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
     specialty VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    admin_id INT,
     user_id INT UNIQUE,
-    FOREIGN KEY (admin_id) REFERENCES Admins(admin_id) ON DELETE SET NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
@@ -74,8 +53,6 @@ CREATE TABLE CVD_risk_Questionnaire (
     subcategory VARCHAR(100),
     dependencies INT,
     question_order INT DEFAULT 0,
-    admin_id INT,
-    FOREIGN KEY (admin_id) REFERENCES Admins(admin_id) ON DELETE SET NULL,
     FOREIGN KEY (dependencies) REFERENCES CVD_risk_Questionnaire(question_id) ON DELETE SET NULL
 );
 
