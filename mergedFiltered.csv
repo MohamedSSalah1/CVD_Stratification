@@ -1,0 +1,883 @@
+,Field ID,Unnamed: 0,Unique Name,Question Stem,Data type,Full Answer,Select one/Toggle multiple/Enter integer answer,Category
+2,699.0,Length.of.time.at.current.address...Instance.0,D5B,How many years have you lived at your current address?,Numeric,,Enter integer answer,Sociodemographics
+4,904.0,Number.of.days.week.of.vigorous.physical.activity.10..minutes...Instance.0,WP3,"In a typical WEEK, how many days did you do 10 minutes or more of vigorous physical activity?
+(These are activities that make you sweat
+or breathe hard such as fast cycling, aerobics, heavy lifting)",Numeric,,Enter integer answer,Lifestyle and environment
+5,1090.0,Time.spent.driving...Instance.0,WP7,"In a typical DAY, how many hours do you spend driving?",Numeric,,Enter integer answer,Lifestyle and environment
+7,1070.0,Time.spent.watching.television..TV....Instance.0,WP5,"In a typical DAY, how many hours do you spend watching TV?
+(Put 0 if you do not spend any time doing it)",Numeric,,Enter integer answer,Lifestyle and environment
+9,1289.0,Cooked.vegetable.intake...Instance.0,DT1,"On average how many heaped tablespoons of COOKED vegetables would you eat per DAY?
+(Do not include potatoes; put '0' if you do not eat any)",Numeric,,Enter integer answer,Lifestyle and environment
+10,1299.0,Salad...raw.vegetable.intake...Instance.0,DT2,"On average how many heaped tablespoons of SALAD or RAW vegetables would you eat per DAY?(Include lettuce, tomato in sandwiches; put '0' if you do not eat any)",Numeric,,Enter integer answer,Lifestyle and environment
+11,1309.0,Fresh.fruit.intake...Instance.0,DT3,"About how many pieces of FRESH fruit would you eat per DAY?
+(Count one apple, one banana, 10 grapes etc as one piece; put '0' if you do not eat any)",Numeric,,Enter integer answer,Lifestyle and environment
+12,1319.0,Dried.fruit.intake...Instance.0,DT2A,"About how many pieces of DRIED fruit would you eat per DAY?
+(Count one prune, one dried apricot, 10 raisins as one piece; put '0' if you do not eat any)",Numeric,,Enter integer answer,Lifestyle and environment
+14,1438.0,Bread.intake...Instance.0,DT10B,How many slices of bread do you eat each WEEK?,Numeric,,Enter integer answer,Lifestyle and environment
+15,1458.0,Cereal.intake...Instance.0,DT11A1,How many bowls of cereal do you eat a WEEK?,Numeric,,Enter integer answer,Lifestyle and environment
+16,1488.0,Tea.intake...Instance.0,DT12,How many cups of tea do you drink each DAY?(Include black and green tea),Numeric,,Enter integer answer,Lifestyle and environment
+17,1498.0,Coffee.intake...Instance.0,DT13,"How many cups of coffee do you drink each DAY?
+(Include decaffeinated coffee)",Numeric,,Enter integer answer,Lifestyle and environment
+18,1528.0,Water.intake...Instance.0,DT14,How many glasses of water do you drink each DAY?,Numeric,,Enter integer answer,Lifestyle and environment
+19,1050.0,Time.spend.outdoors.in.summer...Instance.0,WP12A,"In a typical DAY in summer, how many hours do you spend outdoors?",Numeric,,Enter integer answer,Lifestyle and environment
+20,1060.0,Time.spent.outdoors.in.winter...Instance.0,WP12B,"In a typical DAY in winter, how many hours do you spend outdoors?",Numeric,,Enter integer answer,Lifestyle and environment
+22,2277.0,Frequency.of.solarium.sunlamp.use...Instance.0,Y6AC,How many times a year would you use a solarium or sunlamp?,Numeric,,Enter integer answer,Lifestyle and environment
+23,670.0,Type.of.accommodation.lived.in...Instance.0_1,D4,What type of accommodation do you live in?,Logical,1 : A house or bungalow,Select one answer,Sociodemographics
+24,670.0,Type.of.accommodation.lived.in...Instance.0_2,D4,What type of accommodation do you live in?,Logical,"2 : A flat, maisonette or apartment",Select one answer,Sociodemographics
+25,670.0,Type.of.accommodation.lived.in...Instance.0_3,D4,What type of accommodation do you live in?,Logical,3 : Mobile or temporary structure (i.e. caravan),Select one answer,Sociodemographics
+26,670.0,Type.of.accommodation.lived.in...Instance.0_4,D4,What type of accommodation do you live in?,Logical,4 : Sheltered accommodation,Select one answer,Sociodemographics
+27,670.0,Type.of.accommodation.lived.in...Instance.0_neg7,D4,What type of accommodation do you live in?,Logical,-7 : None of the above,Select one answer,Sociodemographics
+28,680.0,Own.or.rent.accommodation.lived.in...Instance.0_1,D5,Do you own or rent the accommodation that you live in?,Logical,1 : Own outright (by you or someone in your household),Select one answer,Sociodemographics
+29,680.0,Own.or.rent.accommodation.lived.in...Instance.0_2,D5,Do you own or rent the accommodation that you live in?,Logical,2 : Own with a mortgage,Select one answer,Sociodemographics
+30,680.0,Own.or.rent.accommodation.lived.in...Instance.0_3,D5,Do you own or rent the accommodation that you live in?,Logical,"3 : Rent - from local authority, local council, housing association",Select one answer,Sociodemographics
+32,680.0,Own.or.rent.accommodation.lived.in...Instance.0_5,D5,Do you own or rent the accommodation that you live in?,Logical,5 : Pay part rent and part mortgage (shared ownership),Select one answer,Sociodemographics
+35,6139.0,Gas.or.solid.fuel.cooking.heating...Instance.0_1,D5A,Do you have any of the following in your home? (You can select more than one answer),Logical,1 : A gas hob or gas cooker,Toggle multiple answer,Sociodemographics
+36,6139.0,Gas.or.solid.fuel.cooking.heating...Instance.0_2,D5A,Do you have any of the following in your home? (You can select more than one answer),Logical,2 : A gas fire that you use regularly in winter time,Toggle multiple answer,Sociodemographics
+37,6139.0,Gas.or.solid.fuel.cooking.heating...Instance.0_3,D5A,Do you have any of the following in your home? (You can select more than one answer),Logical,3 : An open solid fuel fire that you use regularly in winter time,Toggle multiple answer,Sociodemographics
+38,6139.0,Gas.or.solid.fuel.cooking.heating...Instance.0_neg7,D5A,Do you have any of the following in your home? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Sociodemographics
+46,709.0,Number.in.household...Instance.0_Lower.third,D7,"Including yourself, how many people are living together in your household?
+(Include those who usually live in the house such as students living away from home during term, partners in the
+armed forces or professions such as pilots)",Logical,,Enter integer answer,Sociodemographics
+47,709.0,Number.in.household...Instance.0_Middle.third,D7,"Including yourself, how many people are living together in your household?
+(Include those who usually live in the house such as students living away from home during term, partners in the
+armed forces or professions such as pilots)",Logical,,Enter integer answer,Sociodemographics
+48,709.0,Number.in.household...Instance.0_Upper.third,D7,"Including yourself, how many people are living together in your household?
+(Include those who usually live in the house such as students living away from home during term, partners in the
+armed forces or professions such as pilots)",Logical,,Enter integer answer,Sociodemographics
+49,6141.0,How.are.people.in.household.related.to.participant...Instance.0_1,D7A,How are the other people who live with you related to you? (You can select more than one answer),Logical,"1 : Husband, wife or partner",Toggle multiple answer,Sociodemographics
+50,6141.0,How.are.people.in.household.related.to.participant...Instance.0_2,D7A,How are the other people who live with you related to you? (You can select more than one answer),Logical,2 : Son and/or daughter (include step-children),Toggle multiple answer,Sociodemographics
+52,6141.0,How.are.people.in.household.related.to.participant...Instance.0_4,D7A,How are the other people who live with you related to you? (You can select more than one answer),Logical,4 : Mother and/or father,Toggle multiple answer,Sociodemographics
+53,6141.0,How.are.people.in.household.related.to.participant...Instance.0_6,D7A,How are the other people who live with you related to you? (You can select more than one answer),Logical,6 : Grandchild,Toggle multiple answer,Sociodemographics
+55,6141.0,How.are.people.in.household.related.to.participant...Instance.0_8,D7A,How are the other people who live with you related to you? (You can select more than one answer),Logical,8 : Other unrelated,Toggle multiple answer,Sociodemographics
+56,728.0,Number.of.vehicles.in.household...Instance.0_1,D8,"How many cars or vans are owned, or available for use, by you or members of your household? (Please include company vehicles if available for private use)",Logical,1 : None,Select one answer,Sociodemographics
+57,728.0,Number.of.vehicles.in.household...Instance.0_2,D8,"How many cars or vans are owned, or available for use, by you or members of your household? (Please include company vehicles if available for private use)",Logical,2 : One,Select one answer,Sociodemographics
+58,728.0,Number.of.vehicles.in.household...Instance.0_3,D8,"How many cars or vans are owned, or available for use, by you or members of your household? (Please include company vehicles if available for private use)",Logical,3 : Two,Select one answer,Sociodemographics
+59,728.0,Number.of.vehicles.in.household...Instance.0_4,D8,"How many cars or vans are owned, or available for use, by you or members of your household? (Please include company vehicles if available for private use)",Logical,4 : Three,Select one answer,Sociodemographics
+60,728.0,Number.of.vehicles.in.household...Instance.0_5,D8,"How many cars or vans are owned, or available for use, by you or members of your household? (Please include company vehicles if available for private use)",Logical,5 : Four or more,Select one answer,Sociodemographics
+61,738.0,Average.total.household.income.before.tax...Instance.0_1,D10,What is the average total income before tax received by your HOUSEHOLD?,Logical,"1 : Less than £18,000",Select one answer,Sociodemographics
+62,738.0,Average.total.household.income.before.tax...Instance.0_2,D10,What is the average total income before tax received by your HOUSEHOLD?,Logical,"2 : £18,000 to £30,999",Select one answer,Sociodemographics
+63,738.0,Average.total.household.income.before.tax...Instance.0_3,D10,What is the average total income before tax received by your HOUSEHOLD?,Logical,"3 : £31,000 to £51,999",Select one answer,Sociodemographics
+64,738.0,Average.total.household.income.before.tax...Instance.0_4,D10,What is the average total income before tax received by your HOUSEHOLD?,Logical,"4 : £52,000 to £100,000",Select one answer,Sociodemographics
+65,738.0,Average.total.household.income.before.tax...Instance.0_5,D10,What is the average total income before tax received by your HOUSEHOLD?,Logical,"5 : Greater than £100,000",Select one answer,Sociodemographics
+66,6142.0,Current.employment.status...Instance.0_1,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,1 : In paid employment or self-employed,Toggle multiple answer,Sociodemographics
+67,6142.0,Current.employment.status...Instance.0_2,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,2 : Retired,Toggle multiple answer,Sociodemographics
+68,6142.0,Current.employment.status...Instance.0_3,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,3 : Looking after home and/or family,Toggle multiple answer,Sociodemographics
+69,6142.0,Current.employment.status...Instance.0_4,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,4 : Unable to work because of sickness or disability,Toggle multiple answer,Sociodemographics
+72,6142.0,Current.employment.status...Instance.0_7,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,7 : Full or part-time student,Toggle multiple answer,Sociodemographics
+73,6142.0,Current.employment.status...Instance.0_neg7,D9,Which of the following describes your current situation? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Sociodemographics
+74,777.0,Frequency.of.travelling.from.home.to.job.workplace...Instance.0_Lower.third,D9G,"How many times a WEEK do you travel from home to your main work?
+(count outward journeys only; put 0 if you always work from home)",Logical,,Enter integer answer,Sociodemographics
+75,777.0,Frequency.of.travelling.from.home.to.job.workplace...Instance.0_Middle.third,D9G,"How many times a WEEK do you travel from home to your main work?
+(count outward journeys only; put 0 if you always work from home)",Logical,,Enter integer answer,Sociodemographics
+77,796.0,Distance.between.home.and.job.workplace...Instance.0_Lower.third,D9F,About how many miles is it between your home and your work?,Logical,,Enter integer answer,Sociodemographics
+78,796.0,Distance.between.home.and.job.workplace...Instance.0_Middle.third,D9F,About how many miles is it between your home and your work?,Logical,,Enter integer answer,Sociodemographics
+79,796.0,Distance.between.home.and.job.workplace...Instance.0_Upper.third,D9F,About how many miles is it between your home and your work?,Logical,,Enter integer answer,Sociodemographics
+80,757.0,Time.employed.in.main.current.job...Instance.0_Lower.third,D9AA,"How many years have you worked in your current job? (If you have more than one job please answer this, and the following questions on work, for your MAIN job only)",Logical,,Enter integer answer,Sociodemographics
+81,757.0,Time.employed.in.main.current.job...Instance.0_Middle.third,D9AA,"How many years have you worked in your current job? (If you have more than one job please answer this, and the following questions on work, for your MAIN job only)",Logical,,Enter integer answer,Sociodemographics
+82,757.0,Time.employed.in.main.current.job...Instance.0_Upper.third,D9AA,"How many years have you worked in your current job? (If you have more than one job please answer this, and the following questions on work, for your MAIN job only)",Logical,,Enter integer answer,Sociodemographics
+83,767.0,Length.of.working.week.for.main.job...Instance.0_Lower.third,D9A,"In a typical WEEK, how many hours do you spend at work?
+(Do not include hours travelling to and from work)",Logical,,Enter integer answer,Sociodemographics
+84,767.0,Length.of.working.week.for.main.job...Instance.0_Middle.third,D9A,"In a typical WEEK, how many hours do you spend at work?
+(Do not include hours travelling to and from work)",Logical,,Enter integer answer,Sociodemographics
+85,767.0,Length.of.working.week.for.main.job...Instance.0_Upper.third,D9A,"In a typical WEEK, how many hours do you spend at work?
+(Do not include hours travelling to and from work)",Logical,,Enter integer answer,Sociodemographics
+86,6143.0,Transport.type.for.commuting.to.job.workplace...Instance.0_1,D9E,What types of transport do you use to get to and from work? (You can select more than one answer),Logical,1 : Car/motor vehicle,Toggle multiple answer,Sociodemographics
+87,6143.0,Transport.type.for.commuting.to.job.workplace...Instance.0_2,D9E,What types of transport do you use to get to and from work? (You can select more than one answer),Logical,2 : Walk,Toggle multiple answer,Sociodemographics
+88,6143.0,Transport.type.for.commuting.to.job.workplace...Instance.0_3,D9E,What types of transport do you use to get to and from work? (You can select more than one answer),Logical,3 : Public transport,Toggle multiple answer,Sociodemographics
+89,6143.0,Transport.type.for.commuting.to.job.workplace...Instance.0_4,D9E,What types of transport do you use to get to and from work? (You can select more than one answer),Logical,4 : Cycle,Toggle multiple answer,Sociodemographics
+90,6143.0,Transport.type.for.commuting.to.job.workplace...Instance.0_neg7,D9E,What types of transport do you use to get to and from work? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Sociodemographics
+91,806.0,Job.involves.mainly.walking.or.standing...Instance.0_1,D9B,Does your work involve walking or standing for most of the time?,Logical,1 : Never/rarely,Select one answer,Sociodemographics
+92,806.0,Job.involves.mainly.walking.or.standing...Instance.0_2,D9B,Does your work involve walking or standing for most of the time?,Logical,2 : Sometimes,Select one answer,Sociodemographics
+94,806.0,Job.involves.mainly.walking.or.standing...Instance.0_4,D9B,Does your work involve walking or standing for most of the time?,Logical,4 : Always,Select one answer,Sociodemographics
+95,816.0,Job.involves.heavy.manual.or.physical.work...Instance.0_1,D9C,Does your work involve heavy manual or physical work?,Logical,1 : Never/rarely,Select one answer,Sociodemographics
+96,816.0,Job.involves.heavy.manual.or.physical.work...Instance.0_2,D9C,Does your work involve heavy manual or physical work?,Logical,2 : Sometimes,Select one answer,Sociodemographics
+99,826.0,Job.involves.shift.work...Instance.0_1,D9D,Does your work involve shift work?,Logical,1 : Never/rarely,Select one answer,Sociodemographics
+100,826.0,Job.involves.shift.work...Instance.0_2,D9D,Does your work involve shift work?,Logical,2 : Sometimes,Select one answer,Sociodemographics
+101,826.0,Job.involves.shift.work...Instance.0_3,D9D,Does your work involve shift work?,Logical,3 : Usually,Select one answer,Sociodemographics
+102,826.0,Job.involves.shift.work...Instance.0_4,D9D,Does your work involve shift work?,Logical,4 : Always,Select one answer,Sociodemographics
+103,3426.0,Job.involves.night.shift.work...Instance.0_1,D9DA,Does your work involve night shifts?,Logical,1 : Never/rarely,Select one answer,Sociodemographics
+104,3426.0,Job.involves.night.shift.work...Instance.0_2,D9DA,Does your work involve night shifts?,Logical,2 : Sometimes,Select one answer,Sociodemographics
+105,3426.0,Job.involves.night.shift.work...Instance.0_3,D9DA,Does your work involve night shifts?,Logical,3 : Usually,Select one answer,Sociodemographics
+107,6138.0,Qualifications...Instance.0_1,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,1 : College or University degree,Toggle multiple answer,Sociodemographics
+108,6138.0,Qualifications...Instance.0_2,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,2 : A levels/AS levels or equivalent,Toggle multiple answer,Sociodemographics
+109,6138.0,Qualifications...Instance.0_3,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,3 : O levels/GCSEs or equivalent,Toggle multiple answer,Sociodemographics
+110,6138.0,Qualifications...Instance.0_4,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,4 : CSEs or equivalent,Toggle multiple answer,Sociodemographics
+112,6138.0,Qualifications...Instance.0_6,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,"6 : Other professional qualifications eg: nursing, teaching",Toggle multiple answer,Sociodemographics
+113,6138.0,Qualifications...Instance.0_neg7,D12,"Which of the following qualifications do you have?
+(You can select more than one)",Logical,-7 : None of the above,Select one answer,Sociodemographics
+114,845.0,Age.completed.full.time.education...Instance.0_Lower.third,D11,At what age did you complete your continuous full time education?,Logical,,Enter integer answer,Sociodemographics
+115,845.0,Age.completed.full.time.education...Instance.0_Middle.third,D11,At what age did you complete your continuous full time education?,Logical,,Enter integer answer,Sociodemographics
+116,845.0,Age.completed.full.time.education...Instance.0_Upper.third,D11,At what age did you complete your continuous full time education?,Logical,,Enter integer answer,Sociodemographics
+125,3659.0,Year.immigrated.to.UK..United.Kingdom....Instance.0_Upper.third,D2A,What year did you first come to live in the United Kingdom?,Logical,,Enter integer answer,Sociodemographics
+126,21000.0,Ethnic.background...Instance.0_1,YE1,What is your ethnic group?,Logical,1 : White,Select one answer,Sociodemographics
+128,21000.0,Ethnic.background...Instance.0_1002,YE1A,What is your ethnic background?,Logical,2 : Irish,Select one answer,Sociodemographics
+129,21000.0,Ethnic.background...Instance.0_1003,YE1A,What is your ethnic background?,Logical,3 : Any other white background,Select one answer,Sociodemographics
+131,21000.0,Ethnic.background...Instance.0_2003,YE1B,What is your ethnic background?,Logical,3 : White and Asian,Select one answer,Sociodemographics
+133,21000.0,Ethnic.background...Instance.0_3001,YE1C,What is your ethnic background?,Logical,1 :Indian,Select one answer,Sociodemographics
+134,21000.0,Ethnic.background...Instance.0_3002,YE1C,What is your ethnic background?,Logical,2 :Pakistani,Select one answer,Sociodemographics
+136,21000.0,Ethnic.background...Instance.0_4001,YE1D,What is your ethnic background?,Logical,1 : Caribbean,Select one answer,Sociodemographics
+137,21000.0,Ethnic.background...Instance.0_4002,YE1D,What is your ethnic background?,Logical,2 : African,Select one answer,Sociodemographics
+138,21000.0,Ethnic.background...Instance.0_5,YE1,What is your ethnic group?,Logical,5 : Chinese,Select one answer,Sociodemographics
+139,21000.0,Ethnic.background...Instance.0_6,YE1,What is your ethnic group?,Logical,6 : Other ethnic group,Select one answer,Sociodemographics
+140,6146.0,Attendance.disability.mobility.allowance...Instance.0_1,H4A,Do you receive any of the following? (You can select more than one answer),Logical,1 : Attendance allowance,Toggle multiple answer,Sociodemographics
+141,6146.0,Attendance.disability.mobility.allowance...Instance.0_2,H4A,Do you receive any of the following? (You can select more than one answer),Logical,2 : Disability living allowance,Toggle multiple answer,Sociodemographics
+142,6146.0,Attendance.disability.mobility.allowance...Instance.0_3,H4A,Do you receive any of the following? (You can select more than one answer),Logical,3 : Blue badge,Toggle multiple answer,Sociodemographics
+143,6146.0,Attendance.disability.mobility.allowance...Instance.0_neg7,H4A,Do you receive any of the following? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Sociodemographics
+148,1100.0,Drive.faster.than.motorway.speed.limit...Instance.0_1,WP8,How often do you drive faster than the speed limit on the motorway?,Logical,1 : Never/rarely,Select one answer,Lifestyle and environment
+150,1100.0,Drive.faster.than.motorway.speed.limit...Instance.0_3,WP8,How often do you drive faster than the speed limit on the motorway?,Logical,3 : Often,Select one answer,Lifestyle and environment
+151,1100.0,Drive.faster.than.motorway.speed.limit...Instance.0_4,WP8,How often do you drive faster than the speed limit on the motorway?,Logical,4 : Most of the time,Select one answer,Lifestyle and environment
+152,1100.0,Drive.faster.than.motorway.speed.limit...Instance.0_5,WP8,How often do you drive faster than the speed limit on the motorway?,Logical,5 : Do not drive on the motorway,Select one answer,Lifestyle and environment
+153,6164.0,Types.of.physical.activity.in.last.4.weeks...Instance.0_1,WP4B1,"In the last 4 weeks did you spend any time doing the following?
+(You can select more than one answer)",Logical,1 :Walking for pleasure (not as a means of transport),Toggle multiple answer,Lifestyle and environment
+154,6164.0,Types.of.physical.activity.in.last.4.weeks...Instance.0_2,WP4B1,"In the last 4 weeks did you spend any time doing the following?
+(You can select more than one answer)",Logical,"2 :Other exercises (eg: swimming, cycling, keep fit, bowling)",Toggle multiple answer,Lifestyle and environment
+155,6164.0,Types.of.physical.activity.in.last.4.weeks...Instance.0_3,WP4B1,"In the last 4 weeks did you spend any time doing the following?
+(You can select more than one answer)",Logical,3 :Strenuous sports,Toggle multiple answer,Lifestyle and environment
+156,6164.0,Types.of.physical.activity.in.last.4.weeks...Instance.0_4,WP4B1,"In the last 4 weeks did you spend any time doing the following?
+(You can select more than one answer)",Logical,"4 :Light DIY (eg: pruning, watering the lawn)",Toggle multiple answer,Lifestyle and environment
+158,6164.0,Types.of.physical.activity.in.last.4.weeks...Instance.0_neg7,WP4B1,"In the last 4 weeks did you spend any time doing the following?
+(You can select more than one answer)",Logical,-7 : None of the above,Select one answer,Lifestyle and environment
+162,2634.0,Duration.of.heavy.DIY...Instance.0_4,WP4E5,"Each time you did heavy DIY, about how long did you spend doing it?",Logical,4 : Between 1 hour and 1½ hours,Select one answer,Lifestyle and environment
+163,2634.0,Duration.of.heavy.DIY...Instance.0_5,WP4E5,"Each time you did heavy DIY, about how long did you spend doing it?",Logical,5 : Between 1½ hours and 2 hours,Select one answer,Lifestyle and environment
+165,2634.0,Duration.of.heavy.DIY...Instance.0_7,WP4E5,"Each time you did heavy DIY, about how long did you spend doing it?",Logical,7 : Over 3 hours,Select one answer,Lifestyle and environment
+168,1021.0,Duration.of.light.DIY...Instance.0_3,WP4E4,"Each time you did light DIY, about how long did you spend doing it?",Logical,3 : Between 30 minutes and 1 hour,Select one answer,Lifestyle and environment
+169,1021.0,Duration.of.light.DIY...Instance.0_4,WP4E4,"Each time you did light DIY, about how long did you spend doing it?",Logical,4 : Between 1 hour and 1½ hours,Select one answer,Lifestyle and environment
+172,1021.0,Duration.of.light.DIY...Instance.0_7,WP4E4,"Each time you did light DIY, about how long did you spend doing it?",Logical,7 : Over 3 hours,Select one answer,Lifestyle and environment
+174,894.0,Duration.of.moderate.activity...Instance.0_Middle.third,WP2A,How many minutes did you usually spend doing moderate activities on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+175,894.0,Duration.of.moderate.activity...Instance.0_Upper.third,WP2A,How many minutes did you usually spend doing moderate activities on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+177,3647.0,Duration.of.other.exercises...Instance.0_2,WP4E2,"Each time you did other exercises such as swimming, cycling, keep fit, about how long did you spend doing them?",Logical,2 : Between 15 and 30 minutes,Select one answer,Lifestyle and environment
+178,3647.0,Duration.of.other.exercises...Instance.0_3,WP4E2,"Each time you did other exercises such as swimming, cycling, keep fit, about how long did you spend doing them?",Logical,3 : Between 30 minutes and1 hour,Select one answer,Lifestyle and environment
+179,3647.0,Duration.of.other.exercises...Instance.0_4,WP4E2,"Each time you did other exercises such as swimming, cycling, keep fit, about how long did you spend doing them?",Logical,4 : Between 1 hour and 1½ hours,Select one answer,Lifestyle and environment
+180,3647.0,Duration.of.other.exercises...Instance.0_5,WP4E2,"Each time you did other exercises such as swimming, cycling, keep fit, about how long did you spend doing them?",Logical,5 : Between 1½ hours and 2 hours,Select one answer,Lifestyle and environment
+182,3647.0,Duration.of.other.exercises...Instance.0_7,WP4E2,"Each time you did other exercises such as swimming, cycling, keep fit, about how long did you spend doing them?",Logical,7 : Over 3 hours,Select one answer,Lifestyle and environment
+183,1001.0,Duration.of.strenuous.sports...Instance.0_2,WP4E3,"Each time you did strenuous sports, about how long did you spend doing it?",Logical,2 : Between 15 and 30 minutes,Select one answer,Lifestyle and environment
+184,1001.0,Duration.of.strenuous.sports...Instance.0_3,WP4E3,"Each time you did strenuous sports, about how long did you spend doing it?",Logical,3 : Between 30 minutes and1 hour,Select one answer,Lifestyle and environment
+185,1001.0,Duration.of.strenuous.sports...Instance.0_4,WP4E3,"Each time you did strenuous sports, about how long did you spend doing it?",Logical,4 : Between 1 hour and 1½ hours,Select one answer,Lifestyle and environment
+186,1001.0,Duration.of.strenuous.sports...Instance.0_5,WP4E3,"Each time you did strenuous sports, about how long did you spend doing it?",Logical,5 : Between 1½ hours and 2 hours,Select one answer,Lifestyle and environment
+187,1001.0,Duration.of.strenuous.sports...Instance.0_6,WP4E3,"Each time you did strenuous sports, about how long did you spend doing it?",Logical,6 : Between 2 and 3 hours,Select one answer,Lifestyle and environment
+190,914.0,Duration.of.vigorous.activity...Instance.0_Middle.third,WP3A,How many minutes did you usually spend doing vigorous activities on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+191,914.0,Duration.of.vigorous.activity...Instance.0_Upper.third,WP3A,How many minutes did you usually spend doing vigorous activities on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+194,864.0,Number.of.days.week.walked.10..minutes...Instance.0_neg2,WP1,"In a typical WEEK, on how many days did you walk for at least 10 minutes
+at a time?
+(Include walking that you do at work, travelling to and from
+work, and for sport or leisure)",Logical,-2 : Unable to walk,Select one answer,Lifestyle and environment
+196,874.0,Duration.of.walks...Instance.0_Middle.third,WP1A,How many minutes did you usually spend walking on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+197,874.0,Duration.of.walks...Instance.0_Upper.third,WP1A,How many minutes did you usually spend walking on a typical DAY?,Logical,,Enter integer answer,Lifestyle and environment
+198,981.0,Duration.walking.for.pleasure...Instance.0_1,WP4E1,"Each time you went walking for pleasure, about how long did you spend doing it?",Logical,1 : Less than 15 minutes,Select one answer,Lifestyle and environment
+200,981.0,Duration.walking.for.pleasure...Instance.0_3,WP4E1,"Each time you went walking for pleasure, about how long did you spend doing it?",Logical,3 : Between 30 minutes and1 hour,Select one answer,Lifestyle and environment
+201,981.0,Duration.walking.for.pleasure...Instance.0_4,WP4E1,"Each time you went walking for pleasure, about how long did you spend doing it?",Logical,4 : Between 1 hour and 1½ hours,Select one answer,Lifestyle and environment
+202,981.0,Duration.walking.for.pleasure...Instance.0_5,WP4E1,"Each time you went walking for pleasure, about how long did you spend doing it?",Logical,5 : Between 1½ hours and 2 hours,Select one answer,Lifestyle and environment
+203,981.0,Duration.walking.for.pleasure...Instance.0_6,WP4E1,"Each time you went walking for pleasure, about how long did you spend doing it?",Logical,6 : Between 2 and 3 hours,Select one answer,Lifestyle and environment
+205,2624.0,Frequency.of.heavy.DIY.in.last.4.weeks...Instance.0_1,WP4C5,How many times in the last 4 weeks did you do heavy DIY?,Logical,1 : Once in the last 4 weeks,Select one answer,Lifestyle and environment
+207,2624.0,Frequency.of.heavy.DIY.in.last.4.weeks...Instance.0_3,WP4C5,How many times in the last 4 weeks did you do heavy DIY?,Logical,3 : Once a week,Select one answer,Lifestyle and environment
+208,2624.0,Frequency.of.heavy.DIY.in.last.4.weeks...Instance.0_4,WP4C5,How many times in the last 4 weeks did you do heavy DIY?,Logical,4 : 2-3 times a week,Select one answer,Lifestyle and environment
+209,2624.0,Frequency.of.heavy.DIY.in.last.4.weeks...Instance.0_5,WP4C5,How many times in the last 4 weeks did you do heavy DIY?,Logical,5 : 4-5 times a week,Select one answer,Lifestyle and environment
+210,2624.0,Frequency.of.heavy.DIY.in.last.4.weeks...Instance.0_6,WP4C5,How many times in the last 4 weeks did you do heavy DIY?,Logical,6 : Every day,Select one answer,Lifestyle and environment
+211,1011.0,Frequency.of.light.DIY.in.last.4.weeks...Instance.0_1,WP4C4,How many times in the last 4 weeks did you do light DIY?,Logical,1 : Once in the last 4 weeks,Select one answer,Lifestyle and environment
+212,1011.0,Frequency.of.light.DIY.in.last.4.weeks...Instance.0_2,WP4C4,How many times in the last 4 weeks did you do light DIY?,Logical,2 : 2-3 times in the last 4 weeks,Select one answer,Lifestyle and environment
+213,1011.0,Frequency.of.light.DIY.in.last.4.weeks...Instance.0_3,WP4C4,How many times in the last 4 weeks did you do light DIY?,Logical,3 : Once a week,Select one answer,Lifestyle and environment
+216,1011.0,Frequency.of.light.DIY.in.last.4.weeks...Instance.0_6,WP4C4,How many times in the last 4 weeks did you do light DIY?,Logical,6 : Every day,Select one answer,Lifestyle and environment
+217,3637.0,Frequency.of.other.exercises.in.last.4.weeks...Instance.0_1,WP4C2,"How many times in the last 4 weeks did you do other exercises such as swimming, cycling, keep fit?",Logical,1 : Once in the last 4 weeks,Select one answer,Lifestyle and environment
+218,3637.0,Frequency.of.other.exercises.in.last.4.weeks...Instance.0_2,WP4C2,"How many times in the last 4 weeks did you do other exercises such as swimming, cycling, keep fit?",Logical,2 : 2-3 times in the last 4 weeks,Select one answer,Lifestyle and environment
+219,3637.0,Frequency.of.other.exercises.in.last.4.weeks...Instance.0_3,WP4C2,"How many times in the last 4 weeks did you do other exercises such as swimming, cycling, keep fit?",Logical,3 : Once a week,Select one answer,Lifestyle and environment
+220,3637.0,Frequency.of.other.exercises.in.last.4.weeks...Instance.0_4,WP4C2,"How many times in the last 4 weeks did you do other exercises such as swimming, cycling, keep fit?",Logical,4 : 2-3 times a week,Select one answer,Lifestyle and environment
+221,3637.0,Frequency.of.other.exercises.in.last.4.weeks...Instance.0_5,WP4C2,"How many times in the last 4 weeks did you do other exercises such as swimming, cycling, keep fit?",Logical,5 : 4-5 times a week,Select one answer,Lifestyle and environment
+223,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_0,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,0 : None,Select one answer,Lifestyle and environment
+224,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_1,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,1 : 1-5 times a day,Select one answer,Lifestyle and environment
+225,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_2,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,2 : 6-10 times a day,Select one answer,Lifestyle and environment
+226,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_3,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,3 : 11-15 times a day,Select one answer,Lifestyle and environment
+227,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_4,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,4 : 16-20 times a day,Select one answer,Lifestyle and environment
+228,943.0,Frequency.of.stair.climbing.in.last.4.weeks...Instance.0_5,WP4A,"At home, during the last 4 weeks, about how many times a DAY do you climb a flight of stairs? (approx 10 steps)",Logical,5 : More than 20 times a day,Select one answer,Lifestyle and environment
+229,991.0,Frequency.of.strenuous.sports.in.last.4.weeks...Instance.0_1,WP4C3,How many times in the last 4 weeks did you do strenuous sports?,Logical,1 : Once in the last 4 weeks,Select one answer,Lifestyle and environment
+230,991.0,Frequency.of.strenuous.sports.in.last.4.weeks...Instance.0_2,WP4C3,How many times in the last 4 weeks did you do strenuous sports?,Logical,2 : 2-3 times in the last 4 weeks,Select one answer,Lifestyle and environment
+231,991.0,Frequency.of.strenuous.sports.in.last.4.weeks...Instance.0_3,WP4C3,How many times in the last 4 weeks did you do strenuous sports?,Logical,3 : Once a week,Select one answer,Lifestyle and environment
+232,991.0,Frequency.of.strenuous.sports.in.last.4.weeks...Instance.0_4,WP4C3,How many times in the last 4 weeks did you do strenuous sports?,Logical,4 : 2-3 times a week,Select one answer,Lifestyle and environment
+233,991.0,Frequency.of.strenuous.sports.in.last.4.weeks...Instance.0_5,WP4C3,How many times in the last 4 weeks did you do strenuous sports?,Logical,5 : 4-5 times a week,Select one answer,Lifestyle and environment
+235,971.0,Frequency.of.walking.for.pleasure.in.last.4.weeks...Instance.0_1,WP4C1,How many times in the last 4 weeks did you go walking for pleasure?,Logical,1 : Once in the last 4 weeks,Select one answer,Lifestyle and environment
+236,971.0,Frequency.of.walking.for.pleasure.in.last.4.weeks...Instance.0_2,WP4C1,How many times in the last 4 weeks did you go walking for pleasure?,Logical,2 : 2-3 times in the last 4 weeks,Select one answer,Lifestyle and environment
+237,971.0,Frequency.of.walking.for.pleasure.in.last.4.weeks...Instance.0_3,WP4C1,How many times in the last 4 weeks did you go walking for pleasure?,Logical,3 : Once a week,Select one answer,Lifestyle and environment
+241,6162.0,Types.of.transport.used..excluding.work....Instance.0_1,WP4AA,"In the last 4 weeks, which forms of transport have you used most often to get about?
+(Not including any journeys to and from work; you can select more than one answer)",Logical,1 : Car/motor vehicle,Toggle multiple answer,Lifestyle and environment
+242,6162.0,Types.of.transport.used..excluding.work....Instance.0_2,WP4AA,"In the last 4 weeks, which forms of transport have you used most often to get about?
+(Not including any journeys to and from work; you can select more than one answer)",Logical,2 : Walk,Toggle multiple answer,Lifestyle and environment
+243,6162.0,Types.of.transport.used..excluding.work....Instance.0_3,WP4AA,"In the last 4 weeks, which forms of transport have you used most often to get about?
+(Not including any journeys to and from work; you can select more than one answer)",Logical,3 : Public transport,Toggle multiple answer,Lifestyle and environment
+244,6162.0,Types.of.transport.used..excluding.work....Instance.0_4,WP4AA,"In the last 4 weeks, which forms of transport have you used most often to get about?
+(Not including any journeys to and from work; you can select more than one answer)",Logical,4 : Cycle,Toggle multiple answer,Lifestyle and environment
+245,6162.0,Types.of.transport.used..excluding.work....Instance.0_neg7,WP4AA,"In the last 4 weeks, which forms of transport have you used most often to get about?
+(Not including any journeys to and from work; you can select more than one answer)",Logical,-7 : None of the above,Select one answer,Lifestyle and environment
+246,924.0,Usual.walking.pace...Instance.0_1,WP4,How would you describe your usual walking pace?,Logical,1 : Slow pace,Select one answer,Lifestyle and environment
+247,924.0,Usual.walking.pace...Instance.0_2,WP4,How would you describe your usual walking pace?,Logical,2 : Steady average pace,Select one answer,Lifestyle and environment
+248,924.0,Usual.walking.pace...Instance.0_3,WP4,How would you describe your usual walking pace?,Logical,3 : Brisk pace,Select one answer,Lifestyle and environment
+249,924.0,Usual.walking.pace...Instance.0_neg7,WP4,How would you describe your usual walking pace?,Logical,-7 : None of the above,Select one answer,Lifestyle and environment
+250,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_0,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,0 : Less than 5mins,Select one answer,Lifestyle and environment
+251,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_1,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,1 : 5-29 mins,Select one answer,Lifestyle and environment
+252,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_2,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,2 : 30-59 mins,Select one answer,Lifestyle and environment
+253,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_3,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,3 : 1-3 hours,Select one answer,Lifestyle and environment
+254,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_4,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,4 : 4-6 hours,Select one answer,Lifestyle and environment
+255,1120.0,Weekly.usage.of.mobile.phone.in.last.3.months...Instance.0_5,MB2,"Over the last 3 months, on average how much time per week did you spend making or receiving calls on a mobile phone?",Logical,5 : More than 6 hours,Select one answer,Lifestyle and environment
+256,1130.0,Hands.free.device.speakerphone.use.with.mobile.phone.in.last.3.month...Instance.0_0,MB2A,"Over the last 3 months, how often have you used a hands-free device/speakerphone when making or receiving calls on your mobile?",Logical,0 : Never or almost never,Select one answer,Lifestyle and environment
+257,1130.0,Hands.free.device.speakerphone.use.with.mobile.phone.in.last.3.month...Instance.0_1,MB2A,"Over the last 3 months, how often have you used a hands-free device/speakerphone when making or receiving calls on your mobile?",Logical,1 : Less than half the time,Select one answer,Lifestyle and environment
+258,1130.0,Hands.free.device.speakerphone.use.with.mobile.phone.in.last.3.month...Instance.0_2,MB2A,"Over the last 3 months, how often have you used a hands-free device/speakerphone when making or receiving calls on your mobile?",Logical,2 : About half the time,Select one answer,Lifestyle and environment
+262,1140.0,Difference.in.mobile.phone.use.compared.to.two.years.previously...Instance.0_1,MB3,Is there any difference between your mobile phone use now compared to two years ago?,Logical,"1 : Yes, use is now less frequent",Select one answer,Lifestyle and environment
+263,1140.0,Difference.in.mobile.phone.use.compared.to.two.years.previously...Instance.0_2,MB3,Is there any difference between your mobile phone use now compared to two years ago?,Logical,"2 : Yes, use is now more frequent",Select one answer,Lifestyle and environment
+264,1140.0,Difference.in.mobile.phone.use.compared.to.two.years.previously...Instance.0_3,MB3,Is there any difference between your mobile phone use now compared to two years ago?,Logical,3 : I didn't use a mobile phone two years ago,Select one answer,Lifestyle and environment
+265,1150.0,Usual.side.of.head.for.mobile.phone.use...Instance.0_1,MB3A,On what side of the head do you usually use a mobile phone?,Logical,1 : Left,Select one answer,Lifestyle and environment
+266,1150.0,Usual.side.of.head.for.mobile.phone.use...Instance.0_2,MB3A,On what side of the head do you usually use a mobile phone?,Logical,2 : Right,Select one answer,Lifestyle and environment
+268,1110.0,Length.of.mobile.phone.use...Instance.0_0,MB1,For approximately how many years have you been using a mobile phone at least once per week to make or receive calls?,Logical,0 : Never used mobile phone at least once per week,Select one answer,Lifestyle and environment
+269,1110.0,Length.of.mobile.phone.use...Instance.0_1,MB1,For approximately how many years have you been using a mobile phone at least once per week to make or receive calls?,Logical,1 : One year or less,Select one answer,Lifestyle and environment
+270,1110.0,Length.of.mobile.phone.use...Instance.0_2,MB1,For approximately how many years have you been using a mobile phone at least once per week to make or receive calls?,Logical,2 : Two to four years,Select one answer,Lifestyle and environment
+271,1110.0,Length.of.mobile.phone.use...Instance.0_3,MB1,For approximately how many years have you been using a mobile phone at least once per week to make or receive calls?,Logical,3 : Five to eight years,Select one answer,Lifestyle and environment
+272,1110.0,Length.of.mobile.phone.use...Instance.0_4,MB1,For approximately how many years have you been using a mobile phone at least once per week to make or receive calls?,Logical,4 : More than eight years,Select one answer,Lifestyle and environment
+273,2237.0,Plays.computer.games...Instance.0_0,F1,Do you play computer games?,Logical,0 : Never/rarely,Select one answer,Lifestyle and environment
+276,1170.0,Getting.up.in.morning...Instance.0_1,SL1AA,"On an average day, how easy do you find getting up in the morning?",Logical,1 : Not at all easy,Select one answer,Lifestyle and environment
+277,1170.0,Getting.up.in.morning...Instance.0_2,SL1AA,"On an average day, how easy do you find getting up in the morning?",Logical,2 : Not very easy,Select one answer,Lifestyle and environment
+278,1170.0,Getting.up.in.morning...Instance.0_3,SL1AA,"On an average day, how easy do you find getting up in the morning?",Logical,3 : Fairly easy,Select one answer,Lifestyle and environment
+279,1170.0,Getting.up.in.morning...Instance.0_4,SL1AA,"On an average day, how easy do you find getting up in the morning?",Logical,4 : Very easy,Select one answer,Lifestyle and environment
+280,1180.0,Morning.evening.person..chronotype....Instance.0_1,SL1AB,Do you consider yourself to be?,Logical,1 : Definitely a 'morning' person,Select one answer,Lifestyle and environment
+281,1180.0,Morning.evening.person..chronotype....Instance.0_2,SL1AB,Do you consider yourself to be?,Logical,2 : More a 'morning' than 'evening' person,Select one answer,Lifestyle and environment
+284,1190.0,Nap.during.day...Instance.0_1,SL1A,Do you have a nap during the day?,Logical,1 : Never/rarely,Select one answer,Lifestyle and environment
+285,1190.0,Nap.during.day...Instance.0_2,SL1A,Do you have a nap during the day?,Logical,2 : Sometimes,Select one answer,Lifestyle and environment
+286,1190.0,Nap.during.day...Instance.0_3,SL1A,Do you have a nap during the day?,Logical,3 : Usually,Select one answer,Lifestyle and environment
+287,1200.0,Sleeplessness...insomnia...Instance.0_1,SL2,Do you have trouble falling asleep at night or do you wake up in the middle of the night?,Logical,1 : Never/rarely,Select one answer,Lifestyle and environment
+288,1200.0,Sleeplessness...insomnia...Instance.0_2,SL2,Do you have trouble falling asleep at night or do you wake up in the middle of the night?,Logical,2 : Sometimes,Select one answer,Lifestyle and environment
+289,1200.0,Sleeplessness...insomnia...Instance.0_3,SL2,Do you have trouble falling asleep at night or do you wake up in the middle of the night?,Logical,3 : Usually,Select one answer,Lifestyle and environment
+290,1210.0,Snoring...Instance.0_1,SL3,Does your partner or a close relative or friend complain about your snoring?,Logical,1 : Yes,Select one answer,Lifestyle and environment
+291,1210.0,Snoring...Instance.0_2,SL3,Does your partner or a close relative or friend complain about your snoring?,Logical,2 : No,Select one answer,Lifestyle and environment
+293,1220.0,Daytime.dozing...sleeping...Instance.0_1,SL4,"How likely are you to doze off or fall asleep during the daytime when you don't mean to? (e.g. when working, reading or driving)",Logical,1 : Sometimes,Select one answer,Lifestyle and environment
+294,1220.0,Daytime.dozing...sleeping...Instance.0_2,SL4,"How likely are you to doze off or fall asleep during the daytime when you don't mean to? (e.g. when working, reading or driving)",Logical,2 : Often,Select one answer,Lifestyle and environment
+295,20116.0,Smoking.status...Instance.0_0,S1 & S2,Current Field is partly derived from S1 & S2,Logical,0 : Never,Select one answer,Lifestyle and environment
+296,20116.0,Smoking.status...Instance.0_1,S1 & S2,Current Field is partly derived from S1 & S2,Logical,1 : Previous,Select one answer,Lifestyle and environment
+298,1239.0,Current.tobacco.smoking...Instance.0_0,S1,Do you smoke tobacco now?,Logical,0 : No,Select one answer,Lifestyle and environment
+299,1239.0,Current.tobacco.smoking...Instance.0_1,S1,Do you smoke tobacco now?,Logical,"1 : Yes, on most or all days",Select one answer,Lifestyle and environment
+302,1249.0,Past.tobacco.smoking...Instance.0_2,S2,"In the past, how often have you smoked tobacco?",Logical,2 : Smoked occasionally,Select one answer,Lifestyle and environment
+303,1249.0,Past.tobacco.smoking...Instance.0_3,S2,"In the past, how often have you smoked tobacco?",Logical,3 : Just tried once or twice,Select one answer,Lifestyle and environment
+304,1249.0,Past.tobacco.smoking...Instance.0_4,S2,"In the past, how often have you smoked tobacco?",Logical,4 : I have never smoked,Select one answer,Lifestyle and environment
+305,2644.0,Light.smokers..at.least.100.smokes.in.lifetime...Instance.0_0,S2A,"In your lifetime, have you smoked a total of at least 100 times?",Logical,0 : No,Select one answer,Lifestyle and environment
+307,3436.0,Age.started.smoking.in.current.smokers...Instance.0_Lower.third,S3,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+308,3436.0,Age.started.smoking.in.current.smokers...Instance.0_Middle.third,S3,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+309,3436.0,Age.started.smoking.in.current.smokers...Instance.0_Upper.third,S3,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+310,3446.0,Type.of.tobacco.currently.smoked...Instance.0_1,S4,What type of tobacco do you mainly smoke?,Logical,1 : Manufactured cigarettes,Select one answer,Lifestyle and environment
+311,3446.0,Type.of.tobacco.currently.smoked...Instance.0_2,S4,What type of tobacco do you mainly smoke?,Logical,2 : Hand-rolled cigarettes,Select one answer,Lifestyle and environment
+312,3446.0,Type.of.tobacco.currently.smoked...Instance.0_3,S4,What type of tobacco do you mainly smoke?,Logical,3 : Cigars or pipes,Select one answer,Lifestyle and environment
+313,5959.0,Previously.smoked.cigarettes.on.most.all.days...Instance.0_0,S4AA,Did you previously smoke cigarettes on most or all days?,Logical,0 : No,Select one answer,Lifestyle and environment
+314,5959.0,Previously.smoked.cigarettes.on.most.all.days...Instance.0_1,S4AA,Did you previously smoke cigarettes on most or all days?,Logical,1 : Yes,Select one answer,Lifestyle and environment
+316,3456.0,Number.of.cigarettes.currently.smoked.daily..current.cigarette.smokers....Instance.0_Middle.third,S4AB,About how many cigarettes did you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+317,3456.0,Number.of.cigarettes.currently.smoked.daily..current.cigarette.smokers....Instance.0_Upper.third,S4AB,About how many cigarettes did you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+318,6194.0,Age.stopped.smoking.cigarettes..current.cigar.pipe.or.previous.cigarette.smoker....Instance.0_Middle.third,S4AC,How old were you when you last smoked cigarettes on most days?,Logical,,Enter integer answer,Lifestyle and environment
+319,6194.0,Age.stopped.smoking.cigarettes..current.cigar.pipe.or.previous.cigarette.smoker....Instance.0_Upper.third,S4AC,How old were you when you last smoked cigarettes on most days?,Logical,,Enter integer answer,Lifestyle and environment
+320,6183.0,Number.of.cigarettes.previously.smoked.daily..current.cigar.pipe.smokers....Instance.0_Lower.third,S4A,About how many cigarettes do you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+321,6183.0,Number.of.cigarettes.previously.smoked.daily..current.cigar.pipe.smokers....Instance.0_Middle.third,S4A,About how many cigarettes do you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+322,3466.0,Time.from.waking.to.first.cigarette...Instance.0_1,S4B,How soon after waking do you smoke your first cigarette of the day?,Logical,1 : Less than 5 minutes,Select one answer,Lifestyle and environment
+323,3466.0,Time.from.waking.to.first.cigarette...Instance.0_2,S4B,How soon after waking do you smoke your first cigarette of the day?,Logical,2 : Between 5-15 minutes,Select one answer,Lifestyle and environment
+324,3466.0,Time.from.waking.to.first.cigarette...Instance.0_3,S4B,How soon after waking do you smoke your first cigarette of the day?,Logical,3 : Between 30 minutes - 1 hour,Select one answer,Lifestyle and environment
+325,3466.0,Time.from.waking.to.first.cigarette...Instance.0_4,S4B,How soon after waking do you smoke your first cigarette of the day?,Logical,4 : Between 1 and 2 hours,Select one answer,Lifestyle and environment
+329,3476.0,Difficulty.not.smoking.for.1.day...Instance.0_3,S4C,How easy or difficult would you find it to go without smoking for a whole day?,Logical,3 : Fairly difficult,Select one answer,Lifestyle and environment
+330,3476.0,Difficulty.not.smoking.for.1.day...Instance.0_4,S4C,How easy or difficult would you find it to go without smoking for a whole day?,Logical,4 : Very difficult,Select one answer,Lifestyle and environment
+331,3486.0,Ever.tried.to.stop.smoking...Instance.0_0,S5,Have you tried to give up smoking?,Logical,0 : No,Select one answer,Lifestyle and environment
+332,3486.0,Ever.tried.to.stop.smoking...Instance.0_1,S5,Have you tried to give up smoking?,Logical,"1 : Yes, tried but was not able to stop or stopped for less than 6 months",Select one answer,Lifestyle and environment
+333,3486.0,Ever.tried.to.stop.smoking...Instance.0_2,S5,Have you tried to give up smoking?,Logical,"2 : Yes, tried and stopped for at least 6 months",Select one answer,Lifestyle and environment
+334,3496.0,Wants.to.stop.smoking...Instance.0_1,S5AA,Do you want to stop smoking?,Logical,"1 : Yes, definitely",Select one answer,Lifestyle and environment
+335,3496.0,Wants.to.stop.smoking...Instance.0_2,S5AA,Do you want to stop smoking?,Logical,"2 : Yes, probably",Select one answer,Lifestyle and environment
+336,3496.0,Wants.to.stop.smoking...Instance.0_3,S5AA,Do you want to stop smoking?,Logical,"3 : No, probably not",Select one answer,Lifestyle and environment
+337,3496.0,Wants.to.stop.smoking...Instance.0_4,S5AA,Do you want to stop smoking?,Logical,"4 : No, definitely not",Select one answer,Lifestyle and environment
+338,3506.0,Smoking.compared.to.10.years.previous...Instance.0_1,S5A,Compared to 10 years ago do you smoke...,Logical,1 : More nowadays?,Select one answer,Lifestyle and environment
+339,3506.0,Smoking.compared.to.10.years.previous...Instance.0_2,S5A,Compared to 10 years ago do you smoke...,Logical,2 : About the same?,Select one answer,Lifestyle and environment
+340,3506.0,Smoking.compared.to.10.years.previous...Instance.0_3,S5A,Compared to 10 years ago do you smoke...,Logical,3 : Less nowadays?,Select one answer,Lifestyle and environment
+341,6158.0,Why.reduced.smoking...Instance.0_1,S5B,Why did you reduce your smoking? (You can select more than one answer),Logical,1 : Illness or ill health,Toggle multiple answer,Lifestyle and environment
+342,6158.0,Why.reduced.smoking...Instance.0_2,S5B,Why did you reduce your smoking? (You can select more than one answer),Logical,2 : Doctor's advice,Toggle multiple answer,Lifestyle and environment
+343,6158.0,Why.reduced.smoking...Instance.0_3,S5B,Why did you reduce your smoking? (You can select more than one answer),Logical,3 : Health precaution,Toggle multiple answer,Lifestyle and environment
+344,6158.0,Why.reduced.smoking...Instance.0_4,S5B,Why did you reduce your smoking? (You can select more than one answer),Logical,4 : Financial reasons,Toggle multiple answer,Lifestyle and environment
+345,6158.0,Why.reduced.smoking...Instance.0_neg7,S5B,Why did you reduce your smoking? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Lifestyle and environment
+346,2867.0,Age.started.smoking.in.former.smokers...Instance.0_Lower.third,S6,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+347,2867.0,Age.started.smoking.in.former.smokers...Instance.0_Middle.third,S6,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+348,2867.0,Age.started.smoking.in.former.smokers...Instance.0_Upper.third,S6,How old were you when you first started smoking on most days?,Logical,,Enter integer answer,Lifestyle and environment
+349,2877.0,Type.of.tobacco.previously.smoked...Instance.0_1,S7,What type of tobacco did you usually smoke?,Logical,1 : Manufactured cigarettes,Select one answer,Lifestyle and environment
+351,2877.0,Type.of.tobacco.previously.smoked...Instance.0_3,S7,What type of tobacco did you usually smoke?,Logical,3 : Cigars or pipes,Select one answer,Lifestyle and environment
+352,2887.0,Number.of.cigarettes.previously.smoked.daily...Instance.0_Lower.third,S7A,About how many cigarettes did you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+353,2887.0,Number.of.cigarettes.previously.smoked.daily...Instance.0_Middle.third,S7A,About how many cigarettes did you smoke on average each day?,Logical,,Enter integer answer,Lifestyle and environment
+356,2897.0,Age.stopped.smoking...Instance.0_Middle.third,S8,How old were you when you last smoked on most days?,Logical,,Enter integer answer,Lifestyle and environment
+358,2907.0,Ever.stopped.smoking.for.6..months...Instance.0_0,S9,"In the time that you smoked, did you ever stop for more than 6 months?",Logical,0 : No,Select one answer,Lifestyle and environment
+359,2907.0,Ever.stopped.smoking.for.6..months...Instance.0_1,S9,"In the time that you smoked, did you ever stop for more than 6 months?",Logical,1 : Yes,Select one answer,Lifestyle and environment
+360,6157.0,Why.stopped.smoking...Instance.0_1,S10,"Why did you stop smoking?
+(You can select more than one answer)",Logical,1 : Illness or ill health,Toggle multiple answer,Lifestyle and environment
+361,6157.0,Why.stopped.smoking...Instance.0_2,S10,"Why did you stop smoking?
+(You can select more than one answer)",Logical,2 : Doctor's advice,Toggle multiple answer,Lifestyle and environment
+362,6157.0,Why.stopped.smoking...Instance.0_3,S10,"Why did you stop smoking?
+(You can select more than one answer)",Logical,3 : Health precaution,Toggle multiple answer,Lifestyle and environment
+363,6157.0,Why.stopped.smoking...Instance.0_4,S10,"Why did you stop smoking?
+(You can select more than one answer)",Logical,4 : Financial reasons,Toggle multiple answer,Lifestyle and environment
+364,6157.0,Why.stopped.smoking...Instance.0_neg7,S10,"Why did you stop smoking?
+(You can select more than one answer)",Logical,-7 : None of the above,Select one answer,Lifestyle and environment
+365,2926.0,Number.of.unsuccessful.stop.smoking.attempts...Instance.0_Lower.third,S10A,How many times did you try to give up smoking before you were successful?,Logical,,Enter integer answer,Lifestyle and environment
+366,2926.0,Number.of.unsuccessful.stop.smoking.attempts...Instance.0_Middle.third,S10A,How many times did you try to give up smoking before you were successful?,Logical,,Enter integer answer,Lifestyle and environment
+367,2926.0,Number.of.unsuccessful.stop.smoking.attempts...Instance.0_Upper.third,S10A,How many times did you try to give up smoking before you were successful?,Logical,,Enter integer answer,Lifestyle and environment
+368,2936.0,Likelihood.of.resuming.smoking...Instance.0_2,S10B,Do you think you may start smoking again?,Logical,"2 : Yes, probably",Select one answer,Lifestyle and environment
+369,2936.0,Likelihood.of.resuming.smoking...Instance.0_3,S10B,Do you think you may start smoking again?,Logical,"3 : No, probably not",Select one answer,Lifestyle and environment
+370,2936.0,Likelihood.of.resuming.smoking...Instance.0_4,S10B,Do you think you may start smoking again?,Logical,"4 : No, definitely not",Select one answer,Lifestyle and environment
+371,1259.0,Smoking.smokers.in.household...Instance.0_0,S11,Does anyone in your household smoke?,Logical,0 : No,Select one answer,Lifestyle and environment
+374,1269.0,Exposure.to.tobacco.smoke.at.home...Instance.0_Middle.third,S12,"At home, about how many hours per WEEK are you exposed to other people's tobacco smoke?",Logical,,Enter integer answer,Lifestyle and environment
+375,1269.0,Exposure.to.tobacco.smoke.at.home...Instance.0_Upper.third,S12,"At home, about how many hours per WEEK are you exposed to other people's tobacco smoke?",Logical,,Enter integer answer,Lifestyle and environment
+376,1279.0,Exposure.to.tobacco.smoke.outside.home...Instance.0_Middle.third,S13,"Outside of your home, about how many hours per WEEK are you exposed to other people's tobacco smoke?",Logical,,Enter integer answer,Lifestyle and environment
+377,1279.0,Exposure.to.tobacco.smoke.outside.home...Instance.0_Upper.third,S13,"Outside of your home, about how many hours per WEEK are you exposed to other people's tobacco smoke?",Logical,,Enter integer answer,Lifestyle and environment
+378,1329.0,Oily.fish.intake...Instance.0_0,DT4,"How often do you eat oily fish?
+(e.g. sardines, salmon, mackerel, herring)",Logical,0 : Never,Select one answer,Lifestyle and environment
+379,1329.0,Oily.fish.intake...Instance.0_1,DT4,"How often do you eat oily fish?
+(e.g. sardines, salmon, mackerel, herring)",Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+381,1329.0,Oily.fish.intake...Instance.0_3,DT4,"How often do you eat oily fish?
+(e.g. sardines, salmon, mackerel, herring)",Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+383,1329.0,Oily.fish.intake...Instance.0_5,DT4,"How often do you eat oily fish?
+(e.g. sardines, salmon, mackerel, herring)",Logical,5 : Once or more daily,Select one answer,Lifestyle and environment
+385,1339.0,Non.oily.fish.intake...Instance.0_1,DT5,"How often do you eat other types of fish? (e.g. cod, tinned tuna, haddock)",Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+386,1339.0,Non.oily.fish.intake...Instance.0_2,DT5,"How often do you eat other types of fish? (e.g. cod, tinned tuna, haddock)",Logical,2 : Once a week,Select one answer,Lifestyle and environment
+387,1339.0,Non.oily.fish.intake...Instance.0_3,DT5,"How often do you eat other types of fish? (e.g. cod, tinned tuna, haddock)",Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+391,1349.0,Processed.meat.intake...Instance.0_1,DT8,"How often do you eat processed meats (such as bacon, ham, sausages, meat pies, kebabs, burgers, chicken nuggets)?",Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+393,1349.0,Processed.meat.intake...Instance.0_3,DT8,"How often do you eat processed meats (such as bacon, ham, sausages, meat pies, kebabs, burgers, chicken nuggets)?",Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+394,1349.0,Processed.meat.intake...Instance.0_4,DT8,"How often do you eat processed meats (such as bacon, ham, sausages, meat pies, kebabs, burgers, chicken nuggets)?",Logical,4 : 5-6 times a week,Select one answer,Lifestyle and environment
+395,1349.0,Processed.meat.intake...Instance.0_5,DT8,"How often do you eat processed meats (such as bacon, ham, sausages, meat pies, kebabs, burgers, chicken nuggets)?",Logical,5 : Once or more daily,Select one answer,Lifestyle and environment
+398,1359.0,Poultry.intake...Instance.0_2,DT6,"How often do you eat chicken, turkey or other poultry?
+(Do not count processed meats)",Logical,2 : Once a week,Select one answer,Lifestyle and environment
+399,1359.0,Poultry.intake...Instance.0_3,DT6,"How often do you eat chicken, turkey or other poultry?
+(Do not count processed meats)",Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+400,1359.0,Poultry.intake...Instance.0_4,DT6,"How often do you eat chicken, turkey or other poultry?
+(Do not count processed meats)",Logical,4 : 5-6 times a week,Select one answer,Lifestyle and environment
+402,1369.0,Beef.intake...Instance.0_0,DT7,How often do you eat beef? (Do not count processed meats),Logical,0 : Never,Select one answer,Lifestyle and environment
+403,1369.0,Beef.intake...Instance.0_1,DT7,How often do you eat beef? (Do not count processed meats),Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+404,1369.0,Beef.intake...Instance.0_2,DT7,How often do you eat beef? (Do not count processed meats),Logical,2 : Once a week,Select one answer,Lifestyle and environment
+405,1369.0,Beef.intake...Instance.0_3,DT7,How often do you eat beef? (Do not count processed meats),Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+406,1369.0,Beef.intake...Instance.0_4,DT7,How often do you eat beef? (Do not count processed meats),Logical,4 : 5-6 times a week,Select one answer,Lifestyle and environment
+407,1379.0,Lamb.mutton.intake...Instance.0_0,DT7A,How often do you eat lamb/mutton? (Do not count processed meats),Logical,0 : Never,Select one answer,Lifestyle and environment
+408,1379.0,Lamb.mutton.intake...Instance.0_1,DT7A,How often do you eat lamb/mutton? (Do not count processed meats),Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+409,1379.0,Lamb.mutton.intake...Instance.0_2,DT7A,How often do you eat lamb/mutton? (Do not count processed meats),Logical,2 : Once a week,Select one answer,Lifestyle and environment
+410,1379.0,Lamb.mutton.intake...Instance.0_3,DT7A,How often do you eat lamb/mutton? (Do not count processed meats),Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+411,1389.0,Pork.intake...Instance.0_0,DT7B,"How often do you eat pork?
+(Do not count processed meats such as bacon or ham)",Logical,0 : Never,Select one answer,Lifestyle and environment
+412,1389.0,Pork.intake...Instance.0_1,DT7B,"How often do you eat pork?
+(Do not count processed meats such as bacon or ham)",Logical,1 : Less than once a week,Select one answer,Lifestyle and environment
+413,1389.0,Pork.intake...Instance.0_2,DT7B,"How often do you eat pork?
+(Do not count processed meats such as bacon or ham)",Logical,2 : Once a week,Select one answer,Lifestyle and environment
+414,1389.0,Pork.intake...Instance.0_3,DT7B,"How often do you eat pork?
+(Do not count processed meats such as bacon or ham)",Logical,3 : 2-4 times a week,Select one answer,Lifestyle and environment
+415,6144.0,Never.eat.eggs..dairy..wheat..sugar...Instance.0_1,DT8B,Which of the following do you NEVER eat?(You can select more than one answer),Logical,1 : Eggs or foods containing eggs,Toggle multiple answer,Lifestyle and environment
+416,6144.0,Never.eat.eggs..dairy..wheat..sugar...Instance.0_2,DT8B,Which of the following do you NEVER eat?(You can select more than one answer),Logical,2 : Dairy products,Toggle multiple answer,Lifestyle and environment
+417,6144.0,Never.eat.eggs..dairy..wheat..sugar...Instance.0_3,DT8B,Which of the following do you NEVER eat?(You can select more than one answer),Logical,3 : Wheat products,Toggle multiple answer,Lifestyle and environment
+418,6144.0,Never.eat.eggs..dairy..wheat..sugar...Instance.0_4,DT8B,Which of the following do you NEVER eat?(You can select more than one answer),Logical,4 : Sugar or foods/drinks containing sugar,Toggle multiple answer,Lifestyle and environment
+419,6144.0,Never.eat.eggs..dairy..wheat..sugar...Instance.0_5,DT8B,Which of the following do you NEVER eat?(You can select more than one answer),Logical,5 :I eat all of the above,Toggle multiple answer,Lifestyle and environment
+420,1408.0,Cheese.intake...Instance.0_0,DT9,"How often do you eat cheese?
+(Include cheese in pizzas, quiches, cheese sauce etc)",Logical,0 : Never,Select one answer,Lifestyle and environment
+422,1408.0,Cheese.intake...Instance.0_2,DT9,"How often do you eat cheese?
+(Include cheese in pizzas, quiches, cheese sauce etc)",Logical,2 : Once a week,Select one answer,Lifestyle and environment
+424,1408.0,Cheese.intake...Instance.0_4,DT9,"How often do you eat cheese?
+(Include cheese in pizzas, quiches, cheese sauce etc)",Logical,4 : 5-6 times a week,Select one answer,Lifestyle and environment
+425,1408.0,Cheese.intake...Instance.0_5,DT9,"How often do you eat cheese?
+(Include cheese in pizzas, quiches, cheese sauce etc)",Logical,5 : Once or more daily,Select one answer,Lifestyle and environment
+426,1418.0,Milk.type.used...Instance.0_1,DT10,What type of milk do you mainly use?,Logical,1 : Full cream,Select one answer,Lifestyle and environment
+428,1418.0,Milk.type.used...Instance.0_3,DT10,What type of milk do you mainly use?,Logical,3 : Skimmed,Select one answer,Lifestyle and environment
+429,1418.0,Milk.type.used...Instance.0_4,DT10,What type of milk do you mainly use?,Logical,4 : Soya,Select one answer,Lifestyle and environment
+431,1418.0,Milk.type.used...Instance.0_6,DT10,What type of milk do you mainly use?,Logical,6 : Never/rarely have milk,Select one answer,Lifestyle and environment
+432,1428.0,Spread.type...Instance.0_0,DT10A,What type of spread do you mainly use?,Logical,0 : Never/rarely use spread,Select one answer,Lifestyle and environment
+433,1428.0,Spread.type...Instance.0_1,DT10A,What type of spread do you mainly use?,Logical,1 : Butter/spreadable butter,Select one answer,Lifestyle and environment
+434,1428.0,Spread.type...Instance.0_2,DT10A,What type of spread do you mainly use?,Logical,2 : Flora Pro-Active or Benecol,Select one answer,Lifestyle and environment
+435,1428.0,Spread.type...Instance.0_3,DT10A,What type of spread do you mainly use?,Logical,3 : Other type of spread/margarine,Select one answer,Lifestyle and environment
+436,2654.0,Non.butter.spread.type.details...Instance.0_2,DT10AA,What type of spread do you mainly use?,Logical,2 : Flora Pro-Active or Benecol,Select one answer,Lifestyle and environment
+437,2654.0,Non.butter.spread.type.details...Instance.0_4,DT10AA,What type of spread do you mainly use?,Logical,4 : Soft (tub) margarine,Select one answer,Lifestyle and environment
+438,2654.0,Non.butter.spread.type.details...Instance.0_6,DT10AA,What type of spread do you mainly use?,Logical,6 : Olive oil based spread (eg: Bertolli),Select one answer,Lifestyle and environment
+441,2654.0,Non.butter.spread.type.details...Instance.0_9,DT10AA,What type of spread do you mainly use?,Logical,9 : Other type of spread/margarine,Select one answer,Lifestyle and environment
+442,1448.0,Bread.type...Instance.0_1,DT11,What type of bread do you mainly eat?,Logical,1 : White,Select one answer,Lifestyle and environment
+443,1448.0,Bread.type...Instance.0_2,DT11,What type of bread do you mainly eat?,Logical,2 : Brown,Select one answer,Lifestyle and environment
+444,1448.0,Bread.type...Instance.0_3,DT11,What type of bread do you mainly eat?,Logical,3 : Wholemeal or wholegrain,Select one answer,Lifestyle and environment
+447,1468.0,Cereal.type...Instance.0_2,DT11A,What type of cereal do you mainly eat?,Logical,2 :Biscuit cereal (e.g. Weetabix),Select one answer,Lifestyle and environment
+448,1468.0,Cereal.type...Instance.0_3,DT11A,What type of cereal do you mainly eat?,Logical,"3 :Oat cereal (e.g. Ready Brek, porridge)",Select one answer,Lifestyle and environment
+449,1468.0,Cereal.type...Instance.0_4,DT11A,What type of cereal do you mainly eat?,Logical,4 :Muesli,Select one answer,Lifestyle and environment
+450,1468.0,Cereal.type...Instance.0_5,DT11A,What type of cereal do you mainly eat?,Logical,"5 :Other (e.g. Cornflakes, Frosties)",Select one answer,Lifestyle and environment
+451,1478.0,Salt.added.to.food...Instance.0_1,DT11B,"Do you add salt to your food?
+(Do not include salt used in cooking)",Logical,1 : Never/rarely,Select one answer,Lifestyle and environment
+452,1478.0,Salt.added.to.food...Instance.0_2,DT11B,"Do you add salt to your food?
+(Do not include salt used in cooking)",Logical,2 : Sometimes,Select one answer,Lifestyle and environment
+453,1478.0,Salt.added.to.food...Instance.0_3,DT11B,"Do you add salt to your food?
+(Do not include salt used in cooking)",Logical,3 : Usually,Select one answer,Lifestyle and environment
+454,1478.0,Salt.added.to.food...Instance.0_4,DT11B,"Do you add salt to your food?
+(Do not include salt used in cooking)",Logical,4 : Always,Select one answer,Lifestyle and environment
+456,1508.0,Coffee.type...Instance.0_2,DT13AA,What type of coffee do you usually drink?,Logical,2 : Instant coffee,Select one answer,Lifestyle and environment
+457,1508.0,Coffee.type...Instance.0_3,DT13AA,What type of coffee do you usually drink?,Logical,"3 : Ground coffee (include espresso, filter etc)",Select one answer,Lifestyle and environment
+459,1518.0,Hot.drink.temperature...Instance.0_1,DT13A,How do you like your hot drinks? (Such as coffee or tea),Logical,1 : Very hot,Select one answer,Lifestyle and environment
+464,1538.0,Major.dietary.changes.in.the.last.5.years...Instance.0_1,DT15,Have you made any major changes to your diet in the last 5 years?,Logical,"1 : Yes, because of illness",Select one answer,Lifestyle and environment
+465,1538.0,Major.dietary.changes.in.the.last.5.years...Instance.0_2,DT15,Have you made any major changes to your diet in the last 5 years?,Logical,"2 : Yes, because of other reasons",Select one answer,Lifestyle and environment
+467,1548.0,Variation.in.diet...Instance.0_2,DT16,Does your diet vary much from week to week?,Logical,2 : Sometimes,Select one answer,Lifestyle and environment
+468,1548.0,Variation.in.diet...Instance.0_3,DT16,Does your diet vary much from week to week?,Logical,3 : Often,Select one answer,Lifestyle and environment
+470,20117.0,Alcohol.drinker.status...Instance.0_1,A1 & A1A,Current Field is partly derived from A1 & A1A,Logical,1 : Previous,Select one answer,Lifestyle and environment
+471,20117.0,Alcohol.drinker.status...Instance.0_2,A1 & A1A,Current Field is partly derived from A1 & A1A,Logical,2 : Current,Select one answer,Lifestyle and environment
+472,1558.0,Alcohol.intake.frequency....Instance.0_1,A1,About how often do you drink alcohol?,Logical,1 :Daily or almost daily,Select one answer,Lifestyle and environment
+473,1558.0,Alcohol.intake.frequency....Instance.0_2,A1,About how often do you drink alcohol?,Logical,2 :Three or four times a week,Select one answer,Lifestyle and environment
+476,1558.0,Alcohol.intake.frequency....Instance.0_5,A1,About how often do you drink alcohol?,Logical,5 :Special occasions only,Select one answer,Lifestyle and environment
+477,1558.0,Alcohol.intake.frequency....Instance.0_6,A1,About how often do you drink alcohol?,Logical,6 :Never,Select one answer,Lifestyle and environment
+478,3731.0,Former.alcohol.drinker...Instance.0_0,A1A,Did you previously drink alcohol?,Logical,0 : No,Select one answer,Lifestyle and environment
+485,4429.0,Average.monthly.beer.plus.cider.intake...Instance.0_Upper.third,A2E,"In an average MONTH, how many pints of beer or cider would you drink?(Include bitter, lager, stout, ale, Guinness)",Logical,,Enter integer answer,Lifestyle and environment
+489,4451.0,Average.monthly.fortified.wine.intake...Instance.0_Upper.third,A2F,"In an average MONTH, how many glasses of fortified wine would you drink?(There are 12 glasses in an average bottle)(Fortified wines include drinks such as sherry, port, vermouth)",Logical,,Enter integer answer,Lifestyle and environment
+490,4462.0,Average.monthly.intake.of.other.alcoholic.drinks...Instance.0_Middle.third,A2G,"In an average MONTH, how many glasses of other alcoholic drinks (such as alcopops) would you drink?",Logical,,Enter integer answer,Lifestyle and environment
+492,1568.0,Average.weekly.red.wine.intake...Instance.0_Middle.third,A3B,"In an average WEEK, how many glasses of RED wine would you drink?(There are six glasses in an average bottle)",Logical,,Enter integer answer,Lifestyle and environment
+493,1568.0,Average.weekly.red.wine.intake...Instance.0_Upper.third,A3B,"In an average WEEK, how many glasses of RED wine would you drink?(There are six glasses in an average bottle)",Logical,,Enter integer answer,Lifestyle and environment
+494,1578.0,Average.weekly.champagne.plus.white.wine.intake...Instance.0_Middle.third,A3C,"In an average WEEK, how many glasses of WHITE wine or champagne would you drink?
+(There are six glasses in an average bottle)",Logical,,Enter integer answer,Lifestyle and environment
+495,1578.0,Average.weekly.champagne.plus.white.wine.intake...Instance.0_Upper.third,A3C,"In an average WEEK, how many glasses of WHITE wine or champagne would you drink?
+(There are six glasses in an average bottle)",Logical,,Enter integer answer,Lifestyle and environment
+497,1588.0,Average.weekly.beer.plus.cider.intake...Instance.0_Upper.third,A3E,"In an average WEEK, how many pints of beer or cider would you drink?
+(Include bitter, lager, stout, ale, Guinness)",Logical,,Enter integer answer,Lifestyle and environment
+498,1598.0,Average.weekly.spirits.intake...Instance.0_Middle.third,A3A,"In an average WEEK, how many measures of spirits or liqueurs
+would you drink?
+(there are 25 standard measures in a normal sized bottle; spirits include drinks such as whisky, gin, rum, vodka, brandy)",Logical,,Enter integer answer,Lifestyle and environment
+499,1598.0,Average.weekly.spirits.intake...Instance.0_Upper.third,A3A,"In an average WEEK, how many measures of spirits or liqueurs
+would you drink?
+(there are 25 standard measures in a normal sized bottle; spirits include drinks such as whisky, gin, rum, vodka, brandy)",Logical,,Enter integer answer,Lifestyle and environment
+500,1608.0,Average.weekly.fortified.wine.intake...Instance.0_Middle.third,A3F,"In an average WEEK, how many glasses of fortified wine would you drink?
+(There are 12 glasses in an average bottle; Fortified wines include drinks such as
+sherry, port, vermouth)",Logical,,Enter integer answer,Lifestyle and environment
+501,1608.0,Average.weekly.fortified.wine.intake...Instance.0_Upper.third,A3F,"In an average WEEK, how many glasses of fortified wine would you drink?
+(There are 12 glasses in an average bottle; Fortified wines include drinks such as
+sherry, port, vermouth)",Logical,,Enter integer answer,Lifestyle and environment
+504,1618.0,Alcohol.usually.taken.with.meals...Instance.0_0,A5,When you drink alcohol is it usually with meals?,Logical,0 : No,Select one answer,Lifestyle and environment
+505,1618.0,Alcohol.usually.taken.with.meals...Instance.0_1,A5,When you drink alcohol is it usually with meals?,Logical,1 : Yes,Select one answer,Lifestyle and environment
+506,1618.0,Alcohol.usually.taken.with.meals...Instance.0_neg6,A5,When you drink alcohol is it usually with meals?,Logical,-6 : It varies,Select one answer,Lifestyle and environment
+507,1628.0,Alcohol.intake.versus.10.years.previously...Instance.0_1,A6,"Compared to 10 years ago, do you drink?",Logical,1 : More nowadays,Select one answer,Lifestyle and environment
+508,1628.0,Alcohol.intake.versus.10.years.previously...Instance.0_2,A6,"Compared to 10 years ago, do you drink?",Logical,2 : About the same,Select one answer,Lifestyle and environment
+509,1628.0,Alcohol.intake.versus.10.years.previously...Instance.0_3,A6,"Compared to 10 years ago, do you drink?",Logical,3 : Less nowadays,Select one answer,Lifestyle and environment
+510,2664.0,Reason.for.reducing.amount.of.alcohol.drunk...Instance.0_1,A7,Why did you reduce the amount you drank?,Logical,1 : Illness or ill health,Select one answer,Lifestyle and environment
+511,2664.0,Reason.for.reducing.amount.of.alcohol.drunk...Instance.0_2,A7,Why did you reduce the amount you drank?,Logical,2 : Doctor's advice,Select one answer,Lifestyle and environment
+512,2664.0,Reason.for.reducing.amount.of.alcohol.drunk...Instance.0_3,A7,Why did you reduce the amount you drank?,Logical,3 : Health precaution,Select one answer,Lifestyle and environment
+513,2664.0,Reason.for.reducing.amount.of.alcohol.drunk...Instance.0_4,A7,Why did you reduce the amount you drank?,Logical,4 : Financial reasons,Select one answer,Lifestyle and environment
+514,2664.0,Reason.for.reducing.amount.of.alcohol.drunk...Instance.0_5,A7,Why did you reduce the amount you drank?,Logical,5 : Other reason,Select one answer,Lifestyle and environment
+515,3859.0,Reason.former.drinker.stopped.drinking.alcohol...Instance.0_1,A7A,Why did you stop drinking alcohol?,Logical,1 : Illness or ill health,Select one answer,Lifestyle and environment
+516,3859.0,Reason.former.drinker.stopped.drinking.alcohol...Instance.0_2,A7A,Why did you stop drinking alcohol?,Logical,2 : Doctor's advice,Select one answer,Lifestyle and environment
+517,3859.0,Reason.former.drinker.stopped.drinking.alcohol...Instance.0_3,A7A,Why did you stop drinking alcohol?,Logical,3 : Health precaution,Select one answer,Lifestyle and environment
+518,3859.0,Reason.former.drinker.stopped.drinking.alcohol...Instance.0_5,A7A,Why did you stop drinking alcohol?,Logical,5 : Other reason,Select one answer,Lifestyle and environment
+520,1717.0,Skin.colour...Instance.0_2,Y6A,What best describes the colour of your skin without tanning?,Logical,2 : Fair,Select one answer,Lifestyle and environment
+521,1717.0,Skin.colour...Instance.0_3,Y6A,What best describes the colour of your skin without tanning?,Logical,3 : Light olive,Select one answer,Lifestyle and environment
+523,1717.0,Skin.colour...Instance.0_5,Y6A,What best describes the colour of your skin without tanning?,Logical,5 : Brown,Select one answer,Lifestyle and environment
+524,1717.0,Skin.colour...Instance.0_6,Y6A,What best describes the colour of your skin without tanning?,Logical,6 : Black,Select one answer,Lifestyle and environment
+525,1727.0,Ease.of.skin.tanning...Instance.0_1,Y6AA,What would happen to your skin if it was repeatedly exposed to bright sunlight without any protection?,Logical,1 : Get very tanned,Select one answer,Lifestyle and environment
+526,1727.0,Ease.of.skin.tanning...Instance.0_2,Y6AA,What would happen to your skin if it was repeatedly exposed to bright sunlight without any protection?,Logical,2 : Get moderately tanned,Select one answer,Lifestyle and environment
+527,1727.0,Ease.of.skin.tanning...Instance.0_3,Y6AA,What would happen to your skin if it was repeatedly exposed to bright sunlight without any protection?,Logical,3 : Get mildly or occasionally tanned,Select one answer,Lifestyle and environment
+532,1747.0,Hair.colour..natural..before.greying....Instance.0_4,Y6B,"What best describes your natural hair colour?
+(If your hair colour is grey, the colour before you went grey)",Logical,4 : Dark brown,Select one answer,Lifestyle and environment
+533,1747.0,Hair.colour..natural..before.greying....Instance.0_5,Y6B,"What best describes your natural hair colour?
+(If your hair colour is grey, the colour before you went grey)",Logical,5 : Black,Select one answer,Lifestyle and environment
+534,1747.0,Hair.colour..natural..before.greying....Instance.0_6,Y6B,"What best describes your natural hair colour?
+(If your hair colour is grey, the colour before you went grey)",Logical,6 : Other,Select one answer,Lifestyle and environment
+535,1757.0,Facial.ageing...Instance.0_1,Y6C,Do people say that you look:,Logical,1 : Younger than you are,Select one answer,Lifestyle and environment
+536,1757.0,Facial.ageing...Instance.0_2,Y6C,Do people say that you look:,Logical,2 : Older than you are,Select one answer,Lifestyle and environment
+537,1757.0,Facial.ageing...Instance.0_3,Y6C,Do people say that you look:,Logical,3 : About your age,Select one answer,Lifestyle and environment
+538,2267.0,Use.of.sun.uv.protection...Instance.0_1,Y6AB,"Do you wear sun protection (e.g. sunscreen lotion, hat) when you spend time outdoors in the summer?",Logical,1 : Never/rarely,Select one answer,Lifestyle and environment
+539,2267.0,Use.of.sun.uv.protection...Instance.0_2,Y6AB,"Do you wear sun protection (e.g. sunscreen lotion, hat) when you spend time outdoors in the summer?",Logical,2 : Sometimes,Select one answer,Lifestyle and environment
+540,2267.0,Use.of.sun.uv.protection...Instance.0_3,Y6AB,"Do you wear sun protection (e.g. sunscreen lotion, hat) when you spend time outdoors in the summer?",Logical,3 : Most of the time,Select one answer,Lifestyle and environment
+541,2267.0,Use.of.sun.uv.protection...Instance.0_4,Y6AB,"Do you wear sun protection (e.g. sunscreen lotion, hat) when you spend time outdoors in the summer?",Logical,4 : Always,Select one answer,Lifestyle and environment
+542,2267.0,Use.of.sun.uv.protection...Instance.0_5,Y6AB,"Do you wear sun protection (e.g. sunscreen lotion, hat) when you spend time outdoors in the summer?",Logical,5 : Do not go out in sunshine,Select one answer,Lifestyle and environment
+543,2129.0,Answered.sexual.history.questions...Instance.0_1,INTRO7,"The next section contains questions about your sexual history.
+If you feel that a question is too sensitive,
+you can skip the question or skip the entire section if you prefer.",Logical,1 : Continue,Select one answer,Lifestyle and environment
+544,2129.0,Answered.sexual.history.questions...Instance.0_2,INTRO7,"The next section contains questions about your sexual history.
+If you feel that a question is too sensitive,
+you can skip the question or skip the entire section if you prefer.",Logical,2 : Skip this section,Select one answer,Lifestyle and environment
+545,2139.0,Age.first.had.sexual.intercourse...Instance.0_Lower.third,SE1,"What was your age when you first had sexual intercourse?
+(Sexual intercourse includes vaginal, oral or anal intercourse)",Logical,,Enter integer answer,Lifestyle and environment
+546,2139.0,Age.first.had.sexual.intercourse...Instance.0_Middle.third,SE1,"What was your age when you first had sexual intercourse?
+(Sexual intercourse includes vaginal, oral or anal intercourse)",Logical,,Enter integer answer,Lifestyle and environment
+549,2149.0,Lifetime.number.of.sexual.partners...Instance.0_Lower.third,SE1A,About how many sexual partners have you had in your lifetime?,Logical,,Enter integer answer,Lifestyle and environment
+551,2149.0,Lifetime.number.of.sexual.partners...Instance.0_Upper.third,SE1A,About how many sexual partners have you had in your lifetime?,Logical,,Enter integer answer,Lifestyle and environment
+558,1687.0,Comparative.body.size.at.age.10...Instance.0_1,Y4,"When you were 10 years old, compared to average would you describe yourself as:",Logical,1 : Thinner,Select one answer,Early life factors
+560,1687.0,Comparative.body.size.at.age.10...Instance.0_3,Y4,"When you were 10 years old, compared to average would you describe yourself as:",Logical,3 : About average,Select one answer,Early life factors
+562,1697.0,Comparative.height.size.at.age.10...Instance.0_2,Y5,"When you were 10 years old, compared to average would you describe yourself as:",Logical,2 : Taller,Select one answer,Early life factors
+566,1707.0,Handedness..chirality.laterality....Instance.0_3,Y6,Are you right or left handed?,Logical,3 : Use both right and left hands equally,Select one answer,Early life factors
+569,1777.0,Part.of.a.multiple.birth...Instance.0_0,Y1A,"Are you a twin, triplet or other multiple birth?",Logical,0 : No,Select one answer,Early life factors
+570,1777.0,Part.of.a.multiple.birth...Instance.0_1,Y1A,"Are you a twin, triplet or other multiple birth?",Logical,1 : Yes,Select one answer,Early life factors
+572,1787.0,Maternal.smoking.around.birth...Instance.0_1,Y7,Did your mother smoke regularly around the time when you were born?,Logical,1 : Yes,Select one answer,Early life factors
+573,1797.0,Father.still.alive...Instance.0_0,Y13,Is your father still alive?,Logical,0 : No,Select one answer,Family history
+575,3912.0,Adopted.father.still.alive...Instance.0_0,Y13AD,Is your ADOPTED father still alive?,Logical,0 : No,Select one answer,Family history
+578,2946.0,Father.s.age...Instance.0_Middle.third,Y13A,What is his age now?,Logical,,Enter integer answer,Family history
+579,2946.0,Father.s.age...Instance.0_Upper.third,Y13A,What is his age now?,Logical,,Enter integer answer,Family history
+581,1807.0,Father.s.age.at.death...Instance.0_Middle.third,Y13B,What was his age when he died?,Logical,,Enter integer answer,Family history
+582,1807.0,Father.s.age.at.death...Instance.0_Upper.third,Y13B,What was his age when he died?,Logical,,Enter integer answer,Family history
+583,1835.0,Mother.still.alive...Instance.0_0,Y16,Is your mother still alive?,Logical,0 : No,Select one answer,Family history
+585,3942.0,Adopted.mother.still.alive...Instance.0_0,Y16AD,Is your ADOPTED mother still alive?,Logical,0 : No,Select one answer,Family history
+587,1845.0,Mother.s.age...Instance.0_Lower.third,Y16A,What is her age now?,Logical,,Enter integer answer,Family history
+588,1845.0,Mother.s.age...Instance.0_Middle.third,Y16A,What is her age now?,Logical,,Enter integer answer,Family history
+589,1845.0,Mother.s.age...Instance.0_Upper.third,Y16A,What is her age now?,Logical,,Enter integer answer,Family history
+591,3526.0,Mother.s.age.at.death...Instance.0_Middle.third,Y16B,What was her age when she died?,Logical,,Enter integer answer,Family history
+593,1873.0,Number.of.full.brothers...Instance.0_Middle.third,Y17,"How many brothers do you have? (Please include those who have died, and twin brothers. Do not include half- brothers, step-brothers or
+adopted brothers)",Logical,,Enter integer answer,Family history
+594,1873.0,Number.of.full.brothers...Instance.0_Upper.third,Y17,"How many brothers do you have? (Please include those who have died, and twin brothers. Do not include half- brothers, step-brothers or
+adopted brothers)",Logical,,Enter integer answer,Family history
+597,1883.0,Number.of.full.sisters...Instance.0_Middle.third,Y18,"How many sisters do you have?
+(Please include those who have died, and twin sisters. Do not include half-sisters, step-sisters or adopted sisters)",Logical,,Enter integer answer,Family history
+598,1883.0,Number.of.full.sisters...Instance.0_Upper.third,Y18,"How many sisters do you have?
+(Please include those who have died, and twin sisters. Do not include half-sisters, step-sisters or adopted sisters)",Logical,,Enter integer answer,Family history
+610,20113.0,Illnesses.of.adopted.mother...Instance.0_2,Y16DAD,"Has/did your ADOPTED mother ever suffer from?
+(You can select more than one answer)",Logical,2 : Stroke,Toggle multiple answer,Family history
+616,20107.0,Illnesses.of.father...Instance.0_1,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,1 : Heart disease,Toggle multiple answer,Family history
+617,20107.0,Illnesses.of.father...Instance.0_2,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,2 : Stroke,Toggle multiple answer,Family history
+618,20107.0,Illnesses.of.father...Instance.0_3,Y13E,Has/did your father ever suffer from? (You can select more than one answer),Logical,3 : Lung cancer,Toggle multiple answer,Family history
+620,20107.0,Illnesses.of.father...Instance.0_6,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,6 : Chronic bronchitis/emphysema,Toggle multiple answer,Family history
+621,20107.0,Illnesses.of.father...Instance.0_8,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,8 : High blood pressure,Toggle multiple answer,Family history
+622,20107.0,Illnesses.of.father...Instance.0_9,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,9 : Diabetes,Toggle multiple answer,Family history
+623,20107.0,Illnesses.of.father...Instance.0_10,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,10 : Alzheimer's disease/dementia,Toggle multiple answer,Family history
+624,20107.0,Illnesses.of.father...Instance.0_11,Y13E,Has/did your father ever suffer from? (You can select more than one answer),Logical,11 : Parkinson's disease,Toggle multiple answer,Family history
+626,20107.0,Illnesses.of.father...Instance.0_13,Y13E,Has/did your father ever suffer from? (You can select more than one answer),Logical,13 : Prostate cancer,Toggle multiple answer,Family history
+627,20107.0,Illnesses.of.father...Instance.0_neg17,Y13D,Has/did your father ever suffer from? (You can select more than one answer),Logical,-17 : None of the above,Select one answer,Family history
+628,20107.0,Illnesses.of.father...Instance.0_neg27,Y13E,Has/did your father ever suffer from? (You can select more than one answer),Logical,-27 : None of the above,Select one answer,Family history
+629,20110.0,Illnesses.of.mother...Instance.0_1,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,1 : Heart disease,Toggle multiple answer,Family history
+630,20110.0,Illnesses.of.mother...Instance.0_2,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,2 : Stroke,Toggle multiple answer,Family history
+631,20110.0,Illnesses.of.mother...Instance.0_3,Y16E,Has/did your mother ever suffer from? (You can select more than one answer),Logical,3 : Lung cancer,Toggle multiple answer,Family history
+632,20110.0,Illnesses.of.mother...Instance.0_4,Y16E,Has/did your mother ever suffer from? (You can select more than one answer),Logical,4 : Bowel cancer,Toggle multiple answer,Family history
+633,20110.0,Illnesses.of.mother...Instance.0_5,Y16E,Has/did your mother ever suffer from? (You can select more than one answer),Logical,5 : Breast cancer,Toggle multiple answer,Family history
+634,20110.0,Illnesses.of.mother...Instance.0_6,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,6 : Chronic bronchitis/emphysema,Toggle multiple answer,Family history
+635,20110.0,Illnesses.of.mother...Instance.0_8,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,8 : High blood pressure,Toggle multiple answer,Family history
+636,20110.0,Illnesses.of.mother...Instance.0_9,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,9 : Diabetes,Toggle multiple answer,Family history
+637,20110.0,Illnesses.of.mother...Instance.0_10,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,10 : Alzheimer's disease/dementia,Toggle multiple answer,Family history
+640,20110.0,Illnesses.of.mother...Instance.0_neg17,Y16D,Has/did your mother ever suffer from? (You can select more than one answer),Logical,-17 : None of the above,Select one answer,Family history
+641,20110.0,Illnesses.of.mother...Instance.0_neg27,Y16E,Has/did your mother ever suffer from? (You can select more than one answer),Logical,-27 : None of the above,Select one answer,Family history
+642,20111.0,Illnesses.of.siblings...Instance.0_1,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,1 : Heart disease,Toggle multiple answer,Family history
+643,20111.0,Illnesses.of.siblings...Instance.0_2,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,2 : Stroke,Toggle multiple answer,Family history
+644,20111.0,Illnesses.of.siblings...Instance.0_3,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,3 : Lung cancer,Toggle multiple answer,Family history
+645,20111.0,Illnesses.of.siblings...Instance.0_4,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,4 : Bowel cancer,Toggle multiple answer,Family history
+646,20111.0,Illnesses.of.siblings...Instance.0_5,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,5 : Breast cancer,Toggle multiple answer,Family history
+647,20111.0,Illnesses.of.siblings...Instance.0_6,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,6 : Chronic bronchitis/emphysema,Toggle multiple answer,Family history
+648,20111.0,Illnesses.of.siblings...Instance.0_8,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,8 : High blood pressure,Toggle multiple answer,Family history
+649,20111.0,Illnesses.of.siblings...Instance.0_9,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,9 : Diabetes,Toggle multiple answer,Family history
+650,20111.0,Illnesses.of.siblings...Instance.0_10,Y19,"Have any of your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,10 : Alzheimer's disease/dementia,Toggle multiple answer,Family history
+651,20111.0,Illnesses.of.siblings...Instance.0_11,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,11 : Parkinson's disease,Toggle multiple answer,Family history
+653,20111.0,Illnesses.of.siblings...Instance.0_13,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,13 : Prostate cancer,Toggle multiple answer,Family history
+654,20111.0,Illnesses.of.siblings...Instance.0_neg17,Y19,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,-17 : None of the above,Select one answer,Family history
+655,20111.0,Illnesses.of.siblings...Instance.0_neg27,Y20,"Have any or your brothers or sisters suffered from any of the following illnesses?
+(You can select more than one answer)",Logical,-27 : None of the above,Select one answer,Family history
+658,1031.0,Frequency.of.friend.family.visits...Instance.0_1,WP11,How often do you visit friends or family or have them visit you?,Logical,1 : Almost daily,Select one answer,Psychosocial factors
+659,1031.0,Frequency.of.friend.family.visits...Instance.0_2,WP11,How often do you visit friends or family or have them visit you?,Logical,2 : 2-4 times a week,Select one answer,Psychosocial factors
+660,1031.0,Frequency.of.friend.family.visits...Instance.0_3,WP11,How often do you visit friends or family or have them visit you?,Logical,3 : About once a week,Select one answer,Psychosocial factors
+661,1031.0,Frequency.of.friend.family.visits...Instance.0_4,WP11,How often do you visit friends or family or have them visit you?,Logical,4 : About once a month,Select one answer,Psychosocial factors
+663,1031.0,Frequency.of.friend.family.visits...Instance.0_6,WP11,How often do you visit friends or family or have them visit you?,Logical,6 : Never or almost never,Select one answer,Psychosocial factors
+664,1031.0,Frequency.of.friend.family.visits...Instance.0_7,WP11,How often do you visit friends or family or have them visit you?,Logical,7 : No friends/family outside household,Select one answer,Psychosocial factors
+665,6160.0,Leisure.social.activities...Instance.0_1,WP12,"Which of the following do you attend once a week or more often?
+(You can select more than one)",Logical,1 : Sports club or gym,Toggle multiple answer,Psychosocial factors
+666,6160.0,Leisure.social.activities...Instance.0_2,WP12,"Which of the following do you attend once a week or more often?
+(You can select more than one)",Logical,2 : Pub or social club,Toggle multiple answer,Psychosocial factors
+668,6160.0,Leisure.social.activities...Instance.0_4,WP12,"Which of the following do you attend once a week or more often?
+(You can select more than one)",Logical,4 : Adult education class,Toggle multiple answer,Psychosocial factors
+670,6160.0,Leisure.social.activities...Instance.0_neg7,WP12,"Which of the following do you attend once a week or more often?
+(You can select more than one)",Logical,-7 : None of the above,Select one answer,Psychosocial factors
+671,2110.0,Able.to.confide...Instance.0_0,E1,How often are you able to confide in someone close to you?,Logical,0 : Never or almost never,Select one answer,Psychosocial factors
+673,2110.0,Able.to.confide...Instance.0_2,E1,How often are you able to confide in someone close to you?,Logical,2 : About once a month,Select one answer,Psychosocial factors
+674,2110.0,Able.to.confide...Instance.0_3,E1,How often are you able to confide in someone close to you?,Logical,3 : About once a week,Select one answer,Psychosocial factors
+675,2110.0,Able.to.confide...Instance.0_4,E1,How often are you able to confide in someone close to you?,Logical,4 : 2-4 times a week,Select one answer,Psychosocial factors
+676,2110.0,Able.to.confide...Instance.0_5,E1,How often are you able to confide in someone close to you?,Logical,5 : Almost daily,Select one answer,Psychosocial factors
+677,1920.0,Mood.swings...Instance.0_0,P18,Does your mood often go up and down?,Logical,0 : No,Select one answer,Psychosocial factors
+678,1920.0,Mood.swings...Instance.0_1,P18,Does your mood often go up and down?,Logical,1 : Yes,Select one answer,Psychosocial factors
+681,1940.0,Irritability...Instance.0_0,P20,Are you an irritable person?,Logical,0 : No,Select one answer,Psychosocial factors
+682,1940.0,Irritability...Instance.0_1,P20,Are you an irritable person?,Logical,1 : Yes,Select one answer,Psychosocial factors
+685,1960.0,Fed.up.feelings...Instance.0_0,P22,Do you often feel 'fed-up'?,Logical,0 : No,Select one answer,Psychosocial factors
+686,1960.0,Fed.up.feelings...Instance.0_1,P22,Do you often feel 'fed-up'?,Logical,1 : Yes,Select one answer,Psychosocial factors
+691,1990.0,Tense....highly.strung....Instance.0_0,P25,Would you call yourself tense or 'highly strung'?,Logical,0 : No,Select one answer,Psychosocial factors
+692,1990.0,Tense....highly.strung....Instance.0_1,P25,Would you call yourself tense or 'highly strung'?,Logical,1 : Yes,Select one answer,Psychosocial factors
+693,2000.0,Worry.too.long.after.embarrassment...Instance.0_0,P26,Do you worry too long after an embarrassing experience?,Logical,0 : No,Select one answer,Psychosocial factors
+694,2000.0,Worry.too.long.after.embarrassment...Instance.0_1,P26,Do you worry too long after an embarrassing experience?,Logical,1 : Yes,Select one answer,Psychosocial factors
+695,2010.0,Suffer.from..nerves....Instance.0_0,P27,Do you suffer from 'nerves'?,Logical,0 : No,Select one answer,Psychosocial factors
+696,2010.0,Suffer.from..nerves....Instance.0_1,P27,Do you suffer from 'nerves'?,Logical,1 : Yes,Select one answer,Psychosocial factors
+697,2020.0,Loneliness..isolation...Instance.0_0,P28,Do you often feel lonely?,Logical,0 : No,Select one answer,Psychosocial factors
+698,2020.0,Loneliness..isolation...Instance.0_1,P28,Do you often feel lonely?,Logical,1 : Yes,Select one answer,Psychosocial factors
+701,2040.0,Risk.taking...Instance.0_0,P30,Would you describe yourself as someone who takes risks?,Logical,0 : No,Select one answer,Psychosocial factors
+702,2040.0,Risk.taking...Instance.0_1,P30,Would you describe yourself as someone who takes risks?,Logical,1 : Yes,Select one answer,Psychosocial factors
+740,2050.0,Frequency.of.depressed.mood.in.last.2.weeks...Instance.0_1,P1,"Over the past two weeks, how often have you felt down, depressed or hopeless?",Logical,1 : Not at all,Select one answer,Psychosocial factors
+742,2050.0,Frequency.of.depressed.mood.in.last.2.weeks...Instance.0_3,P1,"Over the past two weeks, how often have you felt down, depressed or hopeless?",Logical,3 : More than half the days,Select one answer,Psychosocial factors
+744,2060.0,Frequency.of.unenthusiasm...disinterest.in.last.2.weeks...Instance.0_1,P1A,"Over the past two weeks, how often have you had little interest or pleasure in doing things?",Logical,1 : Not at all,Select one answer,Psychosocial factors
+745,2060.0,Frequency.of.unenthusiasm...disinterest.in.last.2.weeks...Instance.0_2,P1A,"Over the past two weeks, how often have you had little interest or pleasure in doing things?",Logical,2 : Several days,Select one answer,Psychosocial factors
+746,2060.0,Frequency.of.unenthusiasm...disinterest.in.last.2.weeks...Instance.0_3,P1A,"Over the past two weeks, how often have you had little interest or pleasure in doing things?",Logical,3 : More than half the days,Select one answer,Psychosocial factors
+747,2060.0,Frequency.of.unenthusiasm...disinterest.in.last.2.weeks...Instance.0_4,P1A,"Over the past two weeks, how often have you had little interest or pleasure in doing things?",Logical,4 : Nearly every day,Select one answer,Psychosocial factors
+748,2070.0,Frequency.of.tenseness...restlessness.in.last.2.weeks...Instance.0_1,P2,"Over the past two weeks, how often have you felt tense, fidgety or restless?",Logical,1 : Not at all,Select one answer,Psychosocial factors
+750,2070.0,Frequency.of.tenseness...restlessness.in.last.2.weeks...Instance.0_3,P2,"Over the past two weeks, how often have you felt tense, fidgety or restless?",Logical,3 : More than half the days,Select one answer,Psychosocial factors
+751,2070.0,Frequency.of.tenseness...restlessness.in.last.2.weeks...Instance.0_4,P2,"Over the past two weeks, how often have you felt tense, fidgety or restless?",Logical,4 : Nearly every day,Select one answer,Psychosocial factors
+752,2080.0,Frequency.of.tiredness...lethargy.in.last.2.weeks...Instance.0_1,P3,"Over the past two weeks, how often have you felt tired or had little energy?",Logical,1 : Not at all,Select one answer,Psychosocial factors
+754,2080.0,Frequency.of.tiredness...lethargy.in.last.2.weeks...Instance.0_3,P3,"Over the past two weeks, how often have you felt tired or had little energy?",Logical,3 : More than half the days,Select one answer,Psychosocial factors
+755,2080.0,Frequency.of.tiredness...lethargy.in.last.2.weeks...Instance.0_4,P3,"Over the past two weeks, how often have you felt tired or had little energy?",Logical,4 : Nearly every day,Select one answer,Psychosocial factors
+756,2090.0,Seen.doctor..GP..for.nerves..anxiety..tension.or.depression...Instance.0_0,P4,"Have you ever seen a general practitioner (GP) for nerves, anxiety, tension or depression?",Logical,0 : No,Select one answer,Psychosocial factors
+757,2090.0,Seen.doctor..GP..for.nerves..anxiety..tension.or.depression...Instance.0_1,P4,"Have you ever seen a general practitioner (GP) for nerves, anxiety, tension or depression?",Logical,1 : Yes,Select one answer,Psychosocial factors
+758,2100.0,Seen.a.psychiatrist.for.nerves..anxiety..tension.or.depression...Instance.0_0,P5,"Have you ever seen a psychiatrist for nerves, anxiety, tension or depression?",Logical,0 : No,Select one answer,Psychosocial factors
+759,2100.0,Seen.a.psychiatrist.for.nerves..anxiety..tension.or.depression...Instance.0_1,P5,"Have you ever seen a psychiatrist for nerves, anxiety, tension or depression?",Logical,1 : Yes,Select one answer,Psychosocial factors
+790,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_1,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,"1 : Serious illness, injury or assault to yourself",Toggle multiple answer,Psychosocial factors
+791,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_2,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,"2 : Serious illness, injury or assault of a close relative",Toggle multiple answer,Psychosocial factors
+793,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_4,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,4 : Death of a spouse or partner,Toggle multiple answer,Psychosocial factors
+794,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_5,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,5 : Marital separation/divorce,Toggle multiple answer,Psychosocial factors
+795,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_6,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,6 : Financial difficulties,Toggle multiple answer,Psychosocial factors
+796,6145.0,Illness..injury..bereavement..stress.in.last.2.years...Instance.0_neg7,E2,"In the last 2 years have you experienced any of the following?
+(You can select more than one answer)",Logical,-7 : None of the above,Select one answer,Psychosocial factors
+797,2207.0,Wears.glasses.or.contact.lenses...Instance.0_0,H5,Do you wear glasses or contact lenses to correct your vision?,Logical,0 : No,Select one answer,Health and medical history
+798,2207.0,Wears.glasses.or.contact.lenses...Instance.0_1,H5,Do you wear glasses or contact lenses to correct your vision?,Logical,1 : Yes,Select one answer,Health and medical history
+799,2217.0,Age.started.wearing.glasses.or.contact.lenses...Instance.0_Lower.third,H5AA,What age did you first start to wear glasses or contact lenses?,Logical,,Enter integer answer,Health and medical history
+801,2217.0,Age.started.wearing.glasses.or.contact.lenses...Instance.0_Upper.third,H5AA,What age did you first start to wear glasses or contact lenses?,Logical,,Enter integer answer,Health and medical history
+875,6149.0,Mouth.teeth.dental.problems...Instance.0_2,H7C,Do you have any of the following? (You can select more than one answer),Logical,2 : Painful gums,Toggle multiple answer,Health and medical history
+876,6149.0,Mouth.teeth.dental.problems...Instance.0_3,H7C,Do you have any of the following? (You can select more than one answer),Logical,3 : Bleeding gums,Toggle multiple answer,Health and medical history
+877,6149.0,Mouth.teeth.dental.problems...Instance.0_4,H7C,Do you have any of the following? (You can select more than one answer),Logical,4 : Loose teeth,Toggle multiple answer,Health and medical history
+878,6149.0,Mouth.teeth.dental.problems...Instance.0_5,H7C,Do you have any of the following? (You can select more than one answer),Logical,5 : Toothache,Toggle multiple answer,Health and medical history
+879,6149.0,Mouth.teeth.dental.problems...Instance.0_6,H7C,Do you have any of the following? (You can select more than one answer),Logical,6 : Dentures,Toggle multiple answer,Health and medical history
+880,6149.0,Mouth.teeth.dental.problems...Instance.0_neg7,H7C,Do you have any of the following? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Health and medical history
+881,2178.0,Overall.health.rating...Instance.0_1,H3,In general how would you rate your overall health?,Logical,1 : Excellent,Select one answer,Health and medical history
+882,2178.0,Overall.health.rating...Instance.0_2,H3,In general how would you rate your overall health?,Logical,2 : Good,Select one answer,Health and medical history
+883,2178.0,Overall.health.rating...Instance.0_3,H3,In general how would you rate your overall health?,Logical,3 : Fair,Select one answer,Health and medical history
+884,2178.0,Overall.health.rating...Instance.0_4,H3,In general how would you rate your overall health?,Logical,4 : Poor,Select one answer,Health and medical history
+885,2188.0,Long.standing.illness..disability.or.infirmity...Instance.0_0,H4,"Do you have any long-standing illness, disability or
+infirmity?",Logical,0 : No,Select one answer,Health and medical history
+886,2188.0,Long.standing.illness..disability.or.infirmity...Instance.0_1,H4,"Do you have any long-standing illness, disability or
+infirmity?",Logical,1 : Yes,Select one answer,Health and medical history
+887,2296.0,Falls.in.the.last.year...Instance.0_1,H8,In the last year have you had any falls?,Logical,1 : No falls,Select one answer,Health and medical history
+888,2296.0,Falls.in.the.last.year...Instance.0_2,H8,In the last year have you had any falls?,Logical,2 : Only one fall,Select one answer,Health and medical history
+889,2296.0,Falls.in.the.last.year...Instance.0_3,H8,In the last year have you had any falls?,Logical,3 : More than one fall,Select one answer,Health and medical history
+890,2306.0,Weight.change.compared.with.1.year.ago...Instance.0_0,H9,"Compared with one year ago, has your weight changed?",Logical,0 : No - weigh about the same,Select one answer,Health and medical history
+892,2306.0,Weight.change.compared.with.1.year.ago...Instance.0_3,H9,"Compared with one year ago, has your weight changed?",Logical,3 : Yes - lost weight,Select one answer,Health and medical history
+893,2316.0,Wheeze.or.whistling.in.the.chest.in.last.year...Instance.0_0,SY2,In the last year have you ever had wheeze or whistling in the chest?,Logical,0 : No,Select one answer,Health and medical history
+894,2316.0,Wheeze.or.whistling.in.the.chest.in.last.year...Instance.0_1,SY2,In the last year have you ever had wheeze or whistling in the chest?,Logical,1 : Yes,Select one answer,Health and medical history
+918,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_1,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,1 : Headache,Toggle multiple answer,Health and medical history
+920,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_3,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,3 : Neck or shoulder pain,Toggle multiple answer,Health and medical history
+921,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_4,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,4 : Back pain,Toggle multiple answer,Health and medical history
+922,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_5,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,5 : Stomach or abdominal pain,Toggle multiple answer,Health and medical history
+923,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_6,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,6 : Hip pain,Toggle multiple answer,Health and medical history
+924,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_7,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,7 : Knee pain,Toggle multiple answer,Health and medical history
+925,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_8,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,8 : Pain all over the body,Toggle multiple answer,Health and medical history
+926,6159.0,Pain.type.s..experienced.in.last.month...Instance.0_neg7,SY5,"In the last month have you experienced any of the following that interfered with your usual activities?
+(You can select more than one answer)",Logical,-7 : None of the above,Select one answer,Health and medical history
+927,3799.0,Headaches.for.3..months...Instance.0_0,SY5B1,Have you had headaches for more than 3 months?,Logical,0 : No,Select one answer,Health and medical history
+930,4067.0,Facial.pains.for.3..months...Instance.0_1,SY5B2,Have you had facial pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+932,3404.0,Neck.shoulder.pain.for.3..months...Instance.0_1,SY5B3,Have you had neck or shoulder pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+934,3571.0,Back.pain.for.3..months...Instance.0_1,SY5B4,Have you had back pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+936,3741.0,Stomach.abdominal.pain.for.3..months...Instance.0_1,SY5B5,Have you had stomach or abdominal pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+937,3414.0,Hip.pain.for.3..months...Instance.0_0,SY5B6,Have you had hip pains for more than 3 months?,Logical,0 : No,Select one answer,Health and medical history
+938,3414.0,Hip.pain.for.3..months...Instance.0_1,SY5B6,Have you had hip pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+940,3773.0,Knee.pain.for.3..months...Instance.0_1,SY5B7,Have you had knee pains for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+941,2956.0,General.pain.for.3..months...Instance.0_0,SY5B8,Have you had pains all over the body for more than 3 months?,Logical,0 : No,Select one answer,Health and medical history
+942,2956.0,General.pain.for.3..months...Instance.0_1,SY5B8,Have you had pains all over the body for more than 3 months?,Logical,1 : Yes,Select one answer,Health and medical history
+943,2335.0,Chest.pain.or.discomfort...Instance.0_0,SY1,Do you ever have any pain or discomfort in your chest?,Logical,0 : No,Select one answer,Health and medical history
+944,2335.0,Chest.pain.or.discomfort...Instance.0_1,SY1,Do you ever have any pain or discomfort in your chest?,Logical,1 : Yes,Select one answer,Health and medical history
+945,3606.0,Chest.pain.or.discomfort.walking.normally...Instance.0_0,SY1A,Do you get this pain or discomfort when you walk at an ordinary pace on the level?,Logical,0 : No,Select one answer,Health and medical history
+946,3606.0,Chest.pain.or.discomfort.walking.normally...Instance.0_1,SY1A,Do you get this pain or discomfort when you walk at an ordinary pace on the level?,Logical,1 : Yes,Select one answer,Health and medical history
+947,3751.0,Chest.pain.or.discomfort.when.walking.uphill.or.hurrying...Instance.0_0,SY1B,Do you get this pain or discomfort when you walk uphill or hurry?,Logical,0 : No,Select one answer,Health and medical history
+948,3751.0,Chest.pain.or.discomfort.when.walking.uphill.or.hurrying...Instance.0_1,SY1B,Do you get this pain or discomfort when you walk uphill or hurry?,Logical,1 : Yes,Select one answer,Health and medical history
+949,3616.0,Chest.pain.due.to.walking.ceases.when.standing.still...Instance.0_0,SY1C,Does this chest pain go away when you stand still?,Logical,0 : No,Select one answer,Health and medical history
+950,3616.0,Chest.pain.due.to.walking.ceases.when.standing.still...Instance.0_1,SY1C,Does this chest pain go away when you stand still?,Logical,1 : Yes,Select one answer,Health and medical history
+951,2345.0,Ever.had.bowel.cancer.screening...Instance.0_0,H10,"Have you ever had a screening test for bowel (colorectal) cancer?
+(Please include tests for blood in the stool/faeces or a colonoscopy or a sigmoidoscopy)",Logical,0 : No,Select one answer,Health and medical history
+952,2345.0,Ever.had.bowel.cancer.screening...Instance.0_1,H10,"Have you ever had a screening test for bowel (colorectal) cancer?
+(Please include tests for blood in the stool/faeces or a colonoscopy or a sigmoidoscopy)",Logical,1 : Yes,Select one answer,Health and medical history
+953,2355.0,Most.recent.bowel.cancer.screening...Instance.0_Lower.third,H10A,How many years ago was the most recent one of these tests?,Logical,,Enter integer answer,Health and medical history
+954,2355.0,Most.recent.bowel.cancer.screening...Instance.0_Middle.third,H10A,How many years ago was the most recent one of these tests?,Logical,,Enter integer answer,Health and medical history
+955,2355.0,Most.recent.bowel.cancer.screening...Instance.0_Upper.third,H10A,How many years ago was the most recent one of these tests?,Logical,,Enter integer answer,Health and medical history
+958,3809.0,Time.since.last.prostate.specific.antigen..PSA..test...Instance.0_Lower.third,MH3,How many years ago was your last test?,Logical,,Enter integer answer,Health and medical history
+959,3809.0,Time.since.last.prostate.specific.antigen..PSA..test...Instance.0_Middle.third,MH3,How many years ago was your last test?,Logical,,Enter integer answer,Health and medical history
+960,3809.0,Time.since.last.prostate.specific.antigen..PSA..test...Instance.0_Upper.third,MH3,How many years ago was your last test?,Logical,,Enter integer answer,Health and medical history
+961,,Combined.sex.major.operations_0,OP1M & OP1W,"Have you had any major operations? (For example, operations that required an overnight stay in hospital)",Logical,0 : No,Select one answer,Health and medical history
+962,,Combined.sex.major.operations_1,OP1M & OP1W,"Have you had any major operations? (For example, operations that required an overnight stay in hospital)",Logical,1 : Yes,Select one answer,Health and medical history
+963,6150.0,Vascular.heart.problems.diagnosed.by.doctor...Instance.0_1,L1,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,1 : Heart attack,Toggle multiple answer,Health and medical history
+964,6150.0,Vascular.heart.problems.diagnosed.by.doctor...Instance.0_2,L1,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,2 : Angina,Toggle multiple answer,Health and medical history
+965,6150.0,Vascular.heart.problems.diagnosed.by.doctor...Instance.0_3,L1,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,3 : Stroke,Toggle multiple answer,Health and medical history
+966,6150.0,Vascular.heart.problems.diagnosed.by.doctor...Instance.0_4,L1,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,4 : High blood pressure,,Health and medical history
+967,6150.0,Vascular.heart.problems.diagnosed.by.doctor...Instance.0_neg7,L1,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Health and medical history
+968,3894.0,Age.heart.attack.diagnosed...Instance.0_Lower.third,L1A1,What was your age when the heart attack was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+969,3894.0,Age.heart.attack.diagnosed...Instance.0_Middle.third,L1A1,What was your age when the heart attack was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+970,3894.0,Age.heart.attack.diagnosed...Instance.0_Upper.third,L1A1,What was your age when the heart attack was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+971,3627.0,Age.angina.diagnosed...Instance.0_Lower.third,L1A2,What was your age when the angina was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+972,3627.0,Age.angina.diagnosed...Instance.0_Middle.third,L1A2,What was your age when the angina was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+973,3627.0,Age.angina.diagnosed...Instance.0_Upper.third,L1A2,What was your age when the angina was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+974,4056.0,Age.stroke.diagnosed...Instance.0_Lower.third,L1A3,What was your age when the stroke was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+975,4056.0,Age.stroke.diagnosed...Instance.0_Middle.third,L1A3,What was your age when the stroke was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+976,4056.0,Age.stroke.diagnosed...Instance.0_Upper.third,L1A3,What was your age when the stroke was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+977,2966.0,Age.high.blood.pressure.diagnosed...Instance.0_Lower.third,L1A4,What was your age when the high blood pressure was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+978,2966.0,Age.high.blood.pressure.diagnosed...Instance.0_Middle.third,L1A4,What was your age when the high blood pressure was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+979,2966.0,Age.high.blood.pressure.diagnosed...Instance.0_Upper.third,L1A4,What was your age when the high blood pressure was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+980,6152.0,Blood.clot..DVT..bronchitis..emphysema..asthma..rhinitis..eczema..allergy.diagnosed.by.doctor...Instance.0_5,L2,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,5 : Blood clot in the leg (DVT),Toggle multiple answer,Health and medical history
+981,6152.0,Blood.clot..DVT..bronchitis..emphysema..asthma..rhinitis..eczema..allergy.diagnosed.by.doctor...Instance.0_6,L2,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,6 : Emphysema/chronic,Toggle multiple answer,Health and medical history
+982,6152.0,Blood.clot..DVT..bronchitis..emphysema..asthma..rhinitis..eczema..allergy.diagnosed.by.doctor...Instance.0_7,L2,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,7 : Blood clot in the lung bronchitis,Toggle multiple answer,Health and medical history
+983,6152.0,Blood.clot..DVT..bronchitis..emphysema..asthma..rhinitis..eczema..allergy.diagnosed.by.doctor...Instance.0_8,L2,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,8 : Asthma,Toggle multiple answer,Health and medical history
+984,6152.0,Blood.clot..DVT..bronchitis..emphysema..asthma..rhinitis..eczema..allergy.diagnosed.by.doctor...Instance.0_9,L2,Has a doctor ever told you that you have had any of the following conditions? (You can select more than one answer),Logical,"9 : Hayfever, allergic rhinitis or eczema",Toggle multiple answer,Health and medical history
+986,4012.0,Age.deep.vein.thrombosis..DVT..blood.clot.in.leg..diagnosed...Instance.0_Lower.third,L2A5,What was your age when the blood clot in the leg (DVT) was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+987,4012.0,Age.deep.vein.thrombosis..DVT..blood.clot.in.leg..diagnosed...Instance.0_Middle.third,L2A5,What was your age when the blood clot in the leg (DVT) was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+988,4012.0,Age.deep.vein.thrombosis..DVT..blood.clot.in.leg..diagnosed...Instance.0_Upper.third,L2A5,What was your age when the blood clot in the leg (DVT) was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+989,4022.0,Age.pulmonary.embolism..blood.clot.in.lung..diagnosed...Instance.0_Lower.third,L2A7,What was your age when the blood clot in the lung was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+990,4022.0,Age.pulmonary.embolism..blood.clot.in.lung..diagnosed...Instance.0_Middle.third,L2A7,What was your age when the blood clot in the lung was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+991,4022.0,Age.pulmonary.embolism..blood.clot.in.lung..diagnosed...Instance.0_Upper.third,L2A7,What was your age when the blood clot in the lung was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+992,3992.0,Age.emphysema.chronic.bronchitis.diagnosed...Instance.0_Lower.third,L2A6,What was your age when the emphysema/chronic bronchitis was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+993,3992.0,Age.emphysema.chronic.bronchitis.diagnosed...Instance.0_Middle.third,L2A6,What was your age when the emphysema/chronic bronchitis was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+994,3992.0,Age.emphysema.chronic.bronchitis.diagnosed...Instance.0_Upper.third,L2A6,What was your age when the emphysema/chronic bronchitis was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+995,3786.0,Age.asthma.diagnosed...Instance.0_Lower.third,L2A8,What was your age when the asthma was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+997,3786.0,Age.asthma.diagnosed...Instance.0_Upper.third,L2A8,What was your age when the asthma was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+998,3761.0,Age.hay.fever..rhinitis.or.eczema.diagnosed...Instance.0_Lower.third,L2A9,"What was your age when the hayfever, rhinitis or eczema was first diagnosed?",Logical,,Enter integer answer,Health and medical history
+999,3761.0,Age.hay.fever..rhinitis.or.eczema.diagnosed...Instance.0_Middle.third,L2A9,"What was your age when the hayfever, rhinitis or eczema was first diagnosed?",Logical,,Enter integer answer,Health and medical history
+1000,3761.0,Age.hay.fever..rhinitis.or.eczema.diagnosed...Instance.0_Upper.third,L2A9,"What was your age when the hayfever, rhinitis or eczema was first diagnosed?",Logical,,Enter integer answer,Health and medical history
+1001,2443.0,Diabetes.diagnosed.by.doctor...Instance.0_0,L3,Has a doctor ever told you that you have diabetes?,Logical,0 : No,Select one answer,Health and medical history
+1002,2443.0,Diabetes.diagnosed.by.doctor...Instance.0_1,L3,Has a doctor ever told you that you have diabetes?,Logical,1 : Yes,Select one answer,Health and medical history
+1003,4041.0,Gestational.diabetes.only...Instance.0_0,L3A,Did you only have diabetes during pregnancy?,Logical,0 : No,Select one answer,Health and medical history
+1005,4041.0,Gestational.diabetes.only...Instance.0_neg2,L3A,Did you only have diabetes during pregnancy?,Logical,-2 : Not applicable,Select one answer,Health and medical history
+1006,2976.0,Age.diabetes.diagnosed...Instance.0_Lower.third,L3B,What was your age when the diabetes was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+1007,2976.0,Age.diabetes.diagnosed...Instance.0_Middle.third,L3B,What was your age when the diabetes was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+1008,2976.0,Age.diabetes.diagnosed...Instance.0_Upper.third,L3B,What was your age when the diabetes was first diagnosed?,Logical,,Enter integer answer,Health and medical history
+1009,2986.0,Started.insulin.within.one.year.diagnosis.of.diabetes...Instance.0_0,L3C,Did you start insulin within one year of your diagnosis of diabetes?,Logical,0 : No,Select one answer,Health and medical history
+1010,2986.0,Started.insulin.within.one.year.diagnosis.of.diabetes...Instance.0_1,L3C,Did you start insulin within one year of your diagnosis of diabetes?,Logical,1 : Yes,Select one answer,Health and medical history
+1011,2453.0,Cancer.diagnosed.by.doctor...Instance.0_0,L4,Has a doctor ever told you that you have had cancer?,Logical,0 : No,Select one answer,Health and medical history
+1012,2453.0,Cancer.diagnosed.by.doctor...Instance.0_1,L4,Has a doctor ever told you that you have had cancer?,Logical,1 : Yes,Select one answer,Health and medical history
+1013,2463.0,Fractured.broken.bones.in.last.5.years...Instance.0_0,L5,Have you fractured/broken any bones in the last 5 years?,Logical,0 : No,Select one answer,Health and medical history
+1014,2463.0,Fractured.broken.bones.in.last.5.years...Instance.0_1,L5,Have you fractured/broken any bones in the last 5 years?,Logical,1 : Yes,Select one answer,Health and medical history
+1015,6151.0,Fractured.bone.site.s....Instance.0_1,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,1 : Ankle,Toggle multiple answer,Health and medical history
+1016,6151.0,Fractured.bone.site.s....Instance.0_2,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,2 : Leg,Toggle multiple answer,Health and medical history
+1017,6151.0,Fractured.bone.site.s....Instance.0_3,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,3 : Hip,Toggle multiple answer,Health and medical history
+1018,6151.0,Fractured.bone.site.s....Instance.0_4,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,4 : Spine,Toggle multiple answer,Health and medical history
+1019,6151.0,Fractured.bone.site.s....Instance.0_5,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,5 : Wrist,Toggle multiple answer,Health and medical history
+1020,6151.0,Fractured.bone.site.s....Instance.0_6,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,6 : Arm,Toggle multiple answer,Health and medical history
+1021,6151.0,Fractured.bone.site.s....Instance.0_7,L5A,Which bones did you fracture/break? (You can select more than one answer),Logical,7 : Other bones,Toggle multiple answer,Health and medical history
+1023,3005.0,Fracture.resulting.from.simple.fall...Instance.0_1,L5B,Did the fracture result from a simple fall (i.e. from standing height)?,Logical,1 : Yes,Select one answer,Health and medical history
+1024,2473.0,Other.serious.medical.condition.disability.diagnosed.by.doctor...Instance.0_0,L5C,Has a doctor ever told you that you have had any other serious medical conditions or disabilities?,Logical,0 : No,Select one answer,Health and medical history
+1025,2473.0,Other.serious.medical.condition.disability.diagnosed.by.doctor...Instance.0_1,L5C,Has a doctor ever told you that you have had any other serious medical conditions or disabilities?,Logical,1 : Yes,Select one answer,Health and medical history
+1026,,Combined.sex.medication_1,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,1 : Cholesterol lowering medication,Toggle multiple answer,Health and medical history
+1027,,Combined.sex.medication_2,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,2 : Blood pressure medication,Toggle multiple answer,Health and medical history
+1028,,Combined.sex.medication_3,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,3 : Insulin,Toggle multiple answer,Health and medical history
+1029,,Combined.sex.medication_4,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,4 : Hormone replacement therapy,Toggle multiple answer,Health and medical history
+1030,,Combined.sex.medication_5,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,5 : Oral contraceptive pill or minipill,Toggle multiple answer,Health and medical history
+1031,,Combined.sex.medication_neg7,L5DM & L5DF,Do you regularly take any of the following medications? (you can select more than one answer),Logical,-7 : None of the above,Select one answer,Health and medical history
+1032,2492.0,Taking.other.prescription.medications...Instance.0_0,L6,"Do you regularly take any other PRESCRIPTION medications?
+(Do not forget medications such as puffers or patches)",Logical,0 : No,Select one answer,Health and medical history
+1033,2492.0,Taking.other.prescription.medications...Instance.0_1,L6,"Do you regularly take any other PRESCRIPTION medications?
+(Do not forget medications such as puffers or patches)",Logical,1 : Yes,Select one answer,Health and medical history
+1034,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_1,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,1 : Aspirin,Toggle multiple answer,Health and medical history
+1036,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_3,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,3 : Paracetamol,Toggle multiple answer,Health and medical history
+1037,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_4,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,4 : Ranitidine (e.g. Zantac),Toggle multiple answer,Health and medical history
+1038,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_5,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,5 : Omeprazole (e.g. Zanprol),Toggle multiple answer,Health and medical history
+1039,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_6,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,"6 : Laxatives (e.g. Dulcolax, Senokot)",Toggle multiple answer,Health and medical history
+1040,6154.0,Medication.for.pain.relief..constipation..heartburn...Instance.0_neg7,L6C,Do you regularly take any of the following? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Health and medical history
+1041,6155.0,Vitamin.and.mineral.supplements...Instance.0_1,L7,Do you regularly take any of the following? (You can select more than one answer),Logical,1 : Vitamin A,Toggle multiple answer,Health and medical history
+1046,6155.0,Vitamin.and.mineral.supplements...Instance.0_6,L7,Do you regularly take any of the following? (You can select more than one answer),Logical,6 : Folic acid or Folate (Vit B9),Toggle multiple answer,Health and medical history
+1048,6155.0,Vitamin.and.mineral.supplements...Instance.0_neg7,L7,Do you regularly take any of the following? (You can select more than one answer),Logical,-7 : None of the above,Select one answer,Health and medical history
+1049,6179.0,Mineral.and.other.dietary.supplements...Instance.0_1,L7A,Do you regularly take any of the following? (You can select more than one answer),Logical,1 : Fish oil (including cod liver oil),Toggle multiple answer,Health and medical history
+1051,6179.0,Mineral.and.other.dietary.supplements...Instance.0_3,L7A,Do you regularly take any of the following? (You can select more than one answer),Logical,3 : Calcium,Toggle multiple answer,Health and medical history
+1052,6179.0,Mineral.and.other.dietary.supplements...Instance.0_4,L7A,Do you regularly take any of the following? (You can select more than one answer),Logical,4 : Zinc,Toggle multiple answer,Health and medical history
+1053,6179.0,Mineral.and.other.dietary.supplements...Instance.0_5,L7A,Do you regularly take any of the following? (You can select more than one answer),Logical,5 : Iron,Toggle multiple answer,Health and medical history
+1056,2247.0,Hearing.difficulty.problems...Instance.0_0,H6,Do you have any difficulty with your hearing?,Logical,0 : No,Select one answer,Health and medical history
+1057,2247.0,Hearing.difficulty.problems...Instance.0_1,H6,Do you have any difficulty with your hearing?,Logical,1 : Yes,Select one answer,Health and medical history
+1058,2257.0,Hearing.difficulty.problems.with.background.noise...Instance.0_0,H7,"Do you find it difficult to follow a conversation if there is background noise (such as TV, radio, children playing)?",Logical,0 : No,Select one answer,Health and medical history
+1059,2257.0,Hearing.difficulty.problems.with.background.noise...Instance.0_1,H7,"Do you find it difficult to follow a conversation if there is background noise (such as TV, radio, children playing)?",Logical,1 : Yes,Select one answer,Health and medical history
+1060,3393.0,Hearing.aid.user...Instance.0_0,H7A,Do you use a hearing aid most of the time?,Logical,0 : No,Select one answer,Health and medical history
+1061,3393.0,Hearing.aid.user...Instance.0_1,H7A,Do you use a hearing aid most of the time?,Logical,1 : Yes,Select one answer,Health and medical history
+1081,2375.0,Relative.age.of.first.facial.hair...Instance.0_1,MH4,When did you start to grow facial hair?,Logical,1 : Younger than average,Select one answer,Sex-specific factors
+1082,2375.0,Relative.age.of.first.facial.hair...Instance.0_2,MH4,When did you start to grow facial hair?,Logical,2 : About average age,Select one answer,Sex-specific factors
+1083,2375.0,Relative.age.of.first.facial.hair...Instance.0_3,MH4,When did you start to grow facial hair?,Logical,3 : Older than average,Select one answer,Sex-specific factors
+1084,2385.0,Relative.age.voice.broke...Instance.0_1,MH5,When did your voice break?,Logical,1 : Younger than average,Select one answer,Sex-specific factors
+1085,2385.0,Relative.age.voice.broke...Instance.0_2,MH5,When did your voice break?,Logical,2 : About average age,Select one answer,Sex-specific factors
+1087,2395.0,Hair.balding.pattern...Instance.0_1,MH6,Which of the following best describes your hair/balding pattern?,Logical,1 : Pattern 1,Select one answer,Sex-specific factors
+1088,2395.0,Hair.balding.pattern...Instance.0_2,MH6,Which of the following best describes your hair/balding pattern?,Logical,2 : Pattern 2,Select one answer,Sex-specific factors
+1089,2395.0,Hair.balding.pattern...Instance.0_3,MH6,Which of the following best describes your hair/balding pattern?,Logical,3 : Pattern 3,Select one answer,Sex-specific factors
+1090,2395.0,Hair.balding.pattern...Instance.0_4,MH6,Which of the following best describes your hair/balding pattern?,Logical,4 : Pattern 4,Select one answer,Sex-specific factors
+1091,2405.0,Number.of.children.fathered...Instance.0_Lower.third,MH7,How many children have you fathered?,Logical,,Enter integer answer,Sex-specific factors
+1092,2405.0,Number.of.children.fathered...Instance.0_Middle.third,MH7,How many children have you fathered?,Logical,,Enter integer answer,Sex-specific factors
+1093,2405.0,Number.of.children.fathered...Instance.0_Upper.third,MH7,How many children have you fathered?,Logical,,Enter integer answer,Sex-specific factors
+1094,2674.0,Ever.had.breast.cancer.screening...mammogram...Instance.0_0,FH7,Have you ever been for breast cancer screening (a mammogram)?,Logical,0 : No,Select one answer,Sex-specific factors
+1095,2674.0,Ever.had.breast.cancer.screening...mammogram...Instance.0_1,FH7,Have you ever been for breast cancer screening (a mammogram)?,Logical,1 : Yes,Select one answer,Sex-specific factors
+1096,2684.0,Years.since.last.breast.cancer.screening...mammogram...Instance.0_Lower.third,FH7A,How many years ago was your last screen?,Logical,,Enter integer answer,Sex-specific factors
+1097,2684.0,Years.since.last.breast.cancer.screening...mammogram...Instance.0_Middle.third,FH7A,How many years ago was your last screen?,Logical,,Enter integer answer,Sex-specific factors
+1098,2684.0,Years.since.last.breast.cancer.screening...mammogram...Instance.0_Upper.third,FH7A,How many years ago was your last screen?,Logical,,Enter integer answer,Sex-specific factors
+1100,2694.0,Ever.had.cervical.smear.test...Instance.0_1,FH8,Have you ever had a cervical smear test?,Logical,1 : Yes,Select one answer,Sex-specific factors
+1101,2704.0,Years.since.last.cervical.smear.test...Instance.0_Lower.third,FH8B,How many years ago was your last cervical smear test?,Logical,,Enter integer answer,Sex-specific factors
+1102,2704.0,Years.since.last.cervical.smear.test...Instance.0_Middle.third,FH8B,How many years ago was your last cervical smear test?,Logical,,Enter integer answer,Sex-specific factors
+1104,2714.0,Age.when.periods.started..menarche....Instance.0_Lower.third,FH1,How old were you when your periods started?,Logical,,Enter integer answer,Sex-specific factors
+1105,2714.0,Age.when.periods.started..menarche....Instance.0_Middle.third,FH1,How old were you when your periods started?,Logical,,Enter integer answer,Sex-specific factors
+1106,2714.0,Age.when.periods.started..menarche....Instance.0_Upper.third,FH1,How old were you when your periods started?,Logical,,Enter integer answer,Sex-specific factors
+1107,2724.0,Had.menopause...Instance.0_0,FH2,Have you had your menopause (periods stopped)?,Logical,1 : Yes,Select one answer,Sex-specific factors
+1108,2724.0,Had.menopause...Instance.0_1,FH2,Have you had your menopause (periods stopped)?,Logical,0 : No,Select one answer,Sex-specific factors
+1110,2724.0,Had.menopause...Instance.0_3,FH2,Have you had your menopause (periods stopped)?,Logical,3 : Not sure - other reason,Select one answer,Sex-specific factors
+1112,3581.0,Age.at.menopause..last.menstrual.period....Instance.0_Middle.third,FH2A,How old were you when your periods stopped?,Logical,,Enter integer answer,Sex-specific factors
+1113,3581.0,Age.at.menopause..last.menstrual.period....Instance.0_Upper.third,FH2A,How old were you when your periods stopped?,Logical,,Enter integer answer,Sex-specific factors
+1114,3700.0,Time.since.last.menstrual.period...Instance.0_Lower.third,FH2B,How many days since your last menstrual period?,Logical,,Enter integer answer,Sex-specific factors
+1115,3700.0,Time.since.last.menstrual.period...Instance.0_Middle.third,FH2B,How many days since your last menstrual period?,Logical,,Enter integer answer,Sex-specific factors
+1116,3700.0,Time.since.last.menstrual.period...Instance.0_Upper.third,FH2B,How many days since your last menstrual period?,Logical,,Enter integer answer,Sex-specific factors
+1117,3710.0,Length.of.menstrual.cycle...Instance.0_Lower.third,FH2C,How many days is your usual menstrual cycle?(The number of days between each menstrual period),Logical,,Enter integer answer,Sex-specific factors
+1118,3710.0,Length.of.menstrual.cycle...Instance.0_Middle.third,FH2C,How many days is your usual menstrual cycle?(The number of days between each menstrual period),Logical,,Enter integer answer,Sex-specific factors
+1120,3710.0,Length.of.menstrual.cycle...Instance.0_neg6,FH2C,How many days is your usual menstrual cycle?(The number of days between each menstrual period),Logical,-6 : Irregular cycle,Select one answer,Sex-specific factors
+1121,3720.0,Menstruating.today...Instance.0_0,FH2D,"Are you menstruating today?
+(We are asking this as it may affect the urine sample that you have been asked to provide)",Logical,0 : No,Select one answer,Sex-specific factors
+1123,2734.0,Number.of.live.births...Instance.0_Lower.third,FH3,"How many children have you given birth to?
+(Please include live births only)",Logical,,Enter integer answer,Sex-specific factors
+1125,2734.0,Number.of.live.births...Instance.0_Upper.third,FH3,"How many children have you given birth to?
+(Please include live births only)",Logical,,Enter integer answer,Sex-specific factors
+1126,2744.0,Birth.weight.of.first.child...Instance.0_Lower.third,FH3A,What was the birth weight of your first child in pounds?(do not include twins),Logical,,Enter integer answer,Sex-specific factors
+1127,2744.0,Birth.weight.of.first.child...Instance.0_Middle.third,FH3A,What was the birth weight of your first child in pounds?(do not include twins),Logical,,Enter integer answer,Sex-specific factors
+1128,2744.0,Birth.weight.of.first.child...Instance.0_Upper.third,FH3A,What was the birth weight of your first child in pounds?(do not include twins),Logical,,Enter integer answer,Sex-specific factors
+1129,2744.0,Birth.weight.of.first.child...Instance.0_neg2,FH3A,What was the birth weight of your first child in pounds?(do not include twins),Logical,-2 : Only had twins,Select one answer,Sex-specific factors
+1131,3872.0,Age.of.primiparous.women.at.birth.of.child...Instance.0_Middle.third,FH3B,How old were you when you had your child?,Logical,,Enter integer answer,Sex-specific factors
+1132,3872.0,Age.of.primiparous.women.at.birth.of.child...Instance.0_Upper.third,FH3B,How old were you when you had your child?,Logical,,Enter integer answer,Sex-specific factors
+1134,2754.0,Age.at.first.live.birth...Instance.0_Middle.third,FH3C,How old were you when you had your FIRST child?,Logical,,Enter integer answer,Sex-specific factors
+1135,2754.0,Age.at.first.live.birth...Instance.0_Upper.third,FH3C,How old were you when you had your FIRST child?,Logical,,Enter integer answer,Sex-specific factors
+1137,2764.0,Age.at.last.live.birth...Instance.0_Middle.third,FH3D,How old were you when you had your LAST child?,Logical,,Enter integer answer,Sex-specific factors
+1138,2764.0,Age.at.last.live.birth...Instance.0_Upper.third,FH3D,How old were you when you had your LAST child?,Logical,,Enter integer answer,Sex-specific factors
+1139,2774.0,Ever.had.stillbirth..spontaneous.miscarriage.or.termination...Instance.0_0,FH4,"Have you ever had any stillbirths, spontaneous miscarriages or terminations?",Logical,0 : No,Select one answer,Sex-specific factors
+1140,2774.0,Ever.had.stillbirth..spontaneous.miscarriage.or.termination...Instance.0_1,FH4,"Have you ever had any stillbirths, spontaneous miscarriages or terminations?",Logical,1 : Yes,Select one answer,Sex-specific factors
+1141,3829.0,Number.of.stillbirths...Instance.0_Middle.third,FH4A,How many stillbirths? (enter 0 if none),Logical,,Enter integer answer,Sex-specific factors
+1143,3839.0,Number.of.spontaneous.miscarriages...Instance.0_Middle.third,FH4B,How many spontaneous miscarriages? (enter 0 if none),Logical,,Enter integer answer,Sex-specific factors
+1144,3839.0,Number.of.spontaneous.miscarriages...Instance.0_Upper.third,FH4B,How many spontaneous miscarriages? (enter 0 if none),Logical,,Enter integer answer,Sex-specific factors
+1145,3849.0,Number.of.pregnancy.terminations...Instance.0_Middle.third,FH4C,How many terminations? (enter 0 if none),Logical,,Enter integer answer,Sex-specific factors
+1146,3849.0,Number.of.pregnancy.terminations...Instance.0_Upper.third,FH4C,How many terminations? (enter 0 if none),Logical,,Enter integer answer,Sex-specific factors
+1148,2784.0,Ever.taken.oral.contraceptive.pill...Instance.0_1,FH5,Have you ever taken the contraceptive pill? (include the 'mini-pill'),Logical,1 : Yes,Select one answer,Sex-specific factors
+1149,2794.0,Age.started.oral.contraceptive.pill...Instance.0_Lower.third,FH5A,About how old were you when you first went on the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1150,2794.0,Age.started.oral.contraceptive.pill...Instance.0_Middle.third,FH5A,About how old were you when you first went on the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1151,2794.0,Age.started.oral.contraceptive.pill...Instance.0_Upper.third,FH5A,About how old were you when you first went on the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1152,2804.0,Age.when.last.used.oral.contraceptive.pill...Instance.0_Lower.third,FH5B,How old were you when you last used the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1153,2804.0,Age.when.last.used.oral.contraceptive.pill...Instance.0_Middle.third,FH5B,How old were you when you last used the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1154,2804.0,Age.when.last.used.oral.contraceptive.pill...Instance.0_Upper.third,FH5B,How old were you when you last used the contraceptive pill?,Logical,,Enter integer answer,Sex-specific factors
+1155,2814.0,Ever.used.hormone.replacement.therapy..HRT....Instance.0_0,FH6,Have you ever used hormone replacement therapy (HRT)?,Logical,0 : No,Select one answer,Sex-specific factors
+1161,3546.0,Age.last.used.hormone.replacement.therapy..HRT....Instance.0_Middle.third,FH6B,How old were you when you last used HRT?,Logical,,Enter integer answer,Sex-specific factors
+1162,3546.0,Age.last.used.hormone.replacement.therapy..HRT....Instance.0_Upper.third,FH6B,How old were you when you last used HRT?,Logical,,Enter integer answer,Sex-specific factors
+1163,3546.0,Age.last.used.hormone.replacement.therapy..HRT....Instance.0_neg11,FH6B,How old were you when you last used HRT?,Logical,-11 : Still taking HRT,Select one answer,Sex-specific factors
+1164,3591.0,Ever.had.hysterectomy..womb.removed....Instance.0_0,FH9,Have you had a hysterectomy (womb removed)?,Logical,0 : No,Select one answer,Sex-specific factors
+1165,3591.0,Ever.had.hysterectomy..womb.removed....Instance.0_1,FH9,Have you had a hysterectomy (womb removed)?,Logical,1 : Yes,Select one answer,Sex-specific factors
+1166,2824.0,Age.at.hysterectomy...Instance.0_Lower.third,FH9A,How old were you when you had your hysterectomy?,Logical,,Enter integer answer,Sex-specific factors
+1167,2824.0,Age.at.hysterectomy...Instance.0_Middle.third,FH9A,How old were you when you had your hysterectomy?,Logical,,Enter integer answer,Sex-specific factors
+1169,2834.0,Bilateral.oophorectomy..both.ovaries.removed....Instance.0_0,FH10,Have you had BOTH ovaries removed?,Logical,0 : No,Select one answer,Sex-specific factors
+1174,,Illnesses.of.adopted.siblings...Instance.0_2,,,,,,Family history
+1175,,Illnesses.of.adopted.siblings...Instance.0_9,,,,,,Family history
+1176,,Illnesses.of.adopted.siblings...Instance.0_8,,,,,,Family history
+1177,,Illnesses.of.adopted.mother...Instance.0_4,,,,,,Family history
+1178,,Illnesses.of.adopted.siblings...Instance.0_11,,,,,,Family history
+1179,,Non.butter.spread.type.details...Instance.0_5,,,,,,Lifestyle and environment
+1180,,Reason.former.drinker.stopped.drinking.alcohol...Instance.0_4,,,,,,Lifestyle and environment
+1181,,Number.of.cigarettes.previously.smoked.daily..current.cigar.pipe.smokers....Instance.0_Upper.third,,,,,,Lifestyle and environment
+1182,,Cereal.type...Instance.0_1,,,,,,Lifestyle and environment
+1183,,Lamb.mutton.intake...Instance.0_5,,,,,,Lifestyle and environment
+1184,,Age.stopped.smoking.cigarettes..current.cigar.pipe.or.previous.cigarette.smoker....Instance.0_Lower.third,,,,,,Lifestyle and environment
+1185,,Type.of.tobacco.previously.smoked...Instance.0_neg7,,,,,,Lifestyle and environment
+1186,,Likelihood.of.resuming.smoking...Instance.0_1,,,,,,Lifestyle and environment
+1187,,Duration.of.strenuous.sports...Instance.0_1,,,,,,Lifestyle and environment
+1188,,Ethnic.background...Instance.0_3,,,,,,Sociodemographics
+1189,,Type.of.accommodation.lived.in...Instance.0_5,,,,,,Sociodemographics
+1190,,Age.completed.full.time.education...Instance.0_neg2,,,,,,Sociodemographics
+1191,,How.are.people.in.household.related.to.participant...Instance.0_5,,,,,,Sociodemographics
+1192,,Ethnic.background...Instance.0_2002,,,,,,Sociodemographics
+1193,,Ethnic.background...Instance.0_4003,,,,,,Sociodemographics
+1194,,Ethnic.background...Instance.0_4,,,,,,Sociodemographics
