@@ -17,7 +17,10 @@ CREATE TABLE Users (
     last_name VARCHAR(50),
     last_login DATETIME NULL,
     date_joined DATETIME DEFAULT CURRENT_TIMESTAMP;
-    role ENUM('patient', 'clinician_pending', 'clinician_approved') NOT NULL
+    is_superuser BOOLEAN NOT NULL DEFAULT FALSE,
+    is_staff BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE;
+    role ENUM('patient', 'clinician_pending', 'clinician_approved', 'admin') NOT NULL
 );
 
 -- ===============================
