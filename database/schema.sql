@@ -20,7 +20,7 @@ CREATE TABLE Users (
     is_superuser BOOLEAN NOT NULL DEFAULT FALSE,
     is_staff BOOLEAN NOT NULL DEFAULT FALSE,
     is_active BOOLEAN NOT NULL DEFAULT TRUE;
-    role ENUM('patient', 'clinician_pending', 'clinician_approved', 'admin') NOT NULL
+    role ENUM('patient', 'clinician_pending', 'clinician_approved') NOT NULL
 );
 
 -- ===============================
