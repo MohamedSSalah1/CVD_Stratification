@@ -1,0 +1,121 @@
+{% extends 'cardiovascular_app/base.html' %}
+
+{% block content %}
+<section id="doctors" class="doctors">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <h1 class="text-primary">Admin Panel</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pending Access Requests</h5>
+                        
+                        {% if all_access_requests %}
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Affiliation</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for request in all_access_requests %}
+                                            {% if request.status == 'pending' %}
+                                                <tr>
+                                                    <td>{{ request.full_name }}</td>
+                                                    <td>{{ request.email }}</td>
+                                                    <td>{{ request.affiliation }}</td>
+                                                    <td>{{ request.created_at|date:"M d, Y H:i" }}</td>
+                                                    <td><span class="badge bg-warning text-dark">{{ request.status|capfirst }}</span></td>
+                                                    <td>
+                                                        <form method="post" action="{% url 'approve_request' request.id %}" style="display: inline;">
+                                                            {% csrf_token %}
+                                                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                                                        </form>
+                                                        <form method="post" action="{% url 'reject_request' request.id %}" style="display: inline;">
+                                                            {% csrf_token %}
+                                                            <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info">
+                                No access requests found.
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">All Users</h5>
+                        
+                        {% if all_users %}
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Affiliation</th>
+                                            <th>Registration Date/Time</th>
+                                            <th>Status/Role</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for user_obj in all_users %}
+                                            <tr>
+                                                <td>{{ user_obj.full_name }}</td>
+                                                <td>{{ user_obj.email }}</td>
+                                                <td>{{ user_obj.affiliation }}</td>
+                                                <td>{{ user_obj.date_joined|date:"Y-m-d H:i" }}</td>
+                                                <td>
+                                                    {% if user_obj.is_approved %}
+                                                        <span class="badge bg-success">Approved</span>
+                                                    {% else %}
+                                                        <span class="badge bg-warning text-dark">Pending</span>
+                                                    {% endif %}
+                                                    {{ user_obj.role|capfirst }}
+                                                </td>
+                                                <td>
+                                                    <form method="post" action="{% url 'delete_user' user_obj.id %}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="btn btn-danger btn-sm">Delete User</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info">
+                                No users found.
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

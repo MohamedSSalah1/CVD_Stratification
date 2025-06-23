@@ -1,0 +1,92 @@
+{% extends 'cardiovascular_app/base.html' %}
+
+{% block title %}Patient Records Review{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-primary">Patient Records Review</h1>
+
+            <form method="get" class="mb-4">
+                <div class="row g-3 mb-3"> {# First row for NHS, First, Last Name #}
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="NHS Number" name="nhs_number" value="{{ request.GET.nhs_number|default:'' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ request.GET.first_name|default:'' }}">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{ request.GET.last_name|default:'' }}">
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3"> {# Second row for Age, Gender, Ethnicity #}
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" placeholder="Age" name="age" value="{{ request.GET.age|default:'' }}" min="0">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="Male" {% if request.GET.gender == 'Male' %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if request.GET.gender == 'Female' %}selected{% endif %}>Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Ethnicity" name="ethnicity" value="{{ request.GET.ethnicity|default:'' }}">
+                    </div>
+                </div>
+
+                <div class="row"> {# Third row for the button #}
+                    <div class="col-12">
+                         <button class="btn btn-primary" type="submit">Apply Filters</button>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NHS Number</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Ethnicity</th>
+                        <th>Number of Records</th>
+                        <th>Latest Prediction Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in patient_data %}
+                    <tr>
+                        <td>{{ data.patient.nhs_number }}</td>
+                        <td>{{ data.patient.first_name }} {{ data.patient.last_name }}</td>
+                        <td>{{ data.patient.age }}</td>
+                        <td>{{ data.patient.gender }}</td>
+                        <td>{{ data.patient.ethnicity|default:"N/A" }}</td>
+                        <td>{{ data.record_count }}</td>
+                        <td>{{ data.latest_prediction_score|default:"N/A" }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ forloop.counter }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.counter }}">
+                                    <li><a class="dropdown-item" href="{% url 'patient_detail_history' patient_id=data.patient.pk %}">View Full Record</a></li>
+                                    {# Add other action links here later, e.g., Edit, Add Update #}
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8">No patient records found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %} 
