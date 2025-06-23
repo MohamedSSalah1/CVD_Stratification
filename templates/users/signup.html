@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sign Up - CVD Risk Predictor</title>
+  <meta name="description" content="Create your account to access the CVD Risk Predictor tool">
+  <meta name="keywords" content="CVD, cardiovascular disease, risk calculator, signup, 
+registration">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link 
+href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" 
+rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .signup-container {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    
+    .user-type-selector {
+      display: flex;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    
+    .user-type-selector label {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      transition: all 0.3s ease;
+    }
+    
+    .user-type-selector label:first-child {
+      border-right: none;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    
+    .user-type-selector label:last-child {
+      border-left: none;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+    
+    .user-type-selector input[type="radio"] {
+      display: none;
+    }
+    
+    .user-type-selector input[type="radio"]:checked + label {
+      background-color: #1977cc;
+      color: white;
+      border-color: #1977cc;
+    }
+    
+    .clinician-fields {
+      display: none;
+    }
+    
+    .form-label.required::after {
+      content: " *";
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .form-select:focus, .form-control:focus {
+      border-color: #1977cc;
+      box-shadow: 0 0 0 0.25rem rgba(25, 119, 204, 0.25);
+    }
+    
+    .btn-primary {
+      background-color: #1977cc;
+      border-color: #1977cc;
+    }
+    
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #166ab9;
+      border-color: #166ab9;
+    }
+    
+    .biological-sex-info {
+      font-size: 0.875rem;
+      color: #6c757d;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+
+{% now "U" as timestamp %}
+
+<body class="signup-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a 
+href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 
+55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center 
+justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'medilab/assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' 
+%}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' 
+%}#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' 
+%}#contact">Contact</a></li>
+
+                  <!-- Only show login/signup if user is NOT logged in -->
+                  {% if not user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' 
+%}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'signup' 
+%}">Signup</a></li>
+                  {% endif %}
+
+                  <li class="nav-item">
+                     <a class="nav-link" href="{% url 'request_access' %}" style="color:white; 
+background:#1977cc; border-radius:50px; padding: 8px 20px; margin-left: 10px;">Request Access
+                     </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <!-- Signup Section -->
+    <section id="signup-section" class="signup-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="card shadow">
+              <div class="card-body p-5">
+                <h2 class="text-center mb-4">Create Your Account</h2>
+                <p class="text-center mb-4">Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a>.</p>
+                
+                <!-- Display Messages -->
+                {% if messages %}
+                  <div class="alert alert-danger mb-4">
+                    {% for message in messages %}
+                      <p class="mb-0">{{ message }}</p>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                
+                <form method="POST" class="signup-form">
+                  {% csrf_token %}
+
+                  <!-- User Type Selection -->
+                  <div class="user-type-selector mb-4">
+                    <input type="radio" name="user_type" id="patient" value="patient" checked>
+                    <label for="patient">
+                      <i class="bi bi-person me-2"></i>Patient
+                    </label>
+                    <input type="radio" name="user_type" id="clinician" value="clinician">
+                    <label for="clinician">
+                      <i class="bi bi-hospital me-2"></i>Clinician
+                    </label>
+                  </div>
+                  
+                  <!-- Basic Information -->
+                  <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label for="first_name" class="form-label required">First Name</label>
+                      <input type="text" class="form-control" id="first_name" name="first_name" 
+                             value="{{ request.POST.first_name|default:'' }}" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="last_name" class="form-label required">Last Name</label>
+                      <input type="text" class="form-control" id="last_name" name="last_name" 
+                             value="{{ request.POST.last_name|default:'' }}" required>
+                    </div>
+                  </div>
+                  
+                  <!-- Biological Sex Field - Positioned after names, before email -->
+                  <div class="mb-3">
+                    <label for="sex" class="form-label required">Biological Sex</label>
+                    <select class="form-select" id="sex" name="sex" required>
+                      <option value="" disabled {% if not request.POST.sex %}selected{% endif %}>Select your biological sex</option>
+                      <option value="Male" {% if request.POST.sex == 'Male' %}selected{% endif %}>Male</option>
+                      <option value="Female" {% if request.POST.sex == 'Female' %}selected{% endif %}>Female</option>
+                    </select>
+                    <div class="biological-sex-info">
+                      <i class="bi bi-info-circle me-1"></i>Required for accurate cardiovascular risk assessment
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="email" class="form-label required">Email Address</label>
+                    <input type="email" class="form-control" id="id_email" name="email" 
+                           value="{{ request.POST.email|default:'' }}" required>
+                    <div class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="username" class="form-label required">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" 
+                           value="{{ request.POST.username|default:'' }}" required>
+                  </div>
+                  
+                  <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label for="password" class="form-label required">Password</label>
+                      <input type="password" class="form-control" id="id_password1" name="password1" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="confirm_password" class="form-label required">Confirm Password</label>
+                      <input type="password" class="form-control" id="id_password2" name="password2" required>
+                    </div>
+                  </div>
+                  
+                  <!-- Clinician-specific fields -->
+                  <div id="clinician-fields" class="clinician-fields">
+                    <hr class="my-4">
+                    <h5 class="mb-3">Clinician Information</h5>
+                    
+                    <div class="mb-3">
+                      <label for="medical_license" class="form-label">Medical License Number</label>
+                      <input type="text" class="form-control" id="medical_license" name="medical_license" 
+                             value="{{ request.POST.medical_license|default:'' }}">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="specialty" class="form-label">Specialty</label>
+                      <select class="form-select" id="specialty" name="specialty">                        <option value="">Select your specialty</option>
+                        <option value="cardiology" {% if request.POST.specialty == 'cardiology' %}selected{% endif %}>Cardiology</option>
+                        <option value="internal_medicine" {% if request.POST.specialty == 'internal_medicine' %}selected{% endif %}>Internal Medicine</option>
+                        <option value="family_medicine" {% if request.POST.specialty == 'family_medicine' %}selected{% endif %}>Family Medicine</option>
+                        <option value="endocrinology" {% if request.POST.specialty == 'endocrinology' %}selected{% endif %}>Endocrinology</option>
+                        <option value="other" {% if request.POST.specialty == 'other' %}selected{% endif %}>Other</option>
+                      </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="institution" class="form-label">Institution/Practice</label>
+                      <input type="text" class="form-control" id="institution" name="institution" 
+                             value="{{ request.POST.institution|default:'' }}">
+                    </div>
+                  </div>
+                  
+                  <!-- Terms and Privacy Policy -->
+                  <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                    <label class="form-check-label" for="terms">
+                      I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                    </label>
+                  </div>
+                  
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      <i class="bi bi-person-plus me-2"></i>Create Account
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Signup Section -->
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CVD Risk Predictor</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}?{{ timestamp }}"></script>
+
+  <!-- Custom JavaScript for the signup form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle clinician fields based on user type selection
+      const patientRadio = document.getElementById('patient');
+      const clinicianRadio = document.getElementById('clinician');
+      const clinicianFields = document.getElementById('clinician-fields');
+      
+      function toggleClinicianFields() {
+        if (clinicianRadio.checked) {
+          clinicianFields.style.display = 'block';
+        } else {
+          clinicianFields.style.display = 'none';
+        }
+      }
+      
+      patientRadio.addEventListener('change', toggleClinicianFields);
+      clinicianRadio.addEventListener('change', toggleClinicianFields);
+      
+      // Initialize on page load based on POST data
+      {% if request.POST.user_type == 'clinician' %}
+        clinicianRadio.checked = true;
+        toggleClinicianFields();
+      {% endif %}
+      
+      // Enhanced form validation
+      const form = document.querySelector('.signup-form');
+      const password1 = document.getElementById('id_password1');
+      const password2 = document.getElementById('id_password2');
+      const sexSelect = document.getElementById('sex');
+      
+      form.addEventListener('submit', function(event) {
+        let isValid = true;
+        
+        // Check password match
+        if (password1.value !== password2.value) {
+          event.preventDefault();
+          alert('Passwords do not match!');
+          password2.focus();
+          isValid = false;
+        }
+        
+        // Check biological sex selection
+        if (!sexSelect.value) {
+          event.preventDefault();
+          alert('Please select your biological sex. This information is required for accurate cardiovascular risk assessment.');
+          sexSelect.focus();
+          isValid = false;
+        }
+        
+        // If clinician is selected, validate clinician fields
+        if (clinicianRadio.checked) {
+          const medicalLicense = document.getElementById('medical_license');
+          const specialty = document.getElementById('specialty');
+          const institution = document.getElementById('institution');
+          
+          if (!medicalLicense.value.trim()) {
+            event.preventDefault();
+            alert('Medical license number is required for clinician accounts.');
+            medicalLicense.focus();
+            isValid = false;
+          }
+        }
+      });
+      
+      // Real-time password confirmation feedback
+      password2.addEventListener('input', function() {
+        if (password1.value && password2.value) {
+          if (password1.value === password2.value) {
+            password2.classList.remove('is-invalid');
+            password2.classList.add('is-valid');
+          } else {
+            password2.classList.remove('is-valid');
+            password2.classList.add('is-invalid');
+          }
+        } else {
+          password2.classList.remove('is-valid', 'is-invalid');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
