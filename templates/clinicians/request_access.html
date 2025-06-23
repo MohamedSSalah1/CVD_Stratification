@@ -1,0 +1,229 @@
+{% extends 'cardiovascular_app/base.html' %}
+
+{% block content %}
+<style>
+  .password-match-indicator {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 5px); /* Position above the input, with 5px margin */
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    z-index: 110;
+    white-space: nowrap;
+  }
+  .password-match-indicator.show {
+    display: block;
+  }
+</style>
+<div class="container mt-5 mb-5">
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <h1 class="text-primary">Clinician Access Request</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card shadow p-3 w-100" style="max-width: 650px;">
+        <div class="alert alert-info text-center mb-3">
+          For <strong>clinicians only</strong>. Patients should use the <a href="{% url 'signup' %}">Create Account</a> page.
+        </div>
+        <form method="post" class="php-email-form" action="{% url 'request_access' %}" onsubmit="return validateForm()" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="full_name" class="form-label">Full Name</label>
+              <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="affiliation" class="form-label">Affiliation (Hospital/Clinic)</label>
+              <input type="text" name="affiliation" class="form-control" id="affiliation" placeholder="Affiliation (Hospital/Clinic)" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group" style="position: relative;">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <span class="input-group-text" id="togglePassword" style="cursor: pointer; position: absolute; right: 0; top: 0; bottom: 0; z-index: 100; background-color: transparent; border: none;">
+                  <i class="bi bi-eye"></i>
+                </span>
+              </div>
+              <small class="form-text mt-1">
+                <ul class="list-unstyled">
+                  <li id="length" class="text-secondary mb-1"><i class="bi bi-circle-fill me-2" style="font-size: 0.7em;"></i>At least 8 characters</li>
+                  <li id="common" class="text-secondary mb-1 d-flex align-items-start"><i class="bi bi-circle-fill me-2" style="font-size: 0.7em;"></i><span>Contains both uppercase and lowercase characters.</span></li>
+                </ul>
+              </small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="confirm_password" class="form-label">Confirm Password</label>
+              <div class="input-group" style="position: relative;">
+                <input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+                <span class="input-group-text" id="toggleConfirmPassword" style="cursor: pointer; position: absolute; right: 0; top: 0; bottom: 0; z-index: 100; background-color: transparent; border: none;">
+                  <i class="bi bi-eye"></i>
+                </span>
+                <small class="form-text text-muted password-match-indicator" id="confirmPasswordMatchIndicator">
+                    Passwords do not match so far
+                </small>
+              </div>
+              <small class="form-text mt-1">
+                <ul class="list-unstyled">
+                  <li id="numeric" class="text-secondary mb-1"><i class="bi bi-circle-fill me-2" style="font-size: 0.7em;"></i>Can't be entirely numeric</li>
+                  <li id="similarity" class="text-secondary mb-1 d-flex align-items-start"><i class="bi bi-circle-fill me-2" style="font-size: 0.7em;"></i><span>Includes at least one special character (e.g., ! @ # ?).</span></li>
+                </ul>
+              </small>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Reason for requesting access</label>
+            <textarea name="message" class="form-control" id="message" rows="3" placeholder="Reason for requesting access" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your access request has been submitted successfully!</div>
+          </div>
+          {% if form.errors %}
+            <div class="alert alert-danger mt-3">
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              {% endfor %}
+            </div>
+          {% endif %}
+          <div class="d-grid mt-3">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const passwordInput = document.querySelector('#password');
+    const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+    const confirmPasswordInput = document.querySelector('#confirm_password');
+    const confirmPasswordMatchIndicator = document.querySelector('#confirmPasswordMatchIndicator');
+
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function (e) {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            const icon = this.querySelector('i');
+            icon.classList.toggle('bi-eye');
+            icon.classList.toggle('bi-eye-slash');
+        });
+    }
+
+    if (toggleConfirmPassword && confirmPasswordInput) {
+        toggleConfirmPassword.addEventListener('click', function (e) {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            const icon = this.querySelector('i');
+            icon.classList.toggle('bi-eye');
+            icon.classList.toggle('bi-eye-slash');
+        });
+    }
+
+    if (passwordInput && confirmPasswordInput && confirmPasswordMatchIndicator) {
+        confirmPasswordInput.addEventListener('input', validateAllPasswordFields);
+        passwordInput.addEventListener('input', validateAllPasswordFields);
+    }
+
+    function validateAllPasswordFields() {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        // Password Match Indicator (tooltip)
+        if (confirmPassword.length > 0 && password !== confirmPassword) {
+            confirmPasswordMatchIndicator.classList.add('show');
+        } else {
+            confirmPasswordMatchIndicator.classList.remove('show');
+        }
+
+        // Password Strength (client-side relevant checks)
+        const passwordIsEmpty = password.length === 0;
+
+        const length = document.getElementById('length');
+        const numeric = document.getElementById('numeric');
+        const common = document.getElementById('common'); 
+        const similarity = document.getElementById('similarity'); 
+
+        // --- Length Check (under Password field) ---
+        updateRequirement(length, password.length >= 8, passwordIsEmpty);
+
+        // --- Contains uppercase and lowercase characters (under Password field) ---
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        updateRequirement(common, hasUpperCase && hasLowerCase, passwordIsEmpty);
+
+        // --- Entirely Numeric Check (under Confirm Password field) ---
+        updateRequirement(numeric, password.length > 0 && !/^[0-9]+$/.test(password), passwordIsEmpty);
+
+        // --- Includes special character (under Confirm Password field) ---
+        const hasSpecialChar = /[^a-zA-Z0-9\s]/.test(password);
+        updateRequirement(similarity, hasSpecialChar, passwordIsEmpty);
+
+    }
+
+    function updateRequirement(element, isMet, passwordIsEmpty = false) {
+        const icon = element.querySelector('i');
+        if (passwordIsEmpty) {
+            element.classList.remove('text-success', 'text-danger');
+            element.classList.add('text-secondary');
+            icon.classList.remove('bi-check-circle-fill', 'bi-x-circle-fill');
+            icon.classList.add('bi-circle-fill');
+        } else if (isMet) {
+            element.classList.remove('text-danger', 'text-secondary');
+            element.classList.add('text-success');
+            icon.classList.remove('bi-circle-fill', 'bi-x-circle-fill');
+            icon.classList.add('bi-check-circle-fill');
+        } else {
+            element.classList.remove('text-success', 'text-secondary');
+            element.classList.add('text-danger');
+            icon.classList.remove('bi-circle-fill', 'bi-check-circle-fill');
+            icon.classList.add('bi-x-circle-fill');
+        }
+    }
+
+    function validateForm() {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        const isLengthMet = password.length >= 8;
+        const isMatchMet = password === confirmPassword && password.length > 0;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const isNumericMet = password.length > 0 && !/^[0-9]+$/.test(password);
+        const hasSpecialChar = /[^a-zA-Z0-9\s]/.test(password); 
+
+        // Update visual feedback immediately before checking for submission
+        validateAllPasswordFields();
+
+        if (isLengthMet && isMatchMet && hasUpperCase && hasLowerCase && isNumericMet && hasSpecialChar) {
+            return true; // Allow form submission
+        } else {
+            return false; // Prevent form submission
+        }
+    }
+
+    // Initial validation when the page loads
+    validateAllPasswordFields();
+
+</script>
+{% endblock %} 

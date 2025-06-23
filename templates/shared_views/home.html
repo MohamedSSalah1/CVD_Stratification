@@ -1,0 +1,134 @@
+{% extends 'cardiovascular_app/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated and user.role == 'admin' %}
+<div class="container mt-5 mb-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-primary">Welcome, {{ user.full_name.split.0 }}!</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left Column: Pending Tasks -->
+        <div class="col-md-8">
+            <div class="card shadow p-4 mb-4">
+                <h2 class="mb-3">Pending Tasks</h2>
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" style="font-size: 1.5rem;"></i>
+                    <div>
+                        You have <strong>{{ pending_access_requests_count }}</strong> pending access request{{ pending_access_requests_count|pluralize }}.
+                    </div>
+                </div>
+                <a href="{% url 'admin_panel' %}" class="btn btn-primary mt-3">
+                    {% if pending_access_requests_count > 0 %}
+                        Review Pending Requests
+                    {% else %}
+                        Go to Admin Panel
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: Statistics -->
+        <div class="col-md-4">
+            <div class="card shadow p-3 mb-3">
+                <h5 class="card-title">Pending Access Requests</h5>
+                <p class="card-text display-4">{{ pending_access_requests_count }}</p>
+            </div>
+            <div class="card shadow p-3 mb-3">
+                <h5 class="card-title">Total Approved Users</h5>
+                <p class="card-text display-4">{{ total_approved_users }}</p>
+            </div>
+            <div class="card shadow p-3 mb-3">
+                <h5 class="card-title">Users by Role</h5>
+                <p class="card-text"><strong>Clinicians:</strong> {{ total_clinicians }}</p>
+                <p class="card-text"><strong>Patients:</strong> {{ total_patients }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<!-- ======= Hero Section ======= -->
+<div class="container mt-5">
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <h1 class="text-primary">CVD Risk Prediction</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card shadow p-5 w-100" style="max-width: 650px;">
+        <h2 class="text-center mb-2">Welcome to Our Platform</h2>
+        <h5 class="text-center mt-2 mb-4">Empowering <span class="text-primary">Patients</span> and <span class="text-primary">Clinicians</span> with advanced cardiovascular risk assessment tools.</h5>
+        <div class="d-grid gap-2 col-8 mx-auto">
+          <a href="{% url 'signup' %}" class="btn btn-success btn-lg mb-2">Create Patient Account</a>
+          <a href="{% url 'request_access' %}" class="btn btn-primary btn-lg">Clinician Access Request</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= Why Us Section ======= -->
+<section id="why-us" class="why-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                    <h3>Why Choose Our Platform?</h3>
+                    <p class="text-justify">
+                        Our advanced CVD risk prediction platform empowers <strong>patients</strong> to gain personal health insights and <strong>clinicians</strong> to make informed decisions using state-of-the-art machine learning algorithms and comprehensive health data analysis.
+                    </p>
+                    <div class="text-center">
+                        <a href="{% url 'about' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-receipt"></i>
+                                <h4>Accurate Predictions</h4>
+                                <p class="text-justify">Utilize advanced algorithms for precise cardiovascular disease risk assessment for both individuals and healthcare professionals.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>Batch & Personal Processing</h4>
+                                <p class="text-justify">Process multiple patient records for clinics or get personal risk insights for individual users.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-shield"></i>
+                                <h4>Secure & Compliant</h4>
+                                <p class="text-justify">HIPAA-compliant platform ensuring patient data security and privacy for all users.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= CTA Section ======= -->
+<section id="cta" class="cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 text-center text-lg-start">
+                <h3>Ready to Get Started?</h3>
+                <p>Join our platform today and take control of your cardiovascular health—whether you're a patient seeking personal insights or a clinician enhancing your practice with data-driven tools.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %} 
