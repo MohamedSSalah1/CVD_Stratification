@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CVD Risk Assessment - CVD Risk Predictor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link 
+href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .assessment-container {
+      min-height: calc(100vh - 200px);
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    
+    .assessment-form {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+    }
+    
+    .form-section-title {
+      color: #1977cc;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .form-check-input:checked {
+      background-color: #1977cc;
+      border-color: #1977cc;
+    }
+    
+    .assessment-header {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .progress-indicator {
+      margin: 2rem 0;
+    }
+    
+    .progress-bar {
+      background-color: #1977cc;
+    }
+    
+    .btn-nav {
+      min-width: 120px;
+    }
+    
+    .category-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    .category-tab {
+      padding: 0.75rem 1.25rem;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-bottom: none;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+      margin-right: 0.25rem;
+      font-weight: 500;
+      color: #6c757d;
+      position: relative;
+    }
+    
+    .category-tab.active {
+      color: #1977cc;
+      border-color: #dee2e6;
+      border-bottom-color: #fff;
+      background-color: #fff;
+    }
+    
+    .category-tab.completed {
+      color: #198754;
+    }
+    
+    .category-tab.completed::after {
+      content: "✓";
+      position: absolute;
+      top: 0.25rem;
+      right: 0.25rem;
+      font-size: 0.75rem;
+      color: #198754;
+    }
+    
+    .question-block {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      border-left: 4px solid #1977cc;
+      transition: all 0.3s ease;
+    }
+    
+    /* Conditional questions styling */
+    .question-block[data-conditional="true"] {
+      border-left-color: #6c757d;
+      border-left-width: 4px;
+      background-color: #f3f6f9;
+      margin-left: 1rem;
+      opacity: 0.9;
+    }
+    
+    .question-block[data-conditional="true"].showing {
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .question-block:last-child {
+      margin-bottom: 0;
+    }
+    
+    .question-stem {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #2c4964;
+    }
+    
+    .question-options {
+      margin-left: 1rem;
+    }
+    
+    .numeric-input {
+      max-width: 200px;
+    }
+    
+    .text-input {
+      max-width: 400px;
+    }
+    
+    .required-field::after {
+      content: "*";
+      color: #dc3545;
+      margin-left: 0.25rem;
+    }
+    
+    .invalid-feedback {
+      display: none;
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    
+    .is-invalid ~ .invalid-feedback {
+      display: block;
+    }
+    
+    .is-invalid {
+      border-color: #dc3545;
+    }
+    
+    .form-check {
+      margin-bottom: 0.75rem;
+    }
+    
+    .form-check:last-child {
+      margin-bottom: 0;
+    }
+    
+    .form-check-label {
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .checkbox-group {
+      border: 1px solid #dee2e6;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      background-color: #fff;
+    }
+    
+    .checkbox-group .form-check {
+      margin-bottom: 0.5rem;
+    }
+    
+    .checkbox-group .form-check:last-child {
+      margin-bottom: 0;
+    }
+    
+    .multiple-select-note {
+      font-size: 0.875rem;
+      color: #6c757d;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Risk Score Styling */
+    .risk-score-display {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .risk-score-value {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .risk-score-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .questionnaire-ended {
+      background-color: #f8f9fa;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .questionnaire-ended h4 {
+      color: #28a745;
+      margin-bottom: 1rem;
+    }
+    
+    .questionnaire-ended .btn {
+      margin-top: 1rem;
+    }
+    
+    .category-status {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      display: inline-block;
+    }
+    
+    .status-current {
+      background-color: #1977cc;
+      color: white;
+    }
+    
+    .status-completed {
+      background-color: #28a745;
+      color: white;
+    }
+    
+    .status-pending {
+      background-color: #6c757d;
+      color: white;
+    }
+  </style>
+</head>
+
+{% now "U" as timestamp %}
+
+<body class="assessment-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'medilab/assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' %}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                  <!-- Only show appropriate CVD Risk links based on user type -->
+                  {% if user.is_authenticated %}
+                    {% if user.is_patient %}
+                      <li class="nav-item"><a class="nav-link active" href="{% url 'patient_dashboard' %}">CVD Risk for Patients</a></li>
+                    {% elif user.is_clinician %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 'clinician_dashboard' %}">CVD Risk for Clinicians</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'researcher_dashboard' %}">CVD Risk for Researchers</a></li>
+                    {% endif %}
+                    
+                    <!-- User dropdown menu -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>{{ user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <section id="assessment-section" class="assessment-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <!-- Assessment Header -->
+            <div class="assessment-header" data-aos="fade-up">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h2>Cardiovascular Risk Assessment</h2>
+                  <p class="mb-0">Complete the questionnaire to assess your cardiovascular disease risk.</p>
+                  {% if category %}
+                    <div class="category-status status-current mt-2">
+                      <i class="bi bi-arrow-right-circle me-1"></i>Currently: {{ category }}
+                    </div>
+                  {% endif %}
+                </div>
+                <a href="{% url 'patient_dashboard' %}" class="btn btn-outline-primary">
+                  <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+                </a>
+              </div>
+            </div>
+            
+            <!-- Risk Score Display (if available) -->
+            {% if request.session.risk_score %}
+              <div class="risk-score-display" data-aos="fade-up">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="risk-score-value">{{ request.session.risk_score|floatformat:2 }}%</div>
+                    <div class="risk-score-label">Current CVD Risk Score</div>
+                  </div>
+                  <div class="text-end">
+                    <i class="bi bi-heart-pulse" style="font-size: 2rem; opacity: 0.7;"></i>
+                    {% if request.session.risk_category %}
+                      <div class="mt-1">
+                        <small>Category: {{ request.session.risk_category|title }}</small>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            
+            <!-- Category Tabs -->
+            {% if all_categories %}
+            <div class="category-tabs" data-aos="fade-up">
+              {% for cat in all_categories %}
+                <div class="category-tab {% if cat == category %}active{% endif %} {% if cat in completed_categories %}completed{% endif %}">
+                  {{ cat }}
+                </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Progress Bar -->
+            <div class="progress-indicator" data-aos="fade-up">
+              <div class="d-flex justify-content-between mb-1">
+                <span>Progress</span>
+                <span id="progress-percentage">
+                  {% if all_categories %}
+                    {{ completed_categories|length }} of {{ all_categories|length }} categories completed
+                  {% else %}
+                    0 of 0 categories completed
+                  {% endif %}
+                </span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar" role="progressbar" 
+                     style="width: {{ progress_percentage|default:0 }}%;" 
+                     aria-valuenow="{{ progress_percentage|default:0 }}" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <!-- Error Message (if any) -->
+            {% if error_message %}
+              <div class="alert alert-danger" role="alert" data-aos="fade-up">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ error_message }}
+              </div>
+            {% endif %}
+            
+            <!-- Check if questionnaire has ended -->
+            {% if questionnaire_ended %}
+              <!-- Questionnaire Ended Message -->
+              <div class="questionnaire-ended" data-aos="fade-up">
+                <h4><i class="bi bi-check-circle-fill me-2"></i>Assessment Complete</h4>
+                <p class="mb-3">
+                  Thank you for completing the cardiovascular risk assessment. 
+                  Based on your responses, we have sufficient information to determine your risk level.
+                </p>
+                {% if request.session.risk_score %}
+                  <p class="mb-3">
+                    <strong>Your Risk Score: {{ request.session.risk_score|floatformat:2 }}%</strong>
+                    {% if request.session.risk_category %}
+                      <br><small class="text-muted">Risk Category: {{ request.session.risk_category|title }}</small>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="{% url 'assessment_results' %}" class="btn btn-primary">
+                    <i class="bi bi-file-text me-2"></i>View Detailed Results
+                  </a>
+                  <a href="{% url 'patient_dashboard' %}" class="btn btn-outline-secondary">
+                    <i class="bi bi-house me-2"></i>Return to Dashboard
+                  </a>
+                </div>
+              </div>
+            {% else %}
+              <!-- Assessment Form with Dynamic Conditional Logic -->
+              <div class="card shadow assessment-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-body">
+                  <h3 class="form-section-title">{{ category|default:"Assessment" }}</h3>
+                  
+                  <form id="assessment-form" method="POST">
+                    {% csrf_token %}
+                    
+                    {% if question_data %}
+                      {% for item in question_data %}
+                        {% with q=item.question %}
+                          <!-- Enhanced question block with conditional logic data attributes -->
+                          <div class="question-block"
+                               id="question_{{ q.question_id }}"
+                               {% if q.trigger_questions.all %}
+                                 data-conditional="true"
+                                 {% for dep in q.trigger_questions.all %}
+                                   data-trigger-id="{{ dep.triggering_question.question_id }}"
+                                   data-trigger-values="{{ dep.trigger_values }}"
+                                 {% endfor %}
+                               {% else %}
+                                 data-conditional="false"
+                               {% endif %}
+                               style="{% if q.trigger_questions.all %}display: none;{% endif %}">
+
+                            <div class="question-stem required-field">
+                              {{ q.question_text }}
+                            </div>
+
+                            <div class="question-options">
+                              {% if item.answer_type == "Enter integer answer" %}
+                                <!-- Numeric input with conditional logic class -->
+                                <input type="number"
+                                       class="form-control numeric-input question-input"
+                                       id="question_{{ q.question_id }}"
+                                       name="question_{{ q.question_id }}"
+                                       data-question-id="{{ q.question_id }}"
+                                       value="{{ item.response|default:'' }}"
+                                       placeholder="Enter a number"
+                                       {% if item.required %}required{% endif %}>
+                                <div class="invalid-feedback">
+                                  Please provide a valid number.
+                                </div>
+
+                              {% elif item.answer_type == "Select one answer" %}
+                                <!-- Radio buttons for single selection with conditional logic -->
+                                {% if item.options %}
+                                  {% for option in item.options %}
+                                    <div class="form-check">
+                                      <input type="radio"
+                                             class="form-check-input question-input"
+                                             name="question_{{ q.question_id }}"
+                                             id="q{{ q.question_id }}_opt{{ forloop.counter }}"
+                                             data-question-id="{{ q.question_id }}"
+                                             value="{{ option.id }}"
+                                             {% if option.id|stringformat:"s" == item.response_id|stringformat:"s" %}checked{% endif %}
+                                             {% if item.required %}required{% endif %}>
+                                      <label class="form-check-label"
+                                             for="q{{ q.question_id }}_opt{{ forloop.counter }}">
+                                        {{ option.option_text }}
+                                      </label>
+                                    </div>
+                                  {% endfor %}
+                                {% endif %}
+                                <div class="invalid-feedback">
+                                  Please select one option.
+                                </div>
+
+                              {% elif item.answer_type == "Toggle multiple answer" %}
+                                <!-- Checkboxes for multiple selection with conditional logic -->
+                                <div class="multiple-select-note">
+                                  <i class="bi bi-info-circle me-1"></i>Select all that apply
+                                </div>
+                                {% if item.options %}
+                                  <div class="checkbox-group">
+                                    {% for option in item.options %}
+                                      <div class="form-check">
+                                        <input type="checkbox"
+                                               class="form-check-input question-input"
+                                               name="question_{{ q.question_id }}_option"
+                                               id="q{{ q.question_id }}_opt{{ forloop.counter }}"
+                                               data-question-id="{{ q.question_id }}"
+                                               value="{{ option.id }}"
+                                               {% if option.id|stringformat:"s" in item.multi_response_ids %}checked{% endif %}>
+                                        <label class="form-check-label"
+                                               for="q{{ q.question_id }}_opt{{ forloop.counter }}">
+                                          {{ option.option_text }}
+                                        </label>
+                                      </div>
+                                    {% endfor %}
+                                  </div>
+                                {% endif %}
+                                <div class="invalid-feedback">
+                                  Please select at least one option.
+                                </div>
+
+                              {% else %}
+                                <!-- Fallback text input with conditional logic -->
+                                <input type="text"
+                                       class="form-control text-input question-input"
+                                       id="question_{{ q.question_id }}"
+                                       name="question_{{ q.question_id }}"
+                                       data-question-id="{{ q.question_id }}"
+                                       value="{{ item.response|default:'' }}"
+                                       placeholder="Enter your answer"
+                                       {% if item.required %}required{% endif %}>
+                                <div class="invalid-feedback">
+                                  This field is required.
+                                </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endwith %}
+                      {% endfor %}
+                    {% else %}
+                      <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>No questions available for this category.
+                      </div>
+                    {% endif %}
+                    
+                    <!-- Form Navigation -->
+                    <div class="d-flex justify-content-between mt-4">
+                      {% if previous_category %}
+                        <a href="{% url 'start_assessment' %}?category={{ previous_category }}" class="btn btn-outline-primary btn-nav">
+                          <i class="bi bi-arrow-left me-2"></i>Previous
+                        </a>
+                      {% else %}
+                        <button type="button" class="btn btn-outline-primary btn-nav" disabled>
+                          <i class="bi bi-arrow-left me-2"></i>Previous
+                        </button>
+                      {% endif %}
+                      
+                      {% if next_category %}
+                        <button type="submit" class="btn btn-primary btn-nav">
+                          Next<i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                      {% else %}
+                        <button type="submit" class="btn btn-success btn-nav">
+                          Complete Assessment<i class="bi bi-check-circle ms-2"></i>
+                        </button>
+                      {% endif %}
+                    </div>
+                  </form>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All 
+Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a 
+href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}?{{ timestamp }}"></script>
+
+  <!-- Real-Time Conditional Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Convert trigger values to usable sets and handle comparison operators
+      function matchesTriggerValue(response, triggerValues) {
+        return triggerValues.some(val => {
+          val = val.trim();
+          if (val.startsWith('>=')) return parseFloat(response) >= parseFloat(val.slice(2));
+          if (val.startsWith('<=')) return parseFloat(response) <= parseFloat(val.slice(2));
+          if (val.startsWith('>')) return parseFloat(response) > parseFloat(val.slice(1));
+          if (val.startsWith('<')) return parseFloat(response) < parseFloat(val.slice(1));
+          return response == val;
+        });
+      }
+
+      // Hide or show all dependent questions based on current responses
+      function updateQuestionVisibility() {
+        const inputs = document.querySelectorAll('.question-input');
+        const responses = {};
+
+        // Get current user input values
+        inputs.forEach(input => {
+          const qid = input.dataset.questionId;
+          if (input.tagName === 'SELECT') {
+            responses[qid] = input.value;
+          } else if (input.type === 'radio') {
+            if (input.checked) {
+              responses[qid] = input.value;
+            }
+          } else if (input.type === 'checkbox') {
+            // For checkboxes, we need to handle multiple values
+            if (!responses[qid]) responses[qid] = [];
+            if (input.checked) {
+              responses[qid].push(input.value);
+            }
+          } else if (input.type === 'number' || input.type === 'text') {
+            responses[qid] = input.value;
+          }
+        });
+
+        // Go through conditional question blocks
+        const conditionalQuestions = document.querySelectorAll('.question-block[data-conditional="true"]');
+        conditionalQuestions.forEach(qBlock => {
+          const triggerId = qBlock.dataset.triggerId;
+          const triggerValues = qBlock.dataset.triggerValues.split(',');
+
+          const currentAnswer = responses[triggerId];
+          let shouldShow = false;
+
+          if (currentAnswer !== undefined && currentAnswer !== '') {
+            if (Array.isArray(currentAnswer)) {
+              // For checkbox responses, check if any selected value matches
+              shouldShow = currentAnswer.some(val => matchesTriggerValue(val, triggerValues));
+            } else {
+              shouldShow = matchesTriggerValue(currentAnswer, triggerValues);
+            }
+          }
+
+          // Show/hide with smooth animation
+          if (shouldShow && qBlock.style.display === 'none') {
+            qBlock.style.display = 'block';
+            qBlock.classList.add('showing');
+            // Remove the animation class after animation completes
+            setTimeout(() => qBlock.classList.remove('showing'), 300);
+          } else if (!shouldShow && qBlock.style.display !== 'none') {
+            qBlock.style.display = 'none';
+            
+            // Clear any values in hidden questions to prevent submission of hidden data
+            const hiddenInputs = qBlock.querySelectorAll('.question-input');
+            hiddenInputs.forEach(hiddenInput => {
+              if (hiddenInput.type === 'radio' || hiddenInput.type === 'checkbox') {
+                hiddenInput.checked = false;
+              } else {
+                hiddenInput.value = '';
+              }
+            });
+          }
+        });
+      }
+
+      // Attach change listeners to all question inputs
+      const allInputs = document.querySelectorAll('.question-input');
+      allInputs.forEach(input => {
+        input.addEventListener('change', updateQuestionVisibility);
+        input.addEventListener('input', updateQuestionVisibility); // For real-time typing in number/text inputs
+      });
+
+      // Initial update on page load to show/hide questions based on existing values
+      updateQuestionVisibility();
+
+      // Enhanced Form Validation with conditional logic awareness
+      const form = document.getElementById('assessment-form');
+      
+      if (form) {
+        form.addEventListener('submit', function(event) {
+          let isValid = true;
+          
+          // Only validate visible questions
+          const visibleQuestions = form.querySelectorAll('.question-block:not([style*="display: none"])');
+          
+          visibleQuestions.forEach(questionBlock => {
+            // Check required inputs (text, number, etc.) in visible questions
+            const requiredInputs = questionBlock.querySelectorAll('input[required]:not([type="radio"]):not([type="checkbox"]), select[required], textarea[required]');
+            
+            requiredInputs.forEach(input => {
+              if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('is-invalid');
+              } else {
+                input.classList.remove('is-invalid');
+              }
+            });
+            
+            // Check radio button groups in visible questions
+            const radioGroups = {};
+            questionBlock.querySelectorAll('input[type="radio"][required]').forEach(radio => {
+              const name = radio.getAttribute('name');
+              radioGroups[name] = radioGroups[name] || false;
+              if (radio.checked) {
+                radioGroups[name] = true;
+              }
+            });
+            
+            for (const groupName in radioGroups) {
+              const isGroupValid = radioGroups[groupName];
+              if (!isGroupValid) {
+                isValid = false;
+                const radios = questionBlock.querySelectorAll(`input[name="${groupName}"]`);
+                radios.forEach(radio => {
+                  radio.classList.add('is-invalid');
+                });
+              } else {
+                const radios = questionBlock.querySelectorAll(`input[name="${groupName}"]`);
+                radios.forEach(radio => {
+                  radio.classList.remove('is-invalid');
+                });
+              }
+            }
+          });
+          
+          if (!isValid) {
+            event.preventDefault();
+            
+            // Scroll to first invalid input in visible questions
+            const firstInvalid = form.querySelector('.question-block:not([style*="display: none"]) .is-invalid');
+            if (firstInvalid) {
+              firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Show error message
+            const existingAlert = form.querySelector('.validation-alert');
+            if (existingAlert) {
+              existingAlert.remove();
+            }
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-danger validation-alert mt-3';
+            alertDiv.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i>Please complete all required fields before proceeding.';
+            form.insertBefore(alertDiv, form.querySelector('.d-flex.justify-content-between'));
+          }
+        });
+        
+        // Clear validation on input
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+          input.addEventListener('input', function() {
+            this.classList.remove('is-invalid');
+            // Remove validation alert if it exists
+            const alert = form.querySelector('.validation-alert');
+            if (alert) {
+              alert.remove();
+            }
+          });
+          
+          input.addEventListener('change', function() {
+            this.classList.remove('is-invalid');
+            // Remove validation alert if it exists
+            const alert = form.querySelector('.validation-alert');
+            if (alert) {
+              alert.remove();
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

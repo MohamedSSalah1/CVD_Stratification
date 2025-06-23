@@ -6,7 +6,7 @@ from accounts.views import assessment_view  # from Sanjana's side
 urlpatterns = [
     # ----------------- Shared or Similar Paths -------------------
     path('', views.home, name='home'),  # Mohammed
-    path('starter/', views.home_view, name='starter-page'),  # Sanjana
+    #path('starter/', views.home_view, name='starter-page'),  # Sanjana
 
     path('about/', views.about, name='about'),  # Mohammed
     path('contact/', views.contact, name='contact'),  # Mohammed
@@ -14,8 +14,8 @@ urlpatterns = [
     path('request-access/', views.request_access, name='request_access'),  # Mohammed
     # path('request-access/', views.request_access_view, name='request_access'),  # Sanjana - use one or merge logic
 
-    path('signup/', views.signup, name='signup'),  # Mohammed
-    # path('signup/', views.signup_view, name='signup'),  # Sanjana
+    #path('signup/', views.signup, name='signup'),  # Mohammed
+    path('signup/', views.signup_view, name='signup'),  # Sanjana
 
     # ----------------- Authentication -------------------
     path('login/', views.login_view, name='login'),  # Sanjana
@@ -36,9 +36,10 @@ urlpatterns = [
     path('reset/done/alt/', auth_views.PasswordResetCompleteView.as_view(template_name='cardiovascular_app/password_reset_complete.html'), name='password_reset_complete_mohammed'),
 
     # ----------------- Admin URLs -------------------
-    path('admin/login/', views.admin_login_view, name='admin_login'),  # Sanjana
-    path('admin/dashboard/', views.admin_dashboard, name='admin_dashboard'),  # Sanjana
+    #path('admin/login/', views.admin_login_view, name='admin_login'),  # Sanjana
+    #path('admin/dashboard/', views.admin_dashboard, name='admin_dashboard'),  # Sanjana
     path('admin-panel/', views.admin_panel, name='admin_panel'),  # Mohammed
+    
 
     # ----------------- Patient Views -------------------
     path('patient/dashboard/', views.patient_dashboard, name='patient_dashboard'),  # Sanjana

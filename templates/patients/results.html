@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CVD Risk Assessment Results - CVD Risk Predictor</title>
+  <meta name="description" content="Your cardiovascular disease risk assessment results">
+  <meta name="keywords" content="CVD, cardiovascular disease, risk assessment, results">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link 
+href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .results-container {
+      min-height: calc(100vh - 200px);
+      padding: 40px 0;
+    }
+    
+    .results-header {
+      background: linear-gradient(135deg, #1977cc 0%, #166ab9 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .results-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .results-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+    
+    /* Assessment Step Cards */
+    .assessment-step {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+      border-left: 5px solid #1977cc;
+    }
+    
+    .step-header {
+      background: #f8f9fa;
+      padding: 25px 30px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .step-title {
+      color: #2c4964;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .step-subtitle {
+      color: #6c757d;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    
+    .step-content {
+      padding: 30px;
+    }
+    
+    /* Score Display */
+    .score-display {
+      text-align: center;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .score-display.conclusive-low {
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      border: 2px solid #28a745;
+      color: #155724;
+    }
+    
+    .score-display.conclusive-high {
+      background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+      border: 2px solid #dc3545;
+      color: #721c24;
+    }
+    
+    .score-display.inconclusive {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: 2px solid #6c757d;
+      color: #495057;
+    }
+    
+    .score-value {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .score-label {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    .threshold-info {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+    
+    .risk-status {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    
+    .status-low {
+      background: #28a745;
+      color: white;
+    }
+    
+    .status-high {
+      background: #dc3545;
+      color: white;
+    }
+    
+    .status-inconclusive {
+      background: #6c757d;
+      color: white;
+    }
+    
+    /* Model Performance */
+    .model-performance {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .performance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    
+    .performance-metric {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1977cc;
+      display: block;
+    }
+    
+    .metric-name {
+      font-size: 0.9rem;
+      color: #6c757d;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    
+    /* Feature Importance Plot */
+    .explainability-section {
+      margin-bottom: 30px;
+    }
+    
+    .explainability-plot {
+      text-align: center;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .explainability-plot img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .plot-placeholder {
+      background: #e9ecef;
+      border: 2px dashed #adb5bd;
+      border-radius: 8px;
+      padding: 60px 20px;
+      color: #6c757d;
+      font-style: italic;
+    }
+    
+    .plot-description {
+      color: #6c757d;
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-top: 15px;
+    }
+    
+    /* Clinical Messages */
+    .clinical-message {
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      border-left: 4px solid;
+    }
+    
+    .message-conclusive-low {
+      background: #d4edda;
+      border-left-color: #28a745;
+      color: #155724;
+    }
+    
+    .message-conclusive-high {
+      background: #f8d7da;
+      border-left-color: #dc3545;
+      color: #721c24;
+    }
+    
+    .message-inconclusive {
+      background: #fff3cd;
+      border-left-color: #ffc107;
+      color: #856404;
+    }
+    
+    .message-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .message-title i {
+      margin-right: 8px;
+    }
+    
+    /* Final Summary */
+    .final-summary {
+      background: linear-gradient(135deg, #1977cc 0%, #166ab9 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    
+    .final-summary h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .final-summary p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid #e9ecef;
+    }
+    
+    .btn-primary {
+      background-color: #1977cc;
+      border-color: #1977cc;
+      padding: 12px 30px;
+      font-weight: 500;
+      margin: 0 10px 10px 10px;
+    }
+    
+    .btn-primary:hover {
+      background-color: #166ab9;
+      border-color: #166ab9;
+    }
+    
+    .btn-outline-secondary {
+      padding: 12px 30px;
+      font-weight: 500;
+      margin: 0 10px 10px 10px;
+    }
+    
+    .timestamp {
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+    
+    /* Animation delays using CSS */
+    .step-1 { animation-delay: 0.1s; }
+    .step-2 { animation-delay: 0.2s; }
+    .step-3 { animation-delay: 0.3s; }
+    .step-4 { animation-delay: 0.4s; }
+    .step-5 { animation-delay: 0.5s; }
+    .step-6 { animation-delay: 0.6s; }
+    .step-7 { animation-delay: 0.7s; }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .results-header {
+        padding: 30px 20px;
+      }
+      
+      .results-header h1 {
+        font-size: 2rem;
+      }
+      
+      .step-content {
+        padding: 20px;
+      }
+      
+      .score-value {
+        font-size: 2.5rem;
+      }
+      
+      .performance-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .action-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+{% now "U" as timestamp %}
+
+<body class="results-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' %}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                  {% if user.is_authenticated %}
+                    {% if user.role == 'patient' %}
+                      <li class="nav-item"><a class="nav-link active" href="{% url 'patient_dashboard' %}">CVD Risk for Patients</a></li>
+                    {% elif user.role == 'clinician_approved' %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 'clinician_dashboard' %}">CVD Risk for Clinicians</a></li>
+                    {% endif %}
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>{{ user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <section class="results-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            
+            <!-- Results Header -->
+            <div class="results-header" data-aos="fade-up">
+              <h1><i class="bi bi-heart-pulse me-3"></i>Your CVD Risk Assessment Results</h1>
+              <p>Progressive assessment results from {{ model_results|length }} completed categor{{ model_results|length|pluralize:"y,ies" }}</p>
+            </div>
+
+            {% if model_results %}
+              <!-- Loop through each assessment step -->
+              {% for result in model_results %}
+                <div class="assessment-step step-{{ forloop.counter }}" data-aos="fade-up">
+                  
+                  <!-- Step Header -->
+                  <div class="step-header">
+                    <h3 class="step-title">
+                      <i class="bi bi-graph-up me-2"></i>
+                      Step {{ forloop.counter }}: {{ result.category }} Assessment
+                    </h3>
+                    <p class="step-subtitle">
+                      Cumulative model using data from 
+                      {% if forloop.counter == 1 %}
+                        {{ result.category }}
+                      {% else %}
+                        all previous categories plus {{ result.category }}
+                      {% endif %}
+                    </p>
+                  </div>
+
+                  <!-- Step Content -->
+                  <div class="step-content">
+                    
+                    <!-- Score Display with Color Coding -->
+                    <div class="score-display {% if result.risk_category == 'Low Risk' %}conclusive-low{% elif result.risk_category == 'High Risk' %}conclusive-high{% else %}inconclusive{% endif %}">
+                      <div class="score-value">{{ result.prediction_score }}</div>
+                      <div class="score-label">CVD Risk Prediction Score</div>
+                      
+                      <!-- Risk Status Badge -->
+                      <div class="risk-status {% if result.risk_category == 'Low Risk' %}status-low{% elif result.risk_category == 'High Risk' %}status-high{% else %}status-inconclusive{% endif %}">
+                        {% if result.risk_category == 'Low Risk' %}
+                          <i class="bi bi-check-circle-fill me-1"></i>Low Risk
+                        {% elif result.risk_category == 'High Risk' %}
+                          <i class="bi bi-exclamation-triangle-fill me-1"></i>High Risk
+                        {% else %}
+                          <i class="bi bi-question-circle-fill me-1"></i>Inconclusive
+                        {% endif %}
+                      </div>
+                      
+                      <!-- Threshold Information -->
+                      <div class="threshold-info">
+                        <small>
+                          {% if result.risk_category == 'Low Risk' %}
+                            Score below low-risk threshold - conclusive result
+                          {% elif result.risk_category == 'High Risk' %}
+                            Score above high-risk threshold - conclusive result
+                          {% else %}
+                            Score between thresholds - additional data needed
+                          {% endif %}
+                        </small>
+                      </div>
+                    </div>
+
+                    <!-- Model Performance Metrics -->
+                    <div class="model-performance">
+                      <h5 class="mb-3"><i class="bi bi-speedometer2 me-2"></i>Model Performance Metrics</h5>
+                      <div class="performance-grid">
+                        <div class="performance-metric">
+                          <span class="metric-value">{{ result.accuracy }}</span>
+                          <div class="metric-name">Accuracy</div>
+                        </div>
+                        <div class="performance-metric">
+                          <span class="metric-value">{{ result.auroc }}</span>
+                          <div class="metric-name">AUROC</div>
+                        </div>
+                        <div class="performance-metric">
+                          <span class="metric-value">{{ result.precision }}</span>
+                          <div class="metric-name">Precision</div>
+                        </div>
+                        <div class="performance-metric">
+                          <span class="metric-value">{{ result.recall }}</span>
+                          <div class="metric-name">Recall</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Feature Importance Plot -->
+                    <div class="explainability-section">
+                      <h5 class="mb-3"><i class="bi bi-bar-chart-line me-2"></i>Feature Importance Analysis</h5>
+                      <div class="explainability-plot">
+                        {% if result.plot_path %}
+                          <img src="{% static result.plot_path %}" alt="Feature Importance Plot for {{ result.category }}" class="img-fluid">
+                        {% else %}
+                          <div class="plot-placeholder">
+                            <i class="bi bi-graph-up fs-1 mb-3 d-block"></i>
+                            Feature importance plot is being generated for {{ result.category }} model.<br>
+                            Please check back shortly.
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class="plot-description">
+                        This plot shows which features from the {{ result.category|lower }} category were most important in determining your risk score at this step.
+                      </div>
+                    </div>
+
+                    <!-- Clinical Message for Each Step -->
+                    <div class="clinical-message {% if result.risk_category == 'Low Risk' %}message-conclusive-low{% elif result.risk_category == 'High Risk' %}message-conclusive-high{% else %}message-inconclusive{% endif %}">
+                      <div class="message-title">
+                        {% if result.risk_category == 'Low Risk' %}
+                          <i class="bi bi-check-circle-fill"></i>Assessment Complete - Low Risk
+                        {% elif result.risk_category == 'High Risk' %}
+                          <i class="bi bi-exclamation-triangle-fill"></i>Assessment Complete - High Risk
+                        {% else %}
+                          <i class="bi bi-arrow-right-circle-fill"></i>Assessment Continuing
+                        {% endif %}
+                      </div>
+                      <p class="mb-0">
+                        {% if result.risk_category == 'Low Risk' %}
+                          <strong>Conclusive Result:</strong> Based on the {{ result.category|lower }} data, you are classified as <strong>low 10-year CVD risk</strong>. No further questions are 
+needed. Please consult your GP for personalized advice and to discuss these results.
+                        {% elif result.risk_category == 'High Risk' %}
+                          <strong>Conclusive Result:</strong> Based on the {{ result.category|lower }} data, you are classified as <strong>high 10-year CVD risk</strong>. Please contact your GP or 
+cardiologist immediately for further evaluation and preventive treatment options.
+                        {% else %}
+                          <strong>Intermediate Result:</strong> This is not your final risk score. The current prediction from {{ result.category|lower }} data is inconclusive, so additional 
+questions from the next category are needed to provide more accurate results.
+                        {% endif %}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              {% endfor %}
+
+              <!-- Final Summary -->
+              {% with model_results|last as final_result %}
+                <div class="final-summary" data-aos="fade-up">
+                  {% if final_result.risk_category == 'Low Risk' %}
+                    <h2><i class="bi bi-check-circle-fill me-3"></i>Assessment Complete: Low CVD Risk</h2>
+                    <p>Your assessment concluded after {{ model_results|length }} step{{ model_results|length|pluralize }} with a conclusive low-risk prediction. Continue maintaining a healthy 
+lifestyle and consult your healthcare provider regularly.</p>
+                  {% elif final_result.risk_category == 'High Risk' %}
+                    <h2><i class="bi bi-exclamation-triangle-fill me-3"></i>Assessment Complete: High CVD Risk</h2>
+                    <p>Your assessment concluded after {{ model_results|length }} step{{ model_results|length|pluralize }} with a conclusive high-risk prediction. Please seek immediate medical 
+consultation for comprehensive evaluation and treatment planning.</p>
+                  {% else %}
+                    <h2><i class="bi bi-question-circle-fill me-3"></i>Assessment Inconclusive</h2>
+                    <p>After completing {{ model_results|length }} assessment step{{ model_results|length|pluralize }}, your CVD risk remains inconclusive. Please consult your GP or cardiologist for 
+comprehensive clinical evaluation and personalized medical advice.</p>
+                  {% endif %}
+                </div>
+              {% endwith %}
+
+            {% else %}
+              <!-- No Results Available -->
+              <div class="assessment-step" data-aos="fade-up">
+                <div class="step-content text-center">
+                  <div class="score-display inconclusive">
+                    <i class="bi bi-exclamation-triangle fs-1 mb-3"></i>
+                    <div class="score-label">No Assessment Results Available</div>
+                    <p class="mt-3 mb-0">Please complete the CVD risk assessment to view your results.</p>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            <!-- Action Buttons -->
+            <div class="action-buttons" data-aos="fade-up">
+              <a href="{% url 'patient_dashboard' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-house me-2"></i>Return to Dashboard
+              </a>
+              {% if model_results %}
+                {% with model_results|last as final_result %}
+                  {% if final_result.risk_category == 'Inconclusive' and not all_categories_completed %}
+                    <a href="{% url 'start_assessment' %}" class="btn btn-primary">
+                      <i class="bi bi-arrow-right me-2"></i>Continue Assessment
+                    </a>
+                  {% endif %}
+                {% endwith %}
+              {% endif %}
+              <a href="#" class="btn btn-primary" onclick="window.print()">
+                <i class="bi bi-printer me-2"></i>Print Results
+              </a>
+            </div>
+
+            <!-- Timestamp -->
+            {% if assessment_date %}
+              <div class="timestamp">
+                <i class="bi bi-clock me-1"></i>
+                Assessment completed on {{ assessment_date|date:"F d, Y \a\t g:i A" }}
+              </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CVD Risk Predictor</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}?{{ timestamp }}"></script>
+
+  <!-- Results Page Enhancements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Enhanced plot interaction
+      document.querySelectorAll('.explainability-plot img').forEach(img => {
+        img.addEventListener('click', function() {
+          this.style.transform = this.style.transform === 'scale(1.1)' ? 'scale(1)' : 'scale(1.1)';
+          this.style.transition = 'transform 0.3s ease';
+        });
+      });
+
+      // Print functionality
+      window.addEventListener('beforeprint', function() {
+        document.body.classList.add('printing');
+      });
+
+      window.addEventListener('afterprint', function() {
+        document.body.classList.remove('printing');
+      });
+
+      // Smooth scrolling for better UX
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Print Styles -->
+  <style media="print">
+    .header, .footer, .action-buttons, .scroll-top {
+      display: none !important;
+    }
+    
+    .assessment-step {
+      break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+    
+    .results-header, .final-summary {
+      background: #f8f9fa !important;
+      color: #333 !important;
+    }
+    
+    .score-display {
+      border: 2px solid #ddd !important;
+    }
+  </style>
+
+</body>
+
+</html>

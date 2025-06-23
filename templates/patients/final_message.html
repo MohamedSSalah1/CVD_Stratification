@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Assessment Complete - CVD Risk Predictor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" 
+rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .final-message-container {
+      min-height: calc(100vh - 200px);
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    
+    .result-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 3rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .risk-score-display {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .risk-score-display::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .risk-score-value {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .risk-score-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .recommendation-badge {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+    
+    .recommendation-low {
+      background-color: #d4edda;
+      color: #155724;
+      border: 2px solid #c3e6cb;
+    }
+    
+    .recommendation-high {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 2px solid #f5c6cb;
+    }
+    
+    .message-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2c4964;
+      margin: 2rem 0;
+    }
+    
+    .action-buttons {
+      margin-top: 2rem;
+    }
+    
+    .action-buttons .btn {
+      margin: 0.5rem;
+      min-width: 180px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+    }
+    
+    .btn-primary-large {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      min-width: 220px;
+    }
+    
+    .completion-icon {
+      font-size: 4rem;
+      color: #1977cc;
+      margin-bottom: 1rem;
+    }
+    
+    .completion-icon.low-risk {
+      color: #28a745;
+    }
+    
+    .completion-icon.high-risk {
+      color: #dc3545;
+    }
+    
+    .quick-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .secondary-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 576px) {
+      .action-buttons .btn {
+        min-width: 100%;
+        margin: 0.25rem 0;
+      }
+      
+      .secondary-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="final-message-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'medilab/assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' %}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                  <!-- Only show appropriate CVD Risk links based on user type -->
+                  {% if user.is_authenticated %}
+                    {% if user.is_patient %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 'patient_dashboard' %}">CVD Risk for Patients</a></li>
+                    {% elif user.is_clinician %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 'clinician_dashboard' %}">CVD Risk for Clinicians</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'researcher_dashboard' %}">CVD Risk for Researchers</a></li>
+                    {% endif %}
+                    
+                    <!-- User dropdown menu -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>{{ user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <section class="final-message-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="result-card" data-aos="fade-up">
+              
+              <!-- Completion Icon -->
+              <div class="completion-icon {% if recommendation == 'Low Risk' %}low-risk{% elif recommendation == 'High Risk' %}high-risk{% endif %}">
+                {% if recommendation == "Low Risk" %}
+                  <i class="bi bi-check-circle-fill"></i>
+                {% elif recommendation == "High Risk" %}
+                  <i class="bi bi-exclamation-triangle-fill"></i>
+                {% else %}
+                  <i class="bi bi-heart-pulse-fill"></i>
+                {% endif %}
+              </div>
+
+              <!-- Main Title -->
+              <h2 class="mb-4">Assessment Complete</h2>
+              
+              <!-- Risk Score Display -->
+              <div class="risk-score-display" data-aos="fade-up" data-aos-delay="200">
+                <div class="risk-score-value">{{ risk_score|floatformat:2 }}%</div>
+                <div class="risk-score-label">Your CVD Risk Score</div>
+              </div>
+
+              <!-- Recommendation Badge -->
+              {% if recommendation %}
+                <div class="recommendation-badge {% if recommendation == 'Low Risk' %}recommendation-low{% elif recommendation == 'High Risk' %}recommendation-high{% endif %}" data-aos="fade-up" data-aos-delay="300">
+                  {% if recommendation == "Low Risk" %}
+                    <i class="bi bi-shield-check me-2"></i>{{ recommendation }}
+                  {% elif recommendation == "High Risk" %}
+                    <i class="bi bi-exclamation-circle me-2"></i>{{ recommendation }}
+                  {% else %}
+                    <i class="bi bi-info-circle me-2"></i>{{ recommendation }}
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <!-- Message Text -->
+              <div class="message-text" data-aos="fade-up" data-aos-delay="400">
+                {{ message }}
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="action-buttons" data-aos="fade-up" data-aos-delay="500">
+                <div class="quick-actions">
+                  <!-- Primary Action: Direct link to patient results page -->
+                  <a href="{% url 'patient_self_results' %}" class="btn btn-primary btn-primary-large">
+                    <i class="bi bi-file-text me-2"></i>View Detailed Results
+                  </a>
+                  
+                  <!-- Secondary Actions -->
+                  <div class="secondary-actions">
+                    <a href="{% url 'patient_dashboard' %}" class="btn btn-outline-secondary">
+                      <i class="bi bi-house me-2"></i>Dashboard
+                    </a>
+                    <a href="{% url 'assessment_history' %}" class="btn btn-outline-info">
+                      <i class="bi bi-clock-history me-2"></i>Assessment History
+                    </a>
+                    <a href="{% url 'patient_learn' %}" class="btn btn-outline-success">
+                      <i class="bi bi-book me-2"></i>Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Information -->
+              <div class="mt-4 pt-3 border-top" data-aos="fade-up" data-aos-delay="600">
+                <small class="text-muted">
+                  <i class="bi bi-info-circle me-1"></i>
+                  This assessment is based on the information you provided. For personalized medical advice, 
+                  please consult with your healthcare provider.
+                </small>
+              </div>
+
+              <!-- Quick Navigation Hint -->
+              <div class="mt-3" data-aos="fade-up" data-aos-delay="700">
+                <small class="text-muted">
+                  <i class="bi bi-lightbulb me-1"></i>
+                  <strong>Next steps:</strong> Review your detailed results, save or print your report, 
+                  and discuss these findings with your healthcare team.
+                </small>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a 
+href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center 
+justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

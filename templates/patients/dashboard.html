@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Patient Dashboard - CVD Risk Predictor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link 
+href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" 
+rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .dashboard-card {
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 100%;
+    }
+    
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dashboard-card .card-body {
+      padding: 2rem;
+    }
+    
+    .dashboard-card .icon {
+      font-size: 3rem;
+      color: #1977cc;
+      margin-bottom: 1rem;
+    }
+    
+    .dashboard-card .btn {
+      margin-top: 1rem;
+    }
+    
+    .welcome-banner {
+      background-color: #1977cc;
+      color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+{% now "U" as timestamp %}
+
+<body class="dashboard-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'medilab/assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' 
+%}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                  <!-- Only show appropriate CVD Risk links based on user type -->
+                  {% if user.is_authenticated %}
+                    {% if user.is_patient %}
+                      <li class="nav-item"><a class="nav-link active" href="{% url 
+'patient_dashboard' %}">CVD Risk for Patients</a></li>
+                    {% elif user.is_clinician %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 
+'clinician_dashboard' %}">CVD Risk for Clinicians</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 
+'researcher_dashboard' %}">CVD Risk for Researchers</a></li>
+                    {% endif %}
+                    
+                    <!-- User dropdown menu -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>{{ user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li> 
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <section class="dashboard-section py-5">
+      <div class="container">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner" data-aos="fade-up">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h2>Welcome, {{ user.first_name }}!</h2>
+              <p class="mb-0">Manage your cardiovascular risk assessments and view your results 
+from your personal dashboard.</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <a href="{% url 'start_assessment' %}" class="btn btn-light btn-lg">Start New 
+Assessment</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dashboard Cards -->
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card h-100">
+              <div class="card-body text-center">
+                <div class="icon">
+                  <i class="bi bi-clipboard-plus"></i>
+                </div>
+                <h4 class="card-title">New Assessment</h4>
+                <p class="card-text">Start a new cardiovascular risk assessment to evaluate 
+your current health status.</p>
+                <a href="{% url 'start_assessment' %}" class="btn btn-primary">Start 
+Assessment</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card h-100">
+              <div class="card-body text-center">
+                <div class="icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h4 class="card-title">View Results</h4>
+                <p class="card-text">Check your latest cardiovascular risk assessment results 
+and recommendations.</p>
+                <a href="{% url 'patient_self_results' %}" class="btn btn-primary">View Results</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card h-100">
+              <div class="card-body text-center">
+                <div class="icon">
+                  <i class="bi bi-clock-history"></i>
+                </div>
+                <h4 class="card-title">Assessment History</h4>
+                <p class="card-text">Review your past assessments and track changes in your 
+cardiovascular health over time.</p>
+                <a href="#" class="btn btn-primary">View History</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="card dashboard-card h-100">
+              <div class="card-body text-center">
+                <div class="icon">
+                  <i class="bi bi-book"></i>
+                </div>
+                <h4 class="card-title">Learn More</h4>
+                <p class="card-text">Understand cardiovascular risk factors and learn how to 
+improve your heart health.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Activity Section -->
+        <div class="recent-activity mt-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <div class="card-header bg-white">
+              <h4 class="mb-0">Recent Activity</h4>
+            </div>
+            <div class="card-body">
+              {% if recent_assessments %}
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Assessment Type</th>
+                        <th>Risk Score</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for assessment in recent_assessments %}
+                        <tr>
+                          <td>{{ assessment.date_created }}</td>
+                          <td>{{ assessment.assessment_type }}</td>
+                          <td>{{ assessment.risk_score }}%</td>
+                          <td>
+                            <span class="badge bg-{{ assessment.status_color }}">{{ 
+assessment.status }}</span>
+                          </td>
+                          <td>
+                            <a href="#" 
+class="btn btn-sm btn-outline-primary">View</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% else %}
+                <div class="text-center py-4">
+                  <i class="bi bi-clipboard-x" style="font-size: 3rem; color: #ccc;"></i>
+                  <p class="mt-3">You haven't completed any assessments yet.</p>
+                  <a href="{% url 'start_assessment' %}" class="btn btn-primary mt-2">Start 
+Your First Assessment</a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All 
+Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a 
+href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center 
+justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' 
+%}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' 
+%}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}?{{ timestamp }}"></script>
+
+</body>
+
+</html>

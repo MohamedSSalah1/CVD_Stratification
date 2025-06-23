@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Learn About CVD Risk - CVD Risk Predictor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'medilab/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'medilab/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link 
+href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'medilab/assets/vendor/bootstrap/css/bootstrap.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/fontawesome-free/css/all.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/glightbox/css/glightbox.min.css' %}" 
+rel="stylesheet">
+  <link href="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.css' %}" 
+rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'medilab/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    .learn-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+    }
+    
+    .learn-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .learn-nav {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .learn-nav .nav-link {
+      padding: 1rem 1.5rem;
+      color: #444;
+      border-left: 3px solid transparent;
+    }
+    
+    .learn-nav .nav-link.active {
+      background-color: #f8f9fa;
+      color: #1977cc;
+      border-left: 3px solid #1977cc;
+      font-weight: 500;
+    }
+    
+    .learn-nav .nav-link:hover:not(.active) {
+      background-color: #f8f9fa;
+      border-left: 3px solid #dee2e6;
+    }
+    
+    .learn-section {
+      padding: 2rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .learn-section:last-child {
+      border-bottom: none;
+    }
+    
+    .learn-section h3 {
+      color: #1977cc;
+      margin-bottom: 1.5rem;
+    }
+    
+    .learn-section img {
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fact-card {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #1977cc;
+    }
+    
+    .fact-card h5 {
+      color: #1977cc;
+      margin-bottom: 0.5rem;
+    }
+    
+    .fact-card .icon {
+      font-size: 2rem;
+      color: #1977cc;
+      margin-right: 1rem;
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    .resource-card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-color: #1977cc;
+    }
+    
+    .resource-card .icon {
+      font-size: 2rem0,0,0.1);
+      border-color: #1977cc;
+    }
+    
+    .resource-card .icon {
+      font-size: 2rem;
+      color: #1977cc;
+      margin-bottom: 1rem;
+    }
+    
+    .resource-card h5 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .resource-card p {
+      color: #6c757d;
+      margin-bottom: 1rem;
+    }
+    
+    .quiz-container {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .quiz-question {
+      margin-bottom: 1.5rem;
+    }
+    
+    .quiz-options .form-check {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+{% now "U" as timestamp %}
+
+<body class="learn-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a 
+href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 
+55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center 
+justify-content-between">
+        <a href="{% url 'starter-page' %}" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'medilab/assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">CVD Risk Predictor</h1>
+        </a>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'starter-page' 
+%}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                  <!-- Only show appropriate CVD Risk links based on user type -->
+                  {% if user.is_authenticated %}
+                    {% if user.is_patient %}
+                      <li class="nav-item"><a class="nav-link active" href="{% url 
+'patient_dashboard' %}">CVD Risk for Patients</a></li>
+                    {% elif user.is_clinician %}
+                      <li class="nav-item"><a class="nav-link" href="{% url 
+'clinician_dashboard' %}">CVD Risk for Clinicians</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 
+'researcher_dashboard' %}">CVD Risk for Researchers</a></li>
+                    {% endif %}
+                    
+                    <!-- User dropdown menu -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>{{ user.username }}
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" 
+aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">My 
+Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                      </ul>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <main class="main">
+    <section class="learn-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <!-- Learn Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4" 
+data-aos="fade-up">
+              <div>
+                <h2>Learn About Cardiovascular Risk</h2>
+                <p class="text-muted mb-0">Understanding cardiovascular disease and how to 
+reduce your risk</p>
+              </div>
+              <a href="{% url 'patient_dashboard' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+              </a>
+            </div>
+            
+            <!-- Learn Container -->
+            <div class="learn-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                  <div class="learn-sidebar">
+                    <div class="card">
+                      <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Contents</h5>
+                      </div>
+                      <div class="card-body p-0">
+                        <nav class="learn-nav nav flex-column">
+                          <a class="nav-link active" href="#what-is-cvd">What is CVD?</a>
+                          <a class="nav-link" href="#risk-factors">Risk Factors</a>
+                          <a class="nav-link" href="#prevention">Prevention Strategies</a>
+                          <a class="nav-link" href="#lifestyle">Lifestyle Changes</a>
+                          <a class="nav-link" href="#medications">Medications</a>
+                          <a class="nav-link" href="#resources">Additional Resources</a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                  <!-- What is CVD Section -->
+                  <div id="what-is-cvd" class="learn-section">
+                    <h3>What is Cardiovascular Disease?</h3>
+                    <img src="{% static 'medilab/assets/img/cvd-diagram.jpg' %}" 
+alt="Cardiovascular System Diagram" class="img-fluid">
+                    <p>
+                      Cardiovascular disease (CVD) refers to a class of diseases that involve 
+the heart or blood vessels. CVD includes coronary artery disease, heart failure, congenital 
+heart disease, and problems with heart valves.
+                    </p>
+                    <p>
+                      Cardiovascular disease remains the leading cause of death globally, 
+taking an estimated 17.9 million lives each year. CVD is responsible for 31% of all global 
+deaths, with 85% of these deaths due to heart attack and stroke.
+                    </p>
+                    
+                    <div class="fact-card d-flex mt-4">
+                      <div class="icon">
+                        <i class="bi bi-heart-pulse"></i>
+                      </div>
+                      <div>
+                        <h5>Did You Know?</h5>
+                        <p class="mb-0">
+                          Most cardiovascular diseases can be prevented by addressing 
+behavioral risk factors such as tobacco use, unhealthy diet, physical inactivity, and harmful 
+use of alcohol.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div class="video-container mt-4">
+                      <iframe src="https://www.youtube.com/embed/example-video-id" 
+title="Understanding Cardiovascular Disease" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                  
+                  <!-- Risk Factors Section -->
+                  <div id="risk-factors" class="learn-section">
+                    <h3>Risk Factors for Cardiovascular Disease</h3>
+                    <p>
+                      Several risk factors contribute to the development of cardiovascular 
+disease. Some risk factors cannot be modified, while others can be addressed through lifestyle 
+changes and medical interventions.
+                    </p>
+                    
+                    <h5 class="mt-4">Non-modifiable Risk Factors:</h5>
+                    <ul>
+                      <li><strong>Age:</strong> Risk increases with age</li>
+                      <li><strong>Gender:</strong> Men are at higher risk than pre-menopausal 
+women</li>
+                      <li><strong>Family history:</strong> Risk increases if close relatives 
+have had CVD</li>
+                      <li><strong>Ethnicity:</strong> Some ethnic groups have higher risk</li>
+                    </ul>
+                    
+                    <h5 class="mt-4">Modifiable Risk Factors:</h5>
+                    <ul>
+                      <li><strong>High blood pressure:</strong> Damages arteries and makes them 
+more susceptible to narrowing</li>
+                      <li><strong>High cholesterol:</strong> Contributes to plaque buildup in 
+arteries</li>
+                      <li><strong>Smoking:</strong> Damages blood vessels and reduces oxygen in 
+the blood</li>
+                      <li><strong>Physical inactivity:</strong> Increases risk of obesity, high 
+blood pressure, and high cholesterol</li>
+                      <li><strong>Obesity:</strong> Increases strain on the heart and risk of 
+other conditions</li>
+                      <li><strong>Diabetes:</strong> Damages blood vessels and increases risk 
+of heart disease</li>
+                      <li><strong>Poor diet:</strong> High in saturated fats, trans fats, salt, 
+and sugar</li>
+                      <li><strong>Excessive alcohol consumption:</strong> Can raise blood 
+pressure and triglyceride levels</li>
+                      <li><strong>Stress:</strong> May contribute to high blood pressure and 
+other risk factors</li>
+                    </ul>
+                    
+                    <div class="fact-card d-flex mt-4">
+                      <div class="icon">
+                        <i class="bi bi-graph-up"></i>
+                      </div>
+                      <div>
+                        <h5>Risk Calculation</h5>
+                        <p class="mb-0">
+                          Your CVD risk score is calculated using multiple factors including 
+age, gender, blood pressure, cholesterol levels, smoking status, and whether you have diabetes. 
+This helps predict your likelihood of developing cardiovascular disease in the next 10 years.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Prevention Strategies Section -->
+                  <div id="prevention" class="learn-section">
+                    <h3>Prevention Strategies</h3>
+                    <p>
+                      Preventing cardiovascular disease involves a combination of lifestyle 
+changes, regular health screenings, and in some cases, medication. Here are key strategies to 
+reduce your risk:
+                    </p>
+                    
+                    <div class="row mt-4">
+                      <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-heart me-2 
+text-primary"></i>Regular Health Screenings</h5>
+                            <p class="card-text">
+                              Regular check-ups with your healthcare provider to monitor blood 
+pressure, cholesterol levels, blood sugar, and weight are essential for early detection and 
+management of risk factors.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-lungs me-2 
+text-primary"></i>Quit Smoking</h5>
+                            <p class="card-text">
+                              Smoking cessation is one of the most effective ways to reduce CVD 
+risk. Within just one year of quitting, your risk of heart disease drops dramatically.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-egg-fried me-2 
+text-primary"></i>Healthy Diet</h5>
+                            <p class="card-text">
+                              Adopt a heart-healthy diet rich in fruits, vegetables, whole 
+grains, lean proteins, and healthy fats. Limit saturated fats, trans fats, sodium, and added 
+sugars.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-bicycle me-2 
+text-primary"></i>Regular Physical Activity</h5>
+                            <p class="card-text">
+                              Aim for at least 150 minutes of moderate-intensity aerobic 
+activity or 75 minutes of vigorous activity each week, plus muscle-strengthening activities 
+twice a week.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Lifestyle Changes Section -->
+                  <div id="lifestyle" class="learn-section">
+                    <h3>Lifestyle Changes for Heart Health</h3>
+                    <p>
+                      Making sustainable lifestyle changes is key to long-term cardiovascular 
+health. Here are detailed recommendations for improving your heart health through lifestyle 
+modifications:
+                    </p>
+                    
+                    <h5 class="mt-4">Dietary Recommendations:</h5>
+                    <ul>
+                      <li>Increase intake of fruits, vegetables, and whole grains</li>
+                      <li>Choose lean proteins such as fish, poultry, beans, and nuts</li>
+                      <li>Limit red meat and processed meats</li>
+                      <li>Choose low-fat or fat-free dairy products</li>
+                      <li>Use healthy oils like olive oil instead of butter or margarine</li>
+                      <li>Reduce sodium intake to less than 2,300 mg per day</li>
+                      <li>Limit added sugars and refined carbohydrates</li>
+                      <li>Consider following the DASH or Mediterranean diet</li>
+                    </ul>
+                    
+                    <h5 class="mt-4">Physical Activity Guidelines:</h5>
+                    <ul>
+                      <li>Engage in moderate-intensity aerobic activity (like brisk walking) 
+for at least 150 minutes per week</li>
+                      <li>Or engage in vigorous-intensity aerobic activity (like running) for 
+at least 75 minutes per week</li>
+                      <li>Spread activity throughout the week</li>
+                      <li>Include muscle-strengthening activities at least twice a week</li>
+                      <li>Reduce sedentary time by taking breaks from sitting</li>
+                      <li>Start slowly and gradually increase intensity if you've been 
+inactive</li>
+                    </ul>
+                    
+                    <h5 class="mt-4">Stress Management:</h5>
+                    <ul>
+                      <li>Practice relaxation techniques such as deep breathing, meditation, or 
+yoga</li>
+                      <li>Get adequate sleep (7-9 hours for adults)</li>
+                      <li>Maintain social connections and seek support when needed</li>
+                      <li>Consider counseling or therapy if stress is overwhelming</li>
+                      <li>Engage in activities you enjoy and that help you relax</li>
+                    </ul>
+                    
+                    <div class="fact-card d-flex mt-4">
+                      <div class="icon">
+                        <i class="bi bi-calendar-check"></i>
+                      </div>
+                      <div>
+                        <h5>Small Changes Add Up</h5>
+                        <p class="mb-0">
+                          Even modest improvements in your lifestyle can significantly reduce 
+your cardiovascular risk. Start with small, achievable changes and build on your success over 
+time.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Medications Section -->
+                  <div id="medications" class="learn-section">
+                    <h3>Medications for Cardiovascular Risk Reduction</h3>
+                    <p>
+                      In some cases, lifestyle changes alone may not be sufficient to reduce 
+cardiovascular risk, and medications may be prescribed. Always take medications as directed by 
+your healthcare provider and discuss any concerns or side effects.
+                    </p>
+                    
+                    <div class="table-responsive mt-4">
+                      <table class="table table-bordered">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Medication Type</th>
+                            <th>Purpose</th>
+                            <th>Common Examples</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Statins</td>
+                            <td>Lower cholesterol levels</td>
+                            <td>Atorvastatin, Simvastatin, Rosuvastatin</td>
+                          </tr>
+                          <tr>
+                            <td>Antihypertensives</td>
+                            <td>Lower blood pressure</td>
+                            <td>ACE inhibitors, Beta-blockers, Calcium channel blockers, 
+Diuretics</td>
+                          </tr>
+                          <tr>
+                            <td>Antiplatelet agents</td>
+                            <td>Prevent blood clots</td>
+                            <td>Aspirin, Clopidogrel</td>
+                          </tr>
+                          <tr>
+                            <td>Anticoagulants</td>
+                            <td>Prevent blood clots</td>
+                            <td>Warfarin, Apixaban, Rivaroxaban</td>
+                          </tr>
+                          <tr>
+                            <td>Diabetes medications</td>
+                            <td>Control blood sugar</td>
+                            <td>Metformin, GLP-1 receptor agonists, SGLT2 inhibitors</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="alert alert-warning mt-4">
+                      <h5><i class="bi bi-exclamation-triangle me-2"></i>Important Note</h5>
+                      <p class="mb-0">
+                        Never stop taking prescribed medications without consulting your 
+healthcare provider. Some medications need to be tapered off gradually to avoid adverse 
+effects.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Additional Resources Section -->
+                  <div id="resources" class="learn-section">
+                    <h3>Additional Resources</h3>
+                    <p>
+                      Explore these trusted resources to learn more about cardiovascular health 
+and risk reduction:
+                    </p>
+                    
+                    <div class="row mt-4">
+                      <div class="col-md-6 mb-4">
+                        <div class="resource-card">
+                          <div class="icon">
+                            <i class="bi bi-heart-fill"></i>
+                          </div>
+                          <h5>American Heart Association</h5>
+                          <p>Comprehensive information on heart health, prevention, and 
+treatment options.</p>
+                          <a href="https://www.heart.org/" target="_blank" class="btn 
+btn-outline-primary">Visit Website</a>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="resource-card">
+                          <div class="icon">
+                            <i class="bi bi-hospital"></i>
+                          </div>
+                          <h5>Mayo Clinic</h5>
+                          <p>Expert information on cardiovascular diseases, symptoms, and 
+prevention strategies.</p>
+                          <a 
+href="https://www.mayoclinic.org/diseases-conditions/heart-disease/" target="_blank" class="btn 
+btn-outline-primary">Visit Website</a>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="resource-card">
+                          <div class="icon">
+                            <i class="bi bi-journal-medical"></i>
+                          </div>
+                          <h5>National Heart, Lung, and Blood Institute</h5>
+                          <p>Research-based information on heart, lung, and blood diseases.</p>
+                          <a href="https://www.nhlbi.nih.gov/" target="_blank" class="btn 
+btn-outline-primary">Visit Website</a>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-4">
+                        <div class="resource-card">
+                          <div class="icon">
+                            <i class="bi bi-book"></i>
+                          </div>
+                          <h5>World Heart Federation</h5>
+                          <p>Global perspective on cardiovascular health and disease 
+prevention.</p>
+                          <a href="https://world-heart-federation.org/" target="_blank" 
+class="btn btn-outline-primary">Visit Website</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Knowledge Quiz -->
+                    <div class="quiz-container">
+                      <h4 class="mb-4">Test Your Knowledge</h4>
+                      
+                      <form id="cvd-quiz">
+                        <div class="quiz-question">
+                          <h5>1. Which of the following is a modifiable risk factor for 
+cardiovascular disease?</h5>
+                          <div class="quiz-options">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" id="q1-a" 
+value="a">
+                              <label class="form-check-label" for="q1-a">Age</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" id="q1-b" 
+value="b">
+                              <label class="form-check-label" for="q1-b">Family history</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" id="q1-c" 
+value="c">
+                              <label class="form-check-label" for="q1-c">High blood 
+pressure</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" id="q1-d" 
+value="d">
+                              <label class="form-check-label" for="q1-d">Gender</label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="quiz-question">
+                          <h5>2. How much moderate-intensity physical activity is recommended 
+per week for heart health?</h5>
+                          <div class="quiz-options">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" id="q2-a" 
+value="a">
+                              <label class="form-check-label" for="q2-a">30 minutes</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" id="q2-b" 
+value="b">
+                              <label class="form-check-label" for="q2-b">60 minutes</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" id="q2-c" 
+value="c">
+                              <label class="form-check-label" for="q2-c">150 minutes</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" id="q2-d" 
+value="d">
+                              <label class="form-check-label" for="q2-d">300 minutes</label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="quiz-question">
+                          <h5>3. Which diet is often recommended for heart health?</h5>
+                          <div class="quiz-options">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" id="q3-a" 
+value="a">
+                              <label class="form-check-label" for="q3-a">Keto diet</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" id="q3-b" 
+value="b">
+                              <label class="form-check-label" for="q3-b">Mediterranean 
+diet</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" id="q3-c" 
+value="c">
+                              <label class="form-check-label" for="q3-c">Paleo diet</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" id="q3-d" 
+value="d">
+                              <label class="form-check-label" for="q3-d">Carnivore diet</label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <button type="button" id="quiz-submit" class="btn btn-primary 
+mt-4">Check Answers</button>
+                      </form>
+                      
+                      <div id="quiz-results" class="mt-4" style="display: none;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All 
+Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a 
+href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center 
+justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' 
+%}"></script>
+  <script src="{% static 'medilab/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'medilab/assets/vendor/purecounter/purecounter_vanilla.js' 
+%}"></script>
+  <script src="{% static 'medilab/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'medilab/assets/js/main.js' %}?{{ timestamp }}"></script>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('.learn-nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active class from all links
+          document.querySelectorAll('.learn-nav a').forEach(link => {
+            link.classList.remove('active');
+          });
+          
+          // Add active class to clicked link
+          this.classList.add('active');
+          
+          // Scroll to section
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          window.scrollTo({
+            top: targetSection.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Quiz functionality
+      const quizSubmit = document.getElementById('quiz-submit');
+      const quizResults = document.getElementById('quiz-results');
+      
+      quizSubmit.addEventListener('click', function() {
+        const answers = {
+          q1: 'c', // High blood pressure
+          q2: 'c', // 150 minutes
+          q3: 'b'  // Mediterranean diet
+        };
+        
+        let score = 0;
+        let feedback = '<h5>Quiz Results:</h5><ul>';
+        
+        // Check answers
+        for (const question in answers) {
+          const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+          
+          if (selectedOption) {
+            if (selectedOption.value === answers[question]) {
+              score++;
+              feedback += `<li class="text-success">Question ${question.substring(1)}: 
+Correct!</li>`;
+            } else {
+              feedback += `<li class="text-danger">Question ${question.substring(1)}: 
+Incorrect</li>`;
+            }
+          } else {
+            feedback += `<li class="text-warning">Question ${question.substring(1)}: Not 
+answered</li>`;
+          }
+        }
+        
+        feedback += `</ul><p>Your score: ${score} out of 3</p>`;
+        
+        if (score === 3) {
+          feedback += '<div class="alert alert-success mt-3">Excellent! You have a good 
+understanding of cardiovascular health.</div>';
+        } else if (score >= 1) {
+          feedback += '<div class="alert alert-info mt-3">Good effort! Review the sections 
+above to learn more about cardiovascular health.</div>';
+        } else {
+          feedback += '<div class="alert alert-warning mt-3">Take some time to review the 
+information in this guide to improve your understanding of cardiovascular health.</div>';
+        }
+        
+        // Display results
+        quizResults.innerHTML = feedback;
+        quizResults.style.display = 'block';
+        
+        // Scroll to results
+        quizResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
